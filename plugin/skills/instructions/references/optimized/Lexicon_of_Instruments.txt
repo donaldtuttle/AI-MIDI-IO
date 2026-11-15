@@ -1,0 +1,5 @@
+Lexicon of Instruments
+
+Detailed instrument descriptions and usage notes for General MIDI and common synthesis voices used with AI MIDI IO.
+
+(Full original 47 KB content from the synchronized archive.)

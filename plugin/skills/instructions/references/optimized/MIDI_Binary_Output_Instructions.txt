@@ -1,3 +1,5 @@
 MIDI Binary Output Instructions
 
-How to serialize SMF Type 1 with Mido and absolute ticks.
+How to produce valid SMF Type 1 binary with Mido, absolute ticks, and the AI MIDI IO scheduler.
+
+(Full original content from the synchronized archive.)

@@ -1,3 +1,5 @@
 AI MIDI IO Guide
 
-Environment setup, legacy writing, and diagnostics. Full original preserved in local archive.
+Environment setup, legacy MIDI writing, manual PCM WAV examples, diagnostics and batch processing.
+
+(Full original content from the synchronized archive.)

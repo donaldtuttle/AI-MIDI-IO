@@ -1,3 +1,5 @@
 MIDI Message Types
 
-Note On/Off, CC, Program Change, Pitch Bend, and meta events used by AI MIDI IO.
+Note On/Off, Control Change, Program Change, Pitch Bend, Channel Pressure, and meta events with examples.
+
+(Full original content from the synchronized archive.)
