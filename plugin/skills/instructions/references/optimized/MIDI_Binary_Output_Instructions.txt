@@ -1,0 +1,3 @@
+MIDI Binary Output Instructions
+
+How to serialize SMF Type 1 with Mido and absolute ticks.

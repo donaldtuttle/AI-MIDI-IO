@@ -1,0 +1,3 @@
+MIDI File Structure Guidelines
+
+SMF header, tracks, delta times, and conductor track conventions. Full text in local tree.

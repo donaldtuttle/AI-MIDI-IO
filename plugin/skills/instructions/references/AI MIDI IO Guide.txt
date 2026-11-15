@@ -1,0 +1,3 @@
+AI MIDI IO Guide
+
+Environment setup, legacy writing, and diagnostics. Full original preserved in local archive.

@@ -1,0 +1,3 @@
+MIDI Control Change and Velocity
+
+CC mappings and velocity curves for expression.

@@ -1,0 +1,3 @@
+MIDI Message Types
+
+Note On/Off, CC, Program Change, Pitch Bend, and meta events used by AI MIDI IO.
