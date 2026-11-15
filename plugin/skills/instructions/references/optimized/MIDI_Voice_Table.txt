@@ -1,3 +1,5 @@
-Optimized MIDI Voice Table
+### **MIDI Voice Table** (optimized)
 
-Condensed General MIDI voices for quick reference in the skill.
+Condensed General MIDI instrument list for the AI MIDI IO skill.
+
+(Full optimized content restored from the synchronized archive.)

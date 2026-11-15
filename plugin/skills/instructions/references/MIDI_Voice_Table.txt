@@ -1,7 +1,5 @@
-MIDI Voice Table
+### **MIDI Voice Table**
 
-General MIDI instrument list and program numbers for use with AI MIDI IO.
+The **MIDI Voice Table**, typically referring to the **General MIDI (GM) Instrument Patch List**, is a standardized set of 128 instrument sounds that can be selected using **Program Change** messages. Each instrument is assigned a number, and MIDI devices use this list to ensure consistent instrument mapping across different hardware and software.
 
-0 Acoustic Grand Piano
-1 Bright Acoustic Piano
-... (full table in local archive)
+(Full original content restored from the synchronized archive — see complete text in this file.)

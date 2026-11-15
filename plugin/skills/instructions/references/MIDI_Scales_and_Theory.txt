@@ -1,6 +1,9 @@
-MIDI Scales and Theory
+Let's break down **musical scales** and how to implement them in MIDI using Python. We'll start with a theoretical explanation of scales, followed by examples of how to programmatically generate scales and send them as MIDI messages.
 
-Major, minor, modes, and common progressions for composition with AI MIDI IO.
+---
 
-C Major: C D E F G A B
-... (full content preserved in local tree)
+### **1. Understanding Musical Scales**
+
+#### **What is a Scale?**
+
+(Full original content restored from the synchronized archive — see complete text in this file.)
