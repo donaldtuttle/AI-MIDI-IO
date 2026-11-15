@@ -1,0 +1,7 @@
+{
+  "manifest_version": 1,
+  "files": [
+    {"path": "AI MIDI IO Guide.txt", "bytes": 13138, "sha256": "811e16393343edd64f7bf4a5dbf8d7a2ec4a1f5c9cb96162f3c9e24d4ec69e7b"}
+  ],
+  "note": "Full manifest in local tree."
+}
