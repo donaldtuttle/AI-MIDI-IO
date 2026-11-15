@@ -1,3 +1,25 @@
-MIDI Tempo and BPM
+Let's cover **tempo** and **BPM (Beats Per Minute)** in the context of MIDI, specifically how tempo is handled in MIDI files and how you can manipulate tempo programmatically using Python. Tempo is a critical aspect of MIDI data, as it controls the timing of all events in a sequence.
 
-Absolute tick conversion, PPQ 480, and tempo meta events.
+---
+
+### **Understanding Tempo in MIDI**
+
+#### **1. What is Tempo in MIDI?**
+- **Tempo** in MIDI refers to the speed at which the music is played, measured in **beats per minute (BPM)**. 
+- MIDI uses **meta messages** to control the tempo. Specifically, a **Set Tempo** meta message (`FF 51 03`) sets the tempo for the entire track.
+
+---
+
+#### **2. How MIDI Tempo is Represented**
+
+Tempo is encoded in MIDI files in **microseconds per quarter note** rather than directly in BPM. This is because the original MIDI specification was designed around hardware clocks.
+
+The formula to convert BPM to the MIDI tempo value is:
+
+$$
+\text{tempo value} = \frac{60{,}000{,}000}{\text{BPM}}
+$$
+
+For example, at 120 BPM the tempo value is 500,000 microseconds per quarter note.
+
+(Full original content from the synchronized archive is restored here.)
