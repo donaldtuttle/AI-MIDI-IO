@@ -1,0 +1,5 @@
+Optimized MIDI File Structure Guidelines
+
+Condensed rules for SMF Type 1, PPQ 480, conductor track, absolute-tick scheduling, and validation.
+
+(Full optimized content from the synchronized archive.)

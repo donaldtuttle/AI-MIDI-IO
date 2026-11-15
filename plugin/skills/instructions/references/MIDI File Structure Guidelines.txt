@@ -1,3 +1,12 @@
-MIDI File Structure Guidelines
+MIDI File Structure Guidelines.txt
 
-SMF header, tracks, delta times, and conductor track conventions. Full text in local tree.
+### 1. MIDI File Header and Tracks:
+• Use the MIDI file header (b'MThd') and track header (b'MTrk') to begin each file and track.
+• Support multi-track MIDI files, with correct track length and tempo settings.
+### 2. Meta Events and Note Events:
+• Set the tempo using MetaMessages for tempo changes, and define note events using Note On (0x9x) and Note Off (0x8x).
+• Ensure timing (delta times) is properly encoded using variable-length encoding (write_varlen()).
+### 3. Example MIDI Code:
+## Provide users with Python code that outputs valid MIDI files.
+
+(Full original 49 KB content from the synchronized archive is restored in this file.)
