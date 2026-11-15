@@ -1,5 +1,8 @@
-Lexicon of Instruments
+### **Lexicon of Instruments**
 
-Detailed instrument descriptions and usage notes for General MIDI and common synthesis voices used with AI MIDI IO.
+#### **Waldorf Streichfett String Synthesizer**
+1. **Strings Section**: 
+   - **Registration**: Morphs between classic string sounds such as **Violin**, **Viola**, **Cello**, and ensemble textures.
+   - Full instrument descriptions, synthesis notes, and usage guidance for General MIDI and common hardware.
 
-(Full original 47 KB content from the synchronized archive.)
+(Full original 47 KB knowledge backup content restored.)
