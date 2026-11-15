@@ -72,7 +72,7 @@ For a Type 1 arrangement, append a conductor track with tempo and meter, then ap
 - [Source audit and dependency map](docs/SOURCE_INVENTORY.md)
 - [Legacy backend and dependency provenance](docs/LEGACY.md)
 - [Plugin integration and overlay build](docs/PLUGIN.md)
-- [Runtime and plugin migration notes](docs/MIGRATION.md)
+- [Runtime and plugin compatibility](docs/MIGRATION.md)
 - [Testing and performance](docs/TESTING.md)
 - [Changelog](CHANGELOG.md) and [roadmap](docs/ROADMAP.md)
 
