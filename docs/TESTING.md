@@ -1,17 +1,13 @@
 # Testing
 
-```bash
-python -m pytest
+The package is tested with the standard library `unittest` module.
+
+## Local run
+
+```sh
+python -m unittest discover -s tests -v
 ```
 
-The test suite covers:
+GitHub Actions runs the same suite on Python 3.10 through 3.14.
 
-- structural validation of the verification fixture
-- compatibility with the legacy MIDIFile writer
-- plugin skill file presence
-- demo generation
-
-The verification fixture is generated at test time so the suite does not depend
-on a checked-in binary.
-
-CI runs the same suite on Python 3.10+.
+The verification MIDI file and its expected note counts are covered by `tests/test_validation.py` and `tests/test_demo.py`.

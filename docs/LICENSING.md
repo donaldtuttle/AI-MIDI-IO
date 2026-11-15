@@ -1,12 +1,7 @@
 # Licensing
 
-AI MIDI IO is released under the MIT License. See the root LICENSE file (to be
-added) for the full text.
+AI MIDI IO is released under the terms described in this repository.
 
-The legacy `MIDIFile.py` is covered by its own license in `legacy/License.txt`.
+The legacy MIDIFile.py component retains its original license (see `legacy/License.txt`).
 
-Mido is used under its license; a copy is in `legacy/notices/Mido-LICENSE.txt`.
-
-Plugin knowledge files under `plugin/skills/instructions/references/` are
-working notes and are not separately licensed. They may be redistributed with
-the package.
+Mido is used under its own license (see `legacy/notices/Mido-LICENSE.txt`).
