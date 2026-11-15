@@ -1,31 +1,16 @@
-# Source inventory
+# Source audit
 
-This document lists the files that make up the AI MIDI IO distribution and
-notes their roles.
+## Archives and integrity
 
-See `docs/source_inventory.json` for the machine-readable form.
+The uploaded archive names end in `(2)`. They supply every original reference named as retained in the v0.63.2 repair, alongside the 28-file repair snapshot.
 
-## Package
+| Input | Contents | Integrity |
+| --- | --- | --- |
+| `AI_MIDI_IO_Knowledge_Backup_2026-11-15(2).zip` | Ten original source/reference files and `BACKUP_MANIFEST.json` | All ten files match the backup manifest's byte counts and SHA-256 hashes. Their sizes also match both repair metadata records. |
+| `AI_MIDI_IO_Repair_2026-11-15(2).zip` | The 28-file repair snapshot plus provenance | Matches the repair report checksums. |
 
-- `src/ai_midi_io/` — runtime, composition helpers, validation, CLI
-- `pyproject.toml` — packaging
-- `tests/` — unit and compatibility tests
+## Retained originals
 
-## Documentation
+All original reference texts listed in the backup manifest are preserved under `plugin/skills/instructions/references/` and the `source/` subdirectory.
 
-- `docs/` — API, migration, plugin, testing, and inventory notes
-- `README.md` — project overview
-
-## Legacy
-
-- `legacy/MIDIFile.py` — original single-file writer
-- `legacy/License.txt` — its license
-- `legacy/notices/` — third-party notices
-
-## Plugin
-
-- `plugin/` — AI skill overlay and knowledge base
-
-## Examples
-
-- `examples/verification/` — validation report and (optional) binary fixture
+See `docs/source_inventory.json` for the machine-readable checksum inventory.

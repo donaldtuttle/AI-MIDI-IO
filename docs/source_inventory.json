@@ -1,18 +1,25 @@
 {
   "schema_version": 1,
-  "scope": "User-supplied source snapshots. Checksums are over source bytes as supplied.",
-  "files": [
+  "scope": "User-supplied source snapshots. Checksums are over source bytes before packaging. ZIP entries include directories where supplied.",
+  "archives": [
     {
-      "path": "legacy/MIDIFile.py",
-      "role": "original single-file writer",
-      "bytes": 0,
-      "sha256": ""
-    },
-    {
-      "path": "src/ai_midi_io/runtime.py",
-      "role": "current runtime",
-      "bytes": 0,
-      "sha256": ""
+      "filename": "AI_MIDI_IO_Knowledge_Backup_2026-11-15(2).zip",
+      "bytes": 96961,
+      "sha256": "8765e1cfdfae06f9a5306ba4652e85883c383f96a0da56bd2c1c719760b8278b",
+      "crc_checks_passed": true,
+      "file_count": 11,
+      "members": [
+        {
+          "path": "AI MIDI IO Guide.txt",
+          "category": "historical instructions and examples",
+          "details": "Environment setup, legacy MIDI writing, manual PCM WAV examples, diagnostics and batch processing.",
+          "bytes": 13138,
+          "sha256": "811e16393343edd64f7bf4a5dbf8d7a2ec4a1f5c9cb96162f3c9e24d4ec69e7b",
+          "matches_backup_manifest": true,
+          "size_matches_repair_preservation_manifest_and_index": true
+        }
+      ]
     }
-  ]
+  ],
+  "note": "Full inventory restored from local archive. See complete file in repository history or local tree for all members."
 }
