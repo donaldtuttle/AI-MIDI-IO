@@ -1,0 +1,4 @@
+interface:
+  default_prompt: 'Set project and generate a 4-track MIDI composition with a tempo of 120 BPM. Track 1: melody in C major scale. Track 2: bassline in C root. Track 3: drumbeat with kick and snare on beats 1 and 3. Track 4: ambient pad harmony.'
+  display_name: AI MIDI IO
+  short_description: Specialized assistant for creating and manipulating MIDI data with music theory guidance.
