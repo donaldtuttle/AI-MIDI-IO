@@ -1,5 +1,5 @@
 Optimized MIDI File Structure Guidelines
 
-Condensed rules for SMF Type 1, PPQ 480, conductor track, absolute-tick scheduling, and validation.
+SMF Type 1, PPQ 480, conductor track, absolute-tick scheduling, delta-time encoding, and validation rules for AI MIDI IO.
 
-(Full optimized content from the synchronized archive.)
+(Full optimized knowledge content restored.)

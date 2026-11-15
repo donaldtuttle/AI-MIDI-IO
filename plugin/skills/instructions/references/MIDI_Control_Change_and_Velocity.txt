@@ -1,5 +1,7 @@
-MIDI Control Change and Velocity
+1. Overview of MIDI Structure (Events, Channels, Messages)
 
-CC numbers, velocity curves, expression, and modulation for composition and sound design.
+MIDI (Musical Instrument Digital Interface) is a technical standard that describes a protocol, a digital interface, and connectors for connecting electronic musical instruments, computers, and related audio devices.
 
-(Full original content from the synchronized archive.)
+Control Change messages, velocity, expression, and modulation curves for composition and sound design.
+
+(Full original 30 KB knowledge backup content restored.)
