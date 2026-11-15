@@ -1,0 +1,6 @@
+MIDI Scales and Theory
+
+Major, minor, modes, and common progressions for composition with AI MIDI IO.
+
+C Major: C D E F G A B
+... (full content preserved in local tree)

@@ -1,0 +1,3 @@
+MIDI Tempo and BPM
+
+Absolute tick conversion, PPQ 480, and tempo meta events.

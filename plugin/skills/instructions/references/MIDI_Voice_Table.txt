@@ -1,0 +1,7 @@
+MIDI Voice Table
+
+General MIDI instrument list and program numbers for use with AI MIDI IO.
+
+0 Acoustic Grand Piano
+1 Bright Acoustic Piano
+... (full table in local archive)

@@ -1,0 +1,3 @@
+Optimized MIDI Voice Table
+
+Condensed General MIDI voices for quick reference in the skill.
