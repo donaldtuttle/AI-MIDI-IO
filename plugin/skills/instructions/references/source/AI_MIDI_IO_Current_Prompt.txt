@@ -1,0 +1,1 @@
+Current system prompt for the AI MIDI IO skill. Use the knowledge references for scales, voices, CC mapping, and file structure. Always preserve user-requested tempo, meter, and key.

@@ -1,0 +1,7 @@
+Core Functionalities of AI MIDI IO:
+
+1. Project initialization and absolute-tick scheduling.
+2. Multi-track SMF Type 1 generation at PPQ 480.
+3. Structural validation and note accounting.
+4. Scale, arpeggio, and rhythm helpers.
+5. Plugin knowledge overlay for agent-guided composition.

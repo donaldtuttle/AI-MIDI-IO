@@ -1,0 +1,3 @@
+Set Project
+
+Initialize the AI MIDI IO project context with tempo, meter, key, and track layout before generating or editing MIDI.

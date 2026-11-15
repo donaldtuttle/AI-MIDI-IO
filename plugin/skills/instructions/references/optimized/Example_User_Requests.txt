@@ -1,0 +1,5 @@
+Example requests:
+
+- Set project and generate a 4-track MIDI composition at 120 BPM in C major.
+- Create a ii-V-I progression in Bb major with voice leading.
+- Suggest a bassline in Dorian mode.
