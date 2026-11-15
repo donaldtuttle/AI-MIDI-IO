@@ -1,47 +1,30 @@
 # AI MIDI IO
 
-AI MIDI IO is a Python project for composing, organizing, and exporting MIDI data. It focuses on predictable event timing, clear musical structure, and file-based workflows that can be used in music production and automation.
+AI MIDI IO is a Python toolkit for MIDI composition, Standard MIDI File generation, structural validation, and repeatable music-production workflows. It combines a standalone command-line interface with reusable Python modules and a companion plugin.
 
-The project originated as a MIDI composition and workflow system and is being developed into a standalone Python library. The goal is to make its core tools usable directly from Python without requiring a chat interface.
+The package uses [Mido](https://mido.readthedocs.io/) to construct, serialize and reopen Standard MIDI Files. AI MIDI IO adds absolute-tick scheduling, structural validation, note accounting, project initialization and a reproducible four-part composition. The core file workflows run locally without a hosted service.
 
-## Current implementation
+## Install
 
-The repository currently includes:
+The package requires Python 3.10 or later. The included GitHub Actions workflow targets 3.10 through 3.14. See [test results](docs/TESTING.md) for verified interpreters and execution environments.
 
-- **MIDI event scheduling:** Convert absolute-tick events to delta-tick messages for Standard MIDI File tracks.
-- **Deterministic event order:** At matching tick positions, non-note events precede note releases and note onsets.
-- **End-of-track handling:** Add an explicit end-of-track event at a specified tick.
-- **Mido integration:** Work with Mido messages and MIDI tracks.
-
-The package is under active development. Some modules referenced by the compatibility layer and command-line entry point are not yet included in the current branch. Installation and CLI functionality should be considered incomplete until those components are added and tested.
-
-## Requirements
-
-- Python 3.10 or later
-- [Mido](https://mido.readthedocs.io/) 1.3.3 or compatible 1.x release
-
-## Working with event schedules
-
-The `scheduled_track` function accepts an iterable of `(absolute_tick, message)` pairs and an end tick. It returns a Mido `MidiTrack` with correctly calculated delta times.
-
-```python
-from mido import Message
-from ai_midi_io.composition import scheduled_track
-
-events = [
-    (0, Message("note_on", note=60, velocity=96, channel=0)),
-    (480, Message("note_off", note=60, velocity=0, channel=0)),
-]
-
-track = scheduled_track(events, end_tick=960)
+```sh
+python -m venv .venv
+# Activate .venv using your shell, then run:
+python -m pip install .
+ai-midi-io --help
 ```
 
-Messages at the same tick are sorted by event type while preserving input order within each priority group. Invalid tick positions and delta times outside the Standard MIDI File limit raise `ValueError`.
+The CLI is also available as `python -m ai_midi_io`. Mido 1.3.3 or a compatible 1.x release is the sole direct runtime dependency. Mido brings in `packaging`. Optional MIDI port backends are outside the install.
 
-## Development direction
+## Generate and validate MIDI
 
-The wider project is intended to support multitrack composition, project setup, MIDI file generation, validation, and repeatable musical workflows. Those features will be documented as they become available in the standalone package.
+```sh
+ai-midi-io demo --output-root ./out > demo-report.json
+ai-midi-io validate out/midi_generation/AI_MIDI_IO_Verification_4track_120BPM.mid \
+  --expected-musical-tracks 4 --expected-end-tick 30720
+```
 
-## Project background
+The demo has four musical tracks plus one conductor track. It runs for 16 bars in C major at 120 BPM in 4/4. The repository includes the [MIDI file and validation report](examples/README.md).
 
-AI MIDI IO was originally created by Donald Tuttle as a composition and MIDI workflow tool. This repository is the ongoing Python implementation of that work.
+Create your own one-track export with Mido messages and the AI MIDI IO scheduler.
