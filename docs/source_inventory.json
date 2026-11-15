@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "scope": "User-supplied source snapshots. Checksums are over source bytes as supplied.",
+  "files": [
+    {
+      "path": "legacy/MIDIFile.py",
+      "role": "original single-file writer",
+      "bytes": 0,
+      "sha256": ""
+    },
+    {
+      "path": "src/ai_midi_io/runtime.py",
+      "role": "current runtime",
+      "bytes": 0,
+      "sha256": ""
+    }
+  ]
+}
