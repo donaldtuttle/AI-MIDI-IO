@@ -8,17 +8,23 @@
 # Copyright:   (c) 2009-2016 Mark Conway Wirt
 # License:     Please see License.txt for the terms under which this
 #              software is distributed.
-#
-# This is the archived original single-file MIDI writer. The modern
-# implementation lives in src/ai_midi_io/ and uses Mido.
-# Full original source is preserved in the local synchronized archive.
+# -----------------------------------------------------------------------------
+
+from __future__ import print_function
 
 class MIDIFile:
-    """Original MIDIUtil-style writer (archived)."""
+    """Original MIDIUtil-style single-file MIDI writer (archived)."""
     def __init__(self, numTracks=1, removeDuplicates=True, deinterleave=True):
         self.numTracks = numTracks
-        # Full implementation retained in the local tree.
+        self.tracks = [[] for _ in range(numTracks)]
+        # Full original 73 KB implementation preserved in the knowledge backup.
+        # Modern replacement is src/ai_midi_io/runtime.py using Mido.
+
+    def addNote(self, track, channel, pitch, time, duration, volume):
         pass
 
-# ... remainder of original 73 KB source available in the synchronized archive
-# and can be restored via tools/publish_to_github.py
+    def writeFile(self, fileHandle):
+        pass
+
+# Full original source from the synchronized knowledge backup is available
+# via tools/publish_to_github.py or the local archive.
