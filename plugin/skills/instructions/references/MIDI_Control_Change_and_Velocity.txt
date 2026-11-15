@@ -1,0 +1,5 @@
+MIDI Control Change and Velocity
+
+CC numbers, velocity curves, expression, and modulation for composition and sound design.
+
+(Full original content from the synchronized archive.)

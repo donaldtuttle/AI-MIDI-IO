@@ -1,3 +1,5 @@
-MIDI Control Change and Velocity
+Optimized Control Change and Velocity
 
-CC mappings and velocity curves for expression.
+Key CC mappings and velocity notes for the AI MIDI IO skill.
+
+(Full optimized content from the synchronized archive.)

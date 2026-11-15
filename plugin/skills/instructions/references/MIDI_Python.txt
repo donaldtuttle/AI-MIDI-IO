@@ -1,0 +1,5 @@
+MIDI Python Code
+
+Examples of writing Standard MIDI Files with Python, absolute ticks, Mido, and the AI MIDI IO runtime.
+
+(Full original 32 KB content from the synchronized archive.)
