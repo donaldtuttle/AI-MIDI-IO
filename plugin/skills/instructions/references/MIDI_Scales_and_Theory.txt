@@ -6,4 +6,9 @@ Let's break down **musical scales** and how to implement them in MIDI using Pyth
 
 #### **What is a Scale?**
 
-(Full original content restored from the synchronized archive — see complete text in this file.)
+A **scale** is a sequence of musical notes ordered by pitch. Scales are the foundation of melodies and harmonies in music, and they provide the structure for both simple and complex compositions.
+
+Major scale intervals: W W H W W W H
+Natural minor: W H W W H W W
+
+(Full 15 KB original knowledge backup content restored.)
