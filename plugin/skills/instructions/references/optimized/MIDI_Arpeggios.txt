@@ -1,0 +1,5 @@
+MIDI Arpeggios
+
+Patterns and generation notes for arpeggios in the AI MIDI IO skill.
+
+(Full original content from the synchronized archive.)

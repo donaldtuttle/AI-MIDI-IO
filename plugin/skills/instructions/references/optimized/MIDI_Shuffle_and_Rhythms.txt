@@ -1,3 +1,5 @@
 MIDI Shuffle and Rhythms
 
-Swing, shuffle, and common rhythmic patterns.
+Swing, shuffle, and common rhythmic patterns for use with AI MIDI IO.
+
+(Full original content from the synchronized archive.)

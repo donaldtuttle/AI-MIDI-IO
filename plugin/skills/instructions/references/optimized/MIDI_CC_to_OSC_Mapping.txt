@@ -1,0 +1,5 @@
+MIDI CC to OSC Mapping
+
+Control Change to OSC address mapping for live control and sound design experiments.
+
+(Full original content from the synchronized archive.)

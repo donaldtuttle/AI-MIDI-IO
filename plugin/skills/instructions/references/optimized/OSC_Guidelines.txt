@@ -1,0 +1,5 @@
+OSC Guidelines
+
+Open Sound Control mapping notes complementary to MIDI CC for the AI MIDI IO workflow.
+
+(Full original content from the synchronized archive.)
