@@ -1,5 +1,78 @@
-MIDI CC to OSC Mapping
+### **MIDI CC to OSC Mapping Implementation Guide**
 
-Control Change to OSC address mapping for live control and sound design experiments.
+**Purpose**: This file outlines how to use **MIDI CC (Control Change) messages** to control parameters in OSC-compatible devices, creating a streamlined way to integrate MIDI with OSC in AI MIDI IO.
 
-(Full original content from the synchronized archive.)
+---
+
+#### **1. Overview**
+
+Using MIDI CC messages for OSC control allows for one-way communication where specific MIDI CC messages trigger or adjust parameters on OSC-compatible devices. This approach simplifies integration, avoiding the complexity of full bi-directional MIDI/OSC translation while covering most control needs.
+
+---
+
+#### **2. How MIDI CC to OSC Mapping Works**
+
+Each MIDI CC message includes:
+- **Control Number (0-127)**: Represents the specific parameter (e.g., modulation, volume).
+- **Value (0-127)**: Adjusts the level of that parameter.
+
+In AI MIDI IO, we map each MIDI CC number to a specific OSC path and value range. For example:
+- MIDI CC 7 (volume) -> OSC path `/volume`
+- MIDI CC 1 (modulation) -> OSC path `/modulation`
+
+By sending MIDI CC messages with set control numbers, AI MIDI IO can adjust these parameters in real-time on OSC-compatible devices.
+
+---
+
+#### **3. Setting Up MIDI CC to OSC Mapping in AI MIDI IO**
+
+1. **Define MIDI CC Numbers**:
+   - Choose which MIDI CC numbers you want to use to control specific OSC parameters. Some commonly used CC numbers include:
+     - **CC 1**: Modulation
+     - **CC 7**: Volume
+     - **CC 10**: Pan
+     - **CC 74**: Filter Cutoff
+
+2. **Assign OSC Paths**:
+   - Map each MIDI CC number to an OSC path. For example:
+     - `CC 1 -> /modulation`
+     - `CC 7 -> /volume`
+     - `CC 74 -> /filter_cutoff`
+
+3. **Value Range Adjustments**:
+   - MIDI CC values range from 0-127, which may differ from the range expected by OSC. You can normalize or adjust values in AI MIDI IO to ensure they match the intended OSC range.
+
+4. **Implementing Control in AI MIDI IO**:
+   - Set up a sequence or event handling in AI MIDI IO to send MIDI CC messages targeting the mapped CC numbers.
+   - When AI MIDI IO sends these CC messages, they will be converted to the corresponding OSC commands, adjusting the parameters on the connected OSC device.
+
+---
+
+#### **4. Example MIDI CC to OSC Mapping**
+
+| MIDI CC Number | Description         | Mapped OSC Path      |
+|----------------|---------------------|-----------------------|
+| CC 1           | Modulation          | `/modulation`        |
+| CC 7           | Volume              | `/volume`            |
+| CC 10          | Pan                 | `/pan`               |
+| CC 74          | Filter Cutoff       | `/filter_cutoff`     |
+
+---
+
+#### **5. Limitations**
+
+- **One-Way Control**: This approach only covers MIDI-to-OSC mapping. If OSC-to-MIDI conversion is required, additional handling would be needed.
+- **Value Range**: MIDI values are limited to 128 steps, whereas OSC can support finer adjustments. For basic parameter control, this difference is generally manageable.
+
+---
+
+#### **6. Practical Uses**
+
+This MIDI CC to OSC mapping can control:
+- **Synthesizer Parameters**: Adjust filter cutoff, resonance, or modulation in real-time.
+- **DAW Controls**: Change volume, pan, or send levels dynamically in OSC-supported DAWs.
+- **Custom OSC Devices**: Trigger effects or parameter changes on compatible hardware.
+
+---
+
+This knowledge file provides AI MIDI IO with a structured approach to implementing one-way MIDI CC to OSC control, making integration straightforward and effective for most MIDI-OSC control needs.

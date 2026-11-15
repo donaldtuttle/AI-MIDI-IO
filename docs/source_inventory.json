@@ -17,9 +17,883 @@
           "sha256": "811e16393343edd64f7bf4a5dbf8d7a2ec4a1f5c9cb96162f3c9e24d4ec69e7b",
           "matches_backup_manifest": true,
           "size_matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "AI_MIDI_IO_Python.zip",
+          "category": "third-party binary source container",
+          "details": "Bundled mido source snapshot. Its complete ZIP inventory is nested here.",
+          "bytes": 141730,
+          "sha256": "955bc2a0cac2d5e87fb75b9a5f6ca53502a53a44f33135701123d2d6189a5f20",
+          "members": [
+            {
+              "path": "mido/",
+              "category": "ZIP directory",
+              "details": "Directory entry.",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "path": "mido/__init__.py",
+              "category": "third-party mido Python",
+              "details": "Public mido imports, convenience backend loader and port aliases.",
+              "bytes": 4643,
+              "sha256": "370c01186b7f7984c9f3d744caa901bdc6efc6fec1dd2e16236ef32587543382",
+              "python_imports": [
+                ".",
+                ".backends.backend",
+                ".messages",
+                ".midifiles",
+                ".parser",
+                ".syx",
+                ".version"
+              ]
+            },
+            {
+              "path": "mido/backends/",
+              "category": "ZIP directory",
+              "details": "Directory entry.",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "path": "mido/backends/__init__.py",
+              "category": "third-party mido Python",
+              "details": "Backend package marker.",
+              "bytes": 107,
+              "sha256": "7c331514a212809e5656e5713193ced163a4b37638149b001077e70e00450c77",
+              "python_imports": []
+            },
+            {
+              "path": "mido/backends/_parser_queue.py",
+              "category": "third-party mido Python",
+              "details": "Thread-safe parsed-message queue.",
+              "bytes": 1373,
+              "sha256": "4ec30d0e70254b732a41e1285f83f5e39de28c3367d1b2ac4a9dd2dd203c15f2",
+              "python_imports": [
+                "..parser",
+                "queue",
+                "threading"
+              ]
+            },
+            {
+              "path": "mido/backends/amidi.py",
+              "category": "third-party mido Python",
+              "details": "ALSA amidi process adapter with a missing internal ._common dependency.",
+              "bytes": 3235,
+              "sha256": "53c7ef45d508cdfea558c2aed7e6eb3a6342e548d99fb884b63c4f4230e9cdf7",
+              "python_imports": [
+                "..messages",
+                "._common",
+                "select",
+                "subprocess",
+                "threading"
+              ]
+            },
+            {
+              "path": "mido/backends/backend.py",
+              "category": "third-party mido Python",
+              "details": "Lazy loading of named optional MIDI backends.",
+              "bytes": 6776,
+              "sha256": "ac5011ae2cbb62a68b884b5c31db72425a9dacb7154ad369474694c9973e622c",
+              "python_imports": [
+                "..",
+                "importlib",
+                "os"
+              ]
+            },
+            {
+              "path": "mido/backends/portmidi.py",
+              "category": "third-party mido Python",
+              "details": "PortMidi input/output adapter.",
+              "bytes": 9005,
+              "sha256": "db0947022abba5ea368f1bf085999b50683a2b073e3bb7a94f5dbaac26452e28",
+              "python_imports": [
+                ".",
+                "..ports",
+                "ctypes",
+                "threading"
+              ]
+            },
+            {
+              "path": "mido/backends/portmidi_init.py",
+              "category": "third-party mido Python",
+              "details": "PortMidi shared-library bindings through ctypes.",
+              "bytes": 4550,
+              "sha256": "16dc5b35719daeb9d6d306f245212d15d63ad35cbdd6a72f01775f90b5bc681f",
+              "python_imports": [
+                "ctypes",
+                "ctypes.util",
+                "sys"
+              ]
+            },
+            {
+              "path": "mido/backends/pygame.py",
+              "category": "third-party mido Python",
+              "details": "pygame.midi input/output adapter.",
+              "bytes": 3754,
+              "sha256": "5db49aaf501564a9fc9f4bb2bb83d21c60bfe0bded6afc401f90cb8ada3c71b9",
+              "python_imports": [
+                "..ports",
+                "pygame"
+              ]
+            },
+            {
+              "path": "mido/backends/rtmidi.py",
+              "category": "third-party mido Python",
+              "details": "python-rtmidi input/output adapter.",
+              "bytes": 5658,
+              "sha256": "6513118002ad9c7d9da145a8bf68a03e3ca39535914539e2c156c7b29565a31a",
+              "python_imports": [
+                "..",
+                "..messages",
+                "._parser_queue",
+                ".rtmidi_utils",
+                "rtmidi",
+                "threading"
+              ]
+            },
+            {
+              "path": "mido/backends/rtmidi_python.py",
+              "category": "third-party mido Python",
+              "details": "rtmidi_python input/output adapter.",
+              "bytes": 3891,
+              "sha256": "0933a3cee88a5f30c770dcb453ddeec73255cc801378fb237dc945679ed12340",
+              "python_imports": [
+                "..ports",
+                "queue",
+                "rtmidi_python"
+              ]
+            },
+            {
+              "path": "mido/backends/rtmidi_utils.py",
+              "category": "third-party mido Python",
+              "details": "ALSA port name resolution.",
+              "bytes": 1459,
+              "sha256": "adde6775b41ed11bafcfcfd94fb0bdc98be692560cec5ebf759ad8cfe61fce2c",
+              "python_imports": []
+            },
+            {
+              "path": "mido/frozen.py",
+              "category": "third-party mido Python",
+              "details": "Immutable message wrappers.",
+              "bytes": 2403,
+              "sha256": "bb75443a693594cd64fe1a21c2586ee84a588d897512cb4bf40b5f16eb20cff9",
+              "python_imports": [
+                ".messages",
+                ".midifiles"
+              ]
+            },
+            {
+              "path": "mido/messages/",
+              "category": "ZIP directory",
+              "details": "Directory entry.",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "path": "mido/messages/__init__.py",
+              "category": "third-party mido Python",
+              "details": "Internal MIDI messages public surface.",
+              "bytes": 693,
+              "sha256": "20f6d46fbae3cee6d080a922720b88db79bf30cfbd2075d5a5faa21bf91fe40f",
+              "python_imports": [
+                ".checks",
+                ".messages",
+                ".specs"
+              ]
+            },
+            {
+              "path": "mido/messages/checks.py",
+              "category": "third-party mido Python",
+              "details": "Message range/type validators.",
+              "bytes": 2904,
+              "sha256": "7fa74925bebbf98e4b57691f0077971eceac6482f7f8dfcddf0a42802ab113be",
+              "python_imports": [
+                ".specs",
+                "numbers"
+              ]
+            },
+            {
+              "path": "mido/messages/decode.py",
+              "category": "third-party mido Python",
+              "details": "Wire byte decoding.",
+              "bytes": 2770,
+              "sha256": "65cc9bf41b800310ada008a5e87c57529a8701b08499d0883555d42a9d53a439",
+              "python_imports": [
+                ".checks",
+                ".specs"
+              ]
+            },
+            {
+              "path": "mido/messages/encode.py",
+              "category": "third-party mido Python",
+              "details": "Wire byte encoding.",
+              "bytes": 1808,
+              "sha256": "371876ff09c730be1222f2cd9c11b14008fcb28486ebc5186ac83eedfebae598",
+              "python_imports": [
+                ".specs"
+              ]
+            },
+            {
+              "path": "mido/messages/messages.py",
+              "category": "third-party mido Python",
+              "details": "Message types, copy, construction, repr and parsing.",
+              "bytes": 8147,
+              "sha256": "0fa4fc0ab9916e9d923f5480ff7f1b11f340f75baa83944dc0240bcc09501efd",
+              "python_imports": [
+                ".checks",
+                ".decode",
+                ".encode",
+                ".specs",
+                ".strings",
+                "re"
+              ]
+            },
+            {
+              "path": "mido/messages/specs.py",
+              "category": "third-party mido Python",
+              "details": "MIDI status/data-byte specifications and defaults.",
+              "bytes": 3476,
+              "sha256": "12585c0e8346ab186f316321760e21847e4a94e64bab53aede43f52ce3ff43a3",
+              "python_imports": []
+            },
+            {
+              "path": "mido/messages/strings.py",
+              "category": "third-party mido Python",
+              "details": "Message text serialization and parsing.",
+              "bytes": 1710,
+              "sha256": "774b58eb6a8b0f15f5c7a79042787d994d1a3b317c483605fe4f306db72d3e99",
+              "python_imports": [
+                ".specs"
+              ]
+            },
+            {
+              "path": "mido/midifiles/",
+              "category": "ZIP directory",
+              "details": "Directory entry.",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "path": "mido/midifiles/__init__.py",
+              "category": "third-party mido Python",
+              "details": "SMF public classes and time units.",
+              "bytes": 529,
+              "sha256": "8179b5e659bce44d6a52358d04af78b028a133d1e9b433b5fe8718a072e07ac8",
+              "python_imports": [
+                ".meta",
+                ".midifiles",
+                ".tracks",
+                ".units"
+              ]
+            },
+            {
+              "path": "mido/midifiles/meta.py",
+              "category": "third-party mido Python",
+              "details": "SMF meta message encoders/decoders.",
+              "bytes": 16440,
+              "sha256": "d9dd4c18f01ee3eb99219f0b2a5d25a354e0300ef06db0b85abad2e98a5f627d",
+              "python_imports": [
+                "..messages",
+                "contextlib",
+                "math",
+                "numbers",
+                "struct"
+              ]
+            },
+            {
+              "path": "mido/midifiles/midifiles.py",
+              "category": "third-party mido Python",
+              "details": "SMF parser/writer, variable lengths, tracks and time handling.",
+              "bytes": 14909,
+              "sha256": "4002f72129dbb84c5df3bef88814c90fa5d4d62f32d5d02b7b6ee603e6d00889",
+              "python_imports": [
+                "..messages",
+                ".meta",
+                ".tracks",
+                ".units",
+                "numbers",
+                "string",
+                "struct",
+                "time"
+              ]
+            },
+            {
+              "path": "mido/midifiles/tracks.py",
+              "category": "third-party mido Python",
+              "details": "MidiTrack, merging/ordering and end-of-track normalization.",
+              "bytes": 3924,
+              "sha256": "03be1b22af2e8aca81220d64be8c509b5fae7347c473239a557d7c92f3ec4a2e",
+              "python_imports": [
+                ".meta"
+              ]
+            },
+            {
+              "path": "mido/midifiles/units.py",
+              "category": "third-party mido Python",
+              "details": "Tick/second and tempo/BPM conversions.",
+              "bytes": 1701,
+              "sha256": "ed59bcc9fb23e5af921ed4892f9222f39d7aecde0715694cbbbcea659d5ce025",
+              "python_imports": []
+            },
+            {
+              "path": "mido/parser.py",
+              "category": "third-party mido Python",
+              "details": "Stream parser combining tokenizer and message construction.",
+              "bytes": 2790,
+              "sha256": "f83269e8045ab570521ba816b12ce501cf734947bee640dc83cb895ba855447e",
+              "python_imports": [
+                ".messages",
+                ".tokenizer",
+                "collections"
+              ]
+            },
+            {
+              "path": "mido/ports.py",
+              "category": "third-party mido Python",
+              "details": "Base MIDI ports, multiplexing, and reset/panic message utilities.",
+              "bytes": 11848,
+              "sha256": "7a258a0ab1390c4c2265991a2ab5310927b2c89c62a18b58e79ff4e6cff04468",
+              "python_imports": [
+                ".messages",
+                ".parser",
+                "random",
+                "threading",
+                "time"
+              ]
+            },
+            {
+              "path": "mido/scripts/",
+              "category": "ZIP directory",
+              "details": "Directory entry.",
+              "bytes": 0,
+              "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+            },
+            {
+              "path": "mido/scripts/__init__.py",
+              "category": "third-party mido Python",
+              "details": "Scripts package marker.",
+              "bytes": 107,
+              "sha256": "6b3270e696cfdfe922e28bb278c050e2fd12b98b9dee204cb12ec50f5da917e4",
+              "python_imports": []
+            },
+            {
+              "path": "mido/scripts/mido_connect.py",
+              "category": "third-party mido Python",
+              "details": "Optional upstream MIDI connection CLI.",
+              "bytes": 1058,
+              "sha256": "e4712e7a7a2553851391d6a004ffa674b3e088cd22366d3144fd3961b4bb5baa",
+              "python_imports": [
+                "argparse",
+                "mido"
+              ]
+            },
+            {
+              "path": "mido/scripts/mido_play.py",
+              "category": "third-party mido Python",
+              "details": "Optional upstream playback CLI requiring a MIDI output backend.",
+              "bytes": 2301,
+              "sha256": "3a868f16578a5b99f7b59e3ef41f9dac2023b86bfbc5c4ff45f865f67b518c3c",
+              "python_imports": [
+                "argparse",
+                "mido",
+                "sys"
+              ]
+            },
+            {
+              "path": "mido/scripts/mido_ports.py",
+              "category": "third-party mido Python",
+              "details": "Optional upstream port listing CLI.",
+              "bytes": 907,
+              "sha256": "ba9f9b5d6f78d6cb46c194e42b30e51684843c4799c2886856262de29af29bb4",
+              "python_imports": [
+                "mido",
+                "os"
+              ]
+            },
+            {
+              "path": "mido/scripts/mido_serve.py",
+              "category": "third-party mido Python",
+              "details": "Optional upstream MIDI network server CLI.",
+              "bytes": 1113,
+              "sha256": "96015e98d655ed2c71eeba4baf05edbab1fb2b5bb5a37a3ca694b59d7520d676",
+              "python_imports": [
+                "argparse",
+                "mido",
+                "mido.ports"
+              ]
+            },
+            {
+              "path": "mido/sockets.py",
+              "category": "third-party mido Python",
+              "details": "Optional upstream MIDI-over-socket port transport.",
+              "bytes": 4527,
+              "sha256": "be5736269e9f3f759187714941387a0de574e6c3e50be25ea1cf4b3ac64d3e29",
+              "python_imports": [
+                ".parser",
+                ".ports",
+                "select",
+                "socket"
+              ]
+            },
+            {
+              "path": "mido/syx.py",
+              "category": "third-party mido Python",
+              "details": "SysEx file input/output.",
+              "bytes": 1604,
+              "sha256": "db878634d525d03c411e0aa6b40cf4c1f69049c0cf83368d24551e55356f8cd2",
+              "python_imports": [
+                ".parser",
+                "re"
+              ]
+            },
+            {
+              "path": "mido/tokenizer.py",
+              "category": "third-party mido Python",
+              "details": "Raw MIDI byte stream tokenizer.",
+              "bytes": 2886,
+              "sha256": "8c84f2237bfaf133af2ab42da1a1e0f55ef97928e2f9ff12a9b074a583e90e65",
+              "python_imports": [
+                ".messages.specs",
+                "collections",
+                "numbers"
+              ]
+            },
+            {
+              "path": "mido/version.py",
+              "category": "third-party mido Python",
+              "details": "Distribution metadata and packaging.version import.",
+              "bytes": 516,
+              "sha256": "df20786f6735b9bf653697ce66cdebe476828693874a8226a99f82afa913f4bc",
+              "python_imports": [
+                "importlib.metadata",
+                "importlib_metadata",
+                "packaging.version"
+              ]
+            }
+          ],
+          "crc_checks_passed": true,
+          "matches_backup_manifest": true,
+          "size_matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "BACKUP_MANIFEST.json",
+          "category": "integrity evidence",
+          "details": "Manifest with original-file SHA-256 hashes and byte sizes.",
+          "bytes": 1878,
+          "sha256": "cd21dbdebf93b2ac56d21d503e7d39e8749d80b37b47dcdc1e96cbd95481db7d"
+        },
+        {
+          "path": "MIDI File Structure Guidelines.txt",
+          "category": "MIDI format and examples",
+          "details": "SMF chunks, note/meta events, delta/VLQ, dictionary arrangements, embedded binary and download examples.",
+          "bytes": 50265,
+          "sha256": "b8200da8ee58fd7d908ed09ba1a572f493e4a62301eeaba84be81c53770e8d93",
+          "matches_backup_manifest": true,
+          "size_matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "MIDIFile.py",
+          "category": "legacy Python backend",
+          "details": "MIDIUtil-derived standalone SMF writer with event classes, track/header serialization, variable-length values and tuning-message helpers.",
+          "bytes": 73304,
+          "sha256": "4539cc29aa013f30231815b819b917bd395facfd01e7d5556849649fe847728c",
+          "python_imports": [
+            "__future__",
+            "math",
+            "struct",
+            "warnings"
+          ],
+          "matches_backup_manifest": true,
+          "size_matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "MIDI_CC to OSC Mapping Implementation Guide.txt",
+          "category": "MIDI-to-OSC design",
+          "details": "Controller-to-address mapping concepts and bridge workflow.",
+          "bytes": 3573,
+          "sha256": "20fb9c45ba8938149b18f1ddec149f5e83a4d7ddbed818e23a4a6eadc7f15e32",
+          "matches_backup_manifest": true,
+          "size_matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "MIDI_Control_Change_and_Velocity.txt",
+          "category": "MIDI event and expression reference",
+          "details": "CC, velocity, general messages, GM percussion, and overlapping protocol/file examples.",
+          "bytes": 30446,
+          "sha256": "48b34efa1edc42c6c774d5c6a47e8bc6b1383252052ea640b684f6071bec9bba",
+          "matches_backup_manifest": true,
+          "size_matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "MIDI_Python.txt",
+          "category": "Python examples",
+          "details": "MIDIUtil, mido, pygame.midi, VLQ and binary examples, tempo, randomized melody, arpeggios, Dorian and live I/O snippets.",
+          "bytes": 33099,
+          "sha256": "c5f9e0cec3d7e60603b0d8d5b38c7d270f5cd30abf33bac0987c0d2414a16915",
+          "matches_backup_manifest": true,
+          "size_matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "MIDI_Scales_and_Theory.txt",
+          "category": "music theory and Python examples",
+          "details": "Major, minor, pentatonic, chromatic and Dorian modes, triads, expressive velocity and pitch-bend examples.",
+          "bytes": 15984,
+          "sha256": "e1a3b83dc168e62da3fc4a1e9b6de392217722bce0b952073ccf5cf8e4069d29",
+          "matches_backup_manifest": true,
+          "size_matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "MIDI_Voice_Table.txt",
+          "category": "GM reference data",
+          "details": "GM voice program table and instrument selection guidance.",
+          "bytes": 12769,
+          "sha256": "3f6b648fcbedb620a634dcb43036943fd9f2737d63593094cd438f9e9f63fed3",
+          "matches_backup_manifest": true,
+          "size_matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "set_project.txt",
+          "category": "historical setup instructions",
+          "details": "Unindented ProjectInitializer example with obsolete output roots, resource placeholders and download links.",
+          "bytes": 3122,
+          "sha256": "e99a5ececaeed8fc217841b021768a38b934ffaa8818b852250850f3ba0eaff4",
+          "matches_backup_manifest": true,
+          "size_matches_repair_preservation_manifest_and_index": true
         }
       ]
+    },
+    {
+      "filename": "AI_MIDI_IO_Repair_Update_0.63.2(2).zip",
+      "bytes": 110544,
+      "sha256": "d43db493f33130694f3d29a7a0e88251ce0577e9300f47e4c8fbfe4a3bded83e",
+      "crc_checks_passed": true,
+      "file_count": 28,
+      "members": [
+        {
+          "path": ".codex-plugin/plugin.json",
+          "category": "plugin metadata",
+          "details": "Codex plugin layout, author, identity, icon reference and conversation starters.",
+          "bytes": 1717,
+          "sha256": "6537fe02d1d53374ba52de42fd883ccff62f65594e6e752953f1051c13c180d6"
+        },
+        {
+          "path": "plugin.json",
+          "category": "plugin metadata",
+          "details": "Agent plugin schema manifest with equivalent identity and interface details.",
+          "bytes": 1866,
+          "sha256": "3acb5b4f7c41b2f26f174cd740743fc0edcb49d8f5f2a679cd2b5bb634e192d6"
+        },
+        {
+          "path": "skills/instructions/SKILL.md",
+          "category": "active plugin instructions",
+          "details": "Source precedence and project initialization, arrangement, validation, audio, iOS and live I/O boundaries.",
+          "bytes": 10502,
+          "sha256": "efc38bba7a955a10a26f3d9d4adcfafcd49ca4150a9b222e4326acaa4ff92063"
+        },
+        {
+          "path": "skills/instructions/agents/openai.yaml",
+          "category": "plugin metadata",
+          "details": "Agent display name, description and starter prompt.",
+          "bytes": 384,
+          "sha256": "bda1d18a9b5206117f3bf085a64e1a1d296994d6c3c09abf0b2d0db0215a7cbb"
+        },
+        {
+          "path": "skills/instructions/lookup/knowledge-index.json",
+          "category": "plugin reference routing",
+          "details": "Skill-relative reference paths and source descriptions.",
+          "bytes": 7491,
+          "sha256": "ac1c2f6c2a6729422e9039c6716d0fecf3ab778f6b700bd3410196114517a2cb"
+        },
+        {
+          "path": "skills/instructions/lookup/source-preservation.json",
+          "category": "integrity and scope evidence",
+          "details": "Original-release reference paths/sizes and hashes for newly included user sources.",
+          "bytes": 5461,
+          "sha256": "b298a7de2acd58a9a481d3517e716849597dddcd00d62ec2847663a7af735982"
+        },
+        {
+          "path": "skills/instructions/references/Runtime_and_Migration_Notes.md",
+          "category": "historical repair documentation",
+          "details": "0.63.2 repair scope, initialization and execution changes, historical tests and limits.",
+          "bytes": 5101,
+          "sha256": "237b91fbe5ccc3e16ffcf1ae17882910317af4632628c436a00db49b92c0e178"
+        },
+        {
+          "path": "skills/instructions/references/optimized/AI_MIDI_IO_TOC.md",
+          "category": "knowledge index",
+          "details": "Relative links to the 15 topic files in this directory.",
+          "bytes": 894,
+          "sha256": "5e39d896e03425a6bbc02b8335f8b55c608e380c48a7b75026d71d31e87b766f",
+          "matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "skills/instructions/references/optimized/Core_Functionalities.txt",
+          "category": "historical capability descriptions",
+          "details": "Assistant composition, MIDI and OSC scope and envisioned workflows.",
+          "bytes": 4110,
+          "sha256": "4f8d92bba7f7ffbf55663371429cdd4652bf7a0a0a9383c8e22771ab3e0c73ea",
+          "matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "skills/instructions/references/optimized/Example_User_Requests.txt",
+          "category": "historical use cases",
+          "details": "Techno, odd-meter drums, ii-V-I, live sections, ambient and meter-change examples.",
+          "bytes": 5290,
+          "sha256": "087dc2a286c1946c93591f037e3f8c5d9d126b89d1a6ba8b1af9ef855b1f4d7b",
+          "matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "skills/instructions/references/optimized/Lexicon_of_Instruments.txt",
+          "category": "hardware reference",
+          "details": "Device-specific synthesis and CC, clock, SysEx and controller guidance.",
+          "bytes": 47745,
+          "sha256": "fd76fe6dee0bba2fb2c9de19f07ce6fe917d359e7643c9d9bd6d30003f53af9d",
+          "matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "skills/instructions/references/optimized/MIDI_Arpeggios.txt",
+          "category": "composition techniques and Python examples",
+          "details": "Ascending and descending shapes, live examples and file-based tick sequencing.",
+          "bytes": 4045,
+          "sha256": "d5e4cc78227e6c9822020b54c122ee5ccba7dbf6ec2616c79b2bece22c1bfc74",
+          "matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "skills/instructions/references/optimized/MIDI_Binary_Output_Instructions.txt",
+          "category": "MIDI binary examples",
+          "details": "Dictionary-to-bytes example patterns, chunk examples and historical export links.",
+          "bytes": 12495,
+          "sha256": "23286f21e2bdd80186e0a88ca3087c69f54496789d13279cea5f20310aad48eb",
+          "matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "skills/instructions/references/optimized/MIDI_CC_to_OSC_Mapping.txt",
+          "category": "MIDI-to-OSC design",
+          "details": "Controller-to-address mapping concepts and bridge workflow.",
+          "bytes": 3495,
+          "sha256": "e76af25c9437ac926c76e6d7914f3b176ac8368cdec226c72a531642d7ea2833",
+          "matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "skills/instructions/references/optimized/MIDI_Control_Change_and_Velocity.txt",
+          "category": "MIDI event and expression reference",
+          "details": "CC, velocity, general messages, GM percussion, and overlapping protocol/file examples.",
+          "bytes": 29922,
+          "sha256": "070a162e3fce198e82f40122feadd6c27756a15f8c3649dd73a415079833d6cd",
+          "matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "skills/instructions/references/optimized/MIDI_File_Structure_Guidelines.txt",
+          "category": "MIDI format and examples",
+          "details": "SMF chunks, note/meta events, delta/VLQ, dictionary arrangements, embedded binary and download examples.",
+          "bytes": 49128,
+          "sha256": "cdf769ffd0753bbbcea251438b263cc348c4f08af30464a95d92a942251ee10d",
+          "matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "skills/instructions/references/optimized/MIDI_Message_Types.txt",
+          "category": "MIDI protocol reference",
+          "details": "MIDI message types, status bytes, system and SysEx examples, GM and MIDI 2.0 overview.",
+          "bytes": 27404,
+          "sha256": "ff82a8ad941bcc1ad112a6c45abc7c5948ff660c6ac6a92ff1a24cf447d41e59",
+          "matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "skills/instructions/references/optimized/MIDI_Python_Code.txt",
+          "category": "Python examples",
+          "details": "MIDIUtil, mido, pygame.midi, VLQ and binary examples, tempo, melody, arpeggios, Dorian and live I/O snippets.",
+          "bytes": 32219,
+          "sha256": "2a68dfb8746ec9fed7898e7942ac5279ac42a4c77bfda503af7589f976a2ff5e",
+          "matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "skills/instructions/references/optimized/MIDI_Scales_and_Theory.txt",
+          "category": "music theory and Python examples",
+          "details": "Scale intervals, modes, chords and illustrative live synthesis/control snippets.",
+          "bytes": 15530,
+          "sha256": "02cd34094fc9c83deab18784fdb4652eb16830f308327a9d8cc7c4cb2dc66142",
+          "matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "skills/instructions/references/optimized/MIDI_Shuffle_and_Rhythms.txt",
+          "category": "rhythm and Python examples",
+          "details": "Shuffle, triplets, PPQ offsets, live playback and arpeggio examples.",
+          "bytes": 6388,
+          "sha256": "42d2a56594e090e0fcea618fb1c527f6216d9d277c608b6c7745367035e6204f",
+          "matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "skills/instructions/references/optimized/MIDI_Tempo_and_BPM.txt",
+          "category": "timing and Python examples",
+          "details": "Tempo units, meta messages, tempo maps, live clock, and tempo reading/editing examples.",
+          "bytes": 7312,
+          "sha256": "95047c54af25bc570cd2793c61d05d7150a2ee5825eb601cc70b4a174502c1b0",
+          "matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "skills/instructions/references/optimized/MIDI_Voice_Table.txt",
+          "category": "GM reference data",
+          "details": "GM voice program table and instrument selection guidance.",
+          "bytes": 12605,
+          "sha256": "5b263b51a2cdf34763af82fce9fd0068a9cc3ab385eedc5aa691675c5a4f9f5a",
+          "matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "skills/instructions/references/optimized/OSC_Guidelines.txt",
+          "category": "OSC design and Python examples",
+          "details": "Proposed OSC setup, endpoints and python-osc examples; no executable adapter.",
+          "bytes": 3517,
+          "sha256": "7f854a19c9bac7d3e7360d25144928c91451aeae129ed6fb8e956a4958f519ad",
+          "matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "skills/instructions/references/source/AI_MIDI_IO_Current_Prompt.txt",
+          "category": "historical Custom GPT prompt",
+          "details": "Original assistant instructions, hardcoded sandbox setup and mido velocity example.",
+          "bytes": 4781,
+          "sha256": "532d32f1c05999d750c19e3b3248f8254d95cbe4fcf906d9dbdb6254cd35cc33",
+          "matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "skills/instructions/references/source/AI_MIDI_IO_iOS_User_Guide(20261115-134555).md",
+          "category": "historical user guide",
+          "details": "Mobile app workflow for absent HTML source.",
+          "bytes": 2808,
+          "sha256": "28f8c338a49e5ec608631c4b812a21201249f13bd461982abc38e2f8aedee522",
+          "matches_repair_preservation_manifest_and_index": true
+        },
+        {
+          "path": "skills/instructions/scripts/ai_midi_io_runtime.py",
+          "category": "project Python runtime",
+          "details": "Initialize, optional legacy import and vendored-source loader, event scheduling, structural/note validation, WAV diagnostic and sandbox delivery.",
+          "bytes": 16975,
+          "sha256": "27a39ed1f088998a1700dd4cf280e26ae592adf115c797e704449adcc9880403",
+          "python_imports": [
+            "__future__",
+            "argparse",
+            "hashlib",
+            "importlib",
+            "importlib.util",
+            "json",
+            "math",
+            "mido",
+            "os",
+            "pathlib",
+            "shutil",
+            "stat",
+            "struct",
+            "sys",
+            "tempfile",
+            "types",
+            "typing",
+            "urllib.parse",
+            "wave",
+            "zipfile"
+          ]
+        },
+        {
+          "path": "skills/instructions/scripts/generate_verification.py",
+          "category": "project Python fixture",
+          "details": "Deterministic four-part GM composition and export verification.",
+          "bytes": 3961,
+          "sha256": "6515b1fed911787e394a59bd2055fcf8020f84418e0969e9f21398b0a3cb4f18",
+          "python_imports": [
+            "__future__",
+            "ai_midi_io_runtime",
+            "argparse",
+            "json",
+            "pathlib"
+          ]
+        },
+        {
+          "path": "skills/instructions/tests/test_runtime.py",
+          "category": "project Python tests",
+          "details": "Twenty-four standard-library unittest cases for 0.63.2.",
+          "bytes": 11277,
+          "sha256": "446437c91bd25bbbf6795ce0f904a13464320d2350f896b72eb619da969bfba5",
+          "python_imports": [
+            "__future__",
+            "ai_midi_io_runtime",
+            "generate_verification",
+            "hashlib",
+            "json",
+            "mido",
+            "packaging",
+            "pathlib",
+            "stat",
+            "subprocess",
+            "sys",
+            "tempfile",
+            "unittest",
+            "wave",
+            "zipfile"
+          ]
+        }
+      ],
+      "matches_historical_repair_report": true
     }
   ],
-  "note": "Complete machine-readable inventory of the knowledge backup archives. Full member list and checksums restored from the synchronized tree."
+  "additional_attachments": [
+    {
+      "filename": "AI_MIDI_IO_Repair_Report(1).json",
+      "bytes": 4476,
+      "sha256": "929e633ce74c635acb11d055000abf0237787f1731434a9c73e0ba79c1655d36",
+      "category": "historical repair report",
+      "details": "Historical checksums, test count, validation fixture and private publication metadata. Not a current test result."
+    }
+  ],
+  "direct_reference_comparisons": [
+    {
+      "backup_path": "MIDI File Structure Guidelines.txt",
+      "repair_path": "skills/instructions/references/optimized/MIDI_File_Structure_Guidelines.txt",
+      "byte_identical": false,
+      "newlines_normalized_identical": false,
+      "content_change": "Changed first example import from standalone MIDIFile to separately installed midiutil."
+    },
+    {
+      "backup_path": "MIDI_CC to OSC Mapping Implementation Guide.txt",
+      "repair_path": "skills/instructions/references/optimized/MIDI_CC_to_OSC_Mapping.txt",
+      "byte_identical": false,
+      "newlines_normalized_identical": true
+    },
+    {
+      "backup_path": "MIDI_Control_Change_and_Velocity.txt",
+      "repair_path": "skills/instructions/references/optimized/MIDI_Control_Change_and_Velocity.txt",
+      "byte_identical": false,
+      "newlines_normalized_identical": true
+    },
+    {
+      "backup_path": "MIDI_Python.txt",
+      "repair_path": "skills/instructions/references/optimized/MIDI_Python_Code.txt",
+      "byte_identical": false,
+      "newlines_normalized_identical": true
+    },
+    {
+      "backup_path": "MIDI_Scales_and_Theory.txt",
+      "repair_path": "skills/instructions/references/optimized/MIDI_Scales_and_Theory.txt",
+      "byte_identical": false,
+      "newlines_normalized_identical": true
+    },
+    {
+      "backup_path": "MIDI_Voice_Table.txt",
+      "repair_path": "skills/instructions/references/optimized/MIDI_Voice_Table.txt",
+      "byte_identical": false,
+      "newlines_normalized_identical": true
+    }
+  ],
+  "assets_unavailable_in_supplied_files": [
+    {
+      "path": "assets/gpt-icon.jpg",
+      "source": "Both plugin manifests"
+    },
+    {
+      "path": "ai_midi_io_ios_fixed.html",
+      "source": "iOS user guide"
+    },
+    {
+      "path": "AI_MIDI_IO_Verification_4track_120BPM.mid",
+      "source": "Historical repair report (current fixture regenerated separately)"
+    }
+  ]
 }

@@ -1,5 +1,81 @@
-OSC Guidelines
+OSC Guidelines.txt
 
-Open Sound Control mapping notes complementary to MIDI CC for the AI MIDI IO workflow.
+1. OSC Setup:
 
-(Full original content from the synchronized archive.)
+• Interface with user-provided OSC libraries such as python-osc for sending and receiving OSC messages.
+• Allow dynamic control of musical parameters, including tempo, volume, and triggering notes or sounds.
+• Provide real-time control via OSC messages between software or hardware devices that support OSC.
+
+2. Example Python Code for Sending OSC Messages:
+
+from pythonosc import udp_client
+
+# Setup OSC client
+client = udp_client.SimpleUDPClient("127.0.0.1", 8000)
+
+# Send an OSC message to change tempo
+client.send_message("/tempo", 140) # Set tempo to 140 BPM
+
+# Send an OSC message to trigger a note (e.g., C4 on channel 1)
+client.send_message("/note_on", [60, 100]) # C4, velocity 100
+
+3. Using OSC for Real-Time Control:
+
+• Modify note sequences, tempos, and instrument parameters during playback through OSC messages.
+• Combine MIDI and OSC for dynamic control (e.g., generate a MIDI track and modify tempo in real-time using OSC).
+
+5. External Libraries
+
+When users upload external libraries (e.g., Mido for MIDI, python-osc for OSC), handle it as follows:
+
+1. Upload Process:
+
+• The user uploads the library as a ZIP file.
+• Extract the ZIP file and locate the source code.
+
+2. Adding to Python Path:
+
+• Add the extracted library directory to sys.path:
+
+import sys
+sys.path.append('/path/to/extracted/library')
+
+3. Example Libraries:
+
+• Mido: For creating and processing MIDI files.
+• python-osc: For sending and receiving OSC messages.
+
+
+4. Using OSC for Real-Time Control:
+• Send OSC messages to modify tempo, trigger sounds, or control parameters.
+• Receive OSC messages to respond to live performance controls or inputs from OSC-capable software or hardware.
+• Allow dynamic modification of note sequences and parameters during playback via OSC.
+
+5. Integrating OSC and MIDI:
+• Combine MIDI file generation with OSC real-time control. For example, generate a MIDI track and modify it in real-time using OSC messages to control tempo or instrument settings.
+
+6. Core Functionalities
+
+You provide the following core functionalities:
+
+1. MIDI File Generation: Create multi-track MIDI compositions with different instruments, tempos, and harmonies.
+2. OSC Message Control: Send and receive OSC messages to dynamically adjust music parameters in real-time.
+3. Music Theory Guidance: Provide detailed advice on music theory, including scales, chords, rhythm, and arrangement across multiple genres.
+4. File Handling: Process and modify user-uploaded files (CSV, MIDI, text) and generate new files for download.
+
+7. Example User Requests
+
+1. Create a Techno Track with OSC Control:
+• Respond with a MIDI composition for a techno track at 140 BPM.
+• Provide OSC code to dynamically change tempo or instrument settings during playback.
+2. Send OSC Messages to Control a Synth:
+• Provide Python code to send OSC messages that trigger notes or modify sound parameters on an external synth using the python-osc library.
+3. Generate a 7/8 Drum Pattern with MIDI and OSC:
+• Provide a 7/8 drum pattern as a MIDI file.
+• Include OSC code for dynamically adjusting the kick, snare, or hi-hat sounds during live performance.
+
+8. Support
+
+• Files persist only during the session. Once the session ends, the files will no longer be accessible.
+• The assistant cannot access the internet, so all operations are handled locally.
+• Users can upload ZIP files to integrate external libraries or provide necessary resources for MIDI/OSC processing.

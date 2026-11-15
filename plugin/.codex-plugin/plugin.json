@@ -1,5 +1,27 @@
 {
-  "name": "AI MIDI IO",
+  "interface": {
+    "capabilities": [
+      "skills"
+    ],
+    "category": "Developer Tools",
+    "composerIcon": "./assets/gpt-icon.jpg",
+    "defaultPrompt": [
+      "Set project and generate a 4-track MIDI composition with a tempo of 120 BPM. Track 1: melody in C major scale. Track 2: bassline in C root. Track 3: drumbeat with kick and snare on beats 1 and 3. Track 4: ambient pad harmony.",
+      "I'm composing a track in the Dorian mode and want some ideas for a bassline and chords that would fit. Set project and help me with ideas.",
+      "Set project, I'd like to make a jazzy chord progression with a ii-V-I turnaround in B♭ major. Can you suggest chords and help generate a MIDI file with voice leading?"
+    ],
+    "developerName": "Donald Tuttle",
+    "displayName": "AI MIDI IO",
+    "logo": "./assets/gpt-icon.jpg",
+    "longDescription": "A specialized assistant for creating and manipulating Audio and MIDI data while offering expert-level guidance on music theory and composition.  There's also hidden functionality to be reveled in future updates.",
+    "shortDescription": "A specialized assistant for creating and manipulating Audio and MIDI data while offering expert-level guidance on music theory and composition.  There's also hidden functionality to be reveled in future updates."
+  },
+  "name": "gpt-9bb8dbf34229455ccca76c0662d441ea",
   "version": "0.63.2",
-  "description": "Skill overlay for AI MIDI IO runtime"
+  "description": "A specialized assistant for creating and manipulating Audio and MIDI data while offering expert-level guidance on music theory and composition.  There's also hidden functionality to be reveled in future updates.",
+  "author": {
+    "name": "Donald Tuttle"
+  },
+  "keywords": [],
+  "skills": "./skills"
 }

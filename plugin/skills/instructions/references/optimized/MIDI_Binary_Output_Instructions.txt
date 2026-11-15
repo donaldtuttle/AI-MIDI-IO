@@ -1,5 +1,241 @@
-MIDI Binary Output Instructions
+AI GPT LLM instructions fully comprehensive and dynamic system where an AI can generate MIDI files directly using a structured template.
 
-How to produce valid SMF Type 1 binary with Mido, absolute ticks, and the AI MIDI IO scheduler.
+### Template-Based Approach
 
-(Full original content from the synchronized archive.)
+**Python-based output template**  based on the data in the dictionary. The AI would directly create the binary MIDI data without external tools.
+
+### Comprehensive Python Dictionary Template
+
+```python
+soundtrack = {
+    "composer": "Insert the composer's name",  # Composer metadata
+    "description": "Brief description of the soundtrack's purpose",  # High-level description
+    "goal": "State the goal or purpose of the soundtrack (e.g., film, game, documentary)",
+
+    "format_info": {
+        "description": "Soundtrack encompasses a wide range of styles and emotions, including orchestral, electronic, ambient, etc.",
+        "representation": "Text representation captures instruments, dynamics, articulations, and effects for seamless conversion into MIDI",
+    },
+
+    "midi_settings": {
+        "tempo": 120,  # Beats per minute, can be changed dynamically with meta events
+        "time_signature": "4/4",  # Default time signature, changeable with meta events
+        "tracks": [
+            {
+                "name": "Piano Track",
+                "channel": 1,  # MIDI channel 1
+                "instrument": "Acoustic Grand Piano",  # General MIDI instrument
+                "program_change": 0,  # Program change number for Acoustic Grand Piano
+                "events": [
+                    {"event_type": "note_on", "pitch": 60, "velocity": 64, "start_time": 0},  # C4 note on
+                    {"event_type": "note_off", "pitch": 60, "velocity": 64, "start_time": 480},  # C4 note off after 1 beat
+                ]
+            },
+            {
+                "name": "Synth Lead Track",
+                "channel": 2,  # MIDI channel 2
+                "instrument": "Lead 1 (square)",  # Synth Lead Instrument
+                "program_change": 81,  # Program change number for Lead 1 (square)
+                "events": [
+                    {"event_type": "note_on", "pitch": 72, "velocity": 100, "start_time": 0},  # C5 note on
+                    {"event_type": "note_off", "pitch": 72, "velocity": 64, "start_time": 480},  # C5 note off after 1 beat
+                ]
+            },
+            {
+                "name": "Sound Effects Track",
+                "channel": 3,  # MIDI channel 3
+                "instrument": "FX 1 (rain)",  # General MIDI sound effect
+                "program_change": 97,  # Program change number for FX 1 (rain)
+                "events": [
+                    {"event_type": "note_on", "pitch": None, "velocity": 100, "start_time": 0},  # Rain effect on
+                    {"event_type": "note_off", "pitch": None, "velocity": 64, "start_time": 960},  # Rain effect off after 2 beats
+                ]
+            },
+            # Additional tracks for other channels and instruments...
+        ]
+    },
+
+    "midi_instruments_by_channel": {
+        "channel_1": {  # Channel 1 for Piano and related instruments
+            "description": "Pianos, Chromatic Percussion, and related instruments",
+            "instruments": [
+                "acoustic_grand_piano", "bright_acoustic_piano", "electric_grand_piano", "honky_tonk_piano",
+                "electric_piano_1", "electric_piano_2", "harpsichord", "clavinet"
+            ]
+        },
+        "channel_2": {  # Channel 2 for Synth Leads
+            "description": "Synth Lead instruments",
+            "instruments": [
+                "lead_1_square", "lead_2_sawtooth", "lead_3_calliope", "lead_4_chiffer",
+                "lead_5_charang", "lead_6_voice", "lead_7_fifths", "lead_8_bass_lead"
+            ]
+        },
+        "channel_3": {  # Channel 3 for Sound Effects
+            "description": "Sound Effects",
+            "instruments": [
+                "fx_1_rain", "fx_2_soundtrack", "fx_3_crystal", "fx_4_atmosphere", "fx_5_brightness",
+                "fx_6_goblins", "fx_7_echoes", "fx_8_sci_fi"
+            ]
+        },
+        "channel_4": {  # Channel 4 for Synth Pads
+            "description": "Synth Pads",
+            "instruments": [
+                "pad_1_new_age", "pad_2_warm", "pad_3_polysynth", "pad_4_choir",
+                "pad_5_bowed", "pad_6_metallic", "pad_7_halo", "pad_8_sweep"
+            ]
+        },
+        "channel_5": {  # Channel 5 for Brass Instruments
+            "description": "Brass instruments",
+            "instruments": [
+                "trumpet", "trombone", "tuba", "muted_trumpet", "french_horn", "brass_section", 
+                "synth_brass_1", "synth_brass_2"
+            ]
+        },
+        "channel_6": {  # Channel 6 for Ethnic Instruments
+            "description": "Ethnic instruments",
+            "instruments": [
+                "sitar", "banjo", "shamisen", "koto", "kalimba", "bagpipe", "fiddle", "shanai"
+            ]
+        },
+        "channel_7": {  # Channel 7 for Percussion
+            "description": "Percussion instruments",
+            "instruments": [
+                "tinkle_bell", "agogo", "steel_drums", "woodblock", "taiko_drum", "melodic_tom", 
+                "synth_drum", "reverse_cymbal"
+            ]
+        },
+        "channel_8": {  # Channel 8 for Choir and Voice Effects
+            "description": "Choir and voice instruments",
+            "instruments": [
+                "choir_oh", "voice_ohs", "synth_choir"
+            ]
+        },
+        "channel_9": {  # Channel 9 for Miscellaneous Effects
+            "description": "Miscellaneous sound effects",
+            "instruments": [
+                "guitar_fret_noise", "breath_noise", "seashore", "bird_tweet", "telephone_ring", 
+                "helicopter", "applause", "gunshot"
+            ]
+        },
+        "channel_10": {  # Channel 10 reserved for drum kits and percussion
+            "description": "Percussion sounds for drums (Channel 10 is typically reserved for percussion)",
+            "instruments": [
+                "standard_drum_kit", "room_kit", "power_kit", "electronic_kit", "jazz_kit",
+                "brush_kit", "orchestra_kit", "percussion_kit"
+            ]
+        }
+    },
+
+    "events": {
+        "description": "Musical notes or sounds with attributes like pitch, duration, start time, and effects.",
+        "attributes": {
+            "instrument": "The sound source (e.g., 'piano', 'synth_pad', 'drums').",
+            "pitch": "The note's pitch (e.g., 'C4'). Use None for unpitched instruments (e.g., drums).",
+            "duration": "Length of the note or sound, expressed as a numerical value (in MIDI ticks).",
+            "velocity": "The force with which the note is played (0-127)."
+        }
+    }
+}
+```
+
+### Expectations:
+
+The LLM, using the structure above, will:
+1. Generate the binary data (in `bytearray` format) that can be saved as a `.mid` file without further conversion.
+2. Use the various MIDI tracks and event types (Note On, Note Off, Program Change, etc.) to create complex multi-track compositions.
+3. Automatically handle meta events like tempo changes and time signatures.
+4. Output a fully playable `.mid` file based on the dictionary.
+
+### Explanation of the Output:
+
+- The binary data generated from the dictionary is ready to be saved as a `.mid` file using a Python script or similar approach.
+- This system can handle a wide range of musical genres, instruments, and event types, all based on the provided template.
+
+---
+
+### Example Binary Data Output Based on the Template:
+
+The following shows how the **binary data** (as `bytearray`) would be structured based on the template below:
+
+```python
+# Binary data for the MIDI file manually generated based on your template
+midi_data = bytearray()
+
+# Header Chunk (Format 1, 3 tracks, 480 ticks per quarter note)
+midi_data.extend(b'MThd')  # Header identifier
+midi_data.extend([0x00, 0x00, 0x00, 0x06])  # Header length
+midi_data.extend([0x00, 0x01])  # Format type (1 = multi-track)
+midi_data.extend([0x00, 0x03])  # Number of tracks (3 tracks)
+midi_data.extend([0x01, 0xE0])  # 480 ticks per quarter note
+
+# Track 1: Meta events (tempo and time signature)
+midi_data.extend(b'MTrk')  # Track identifier
+midi_data.extend([0x00, 0x00, 0x00, 0x19])  # Track length
+midi_data.extend([0x00, 0xFF, 0x51, 0x03, 0x07, 0xA1, 0x20])  # Tempo (120 BPM)
+midi_data.extend([0x00, 0xFF, 0x58, 0x04, 0x04, 0x02, 0x18, 0x08])  # Time signature (4/4)
+midi_data.extend([0x00, 0xFF, 0x2F, 0x00])  # End of track
+
+# Track 2: Piano Track (Acoustic Grand Piano, Channel 1)
+midi_data.extend(b'MTrk')  # Track identifier
+midi_data.extend([0x00, 0x00, 0x00, 0x2B])  # Track length
+midi_data.extend([0x00, 0xC0, 0x00])  # Program Change to Acoustic Grand Piano (Channel 1)
+midi_data.extend([0x00, 0x90, 0x3C, 0x40])  # Note On (C4, velocity 64, channel 1)
+midi_data.extend([0x81, 0x00, 0x80, 0x3C, 0x40])  # Note Off (C4 after 480 ticks)
+midi_data.extend([0x00, 0x90, 0x3E, 0x40])  # Note On (D4, velocity 64, channel 1)
+midi_data.extend([0x81, 0x00, 0x80, 0x3E, 0x40])  # Note Off (D4 after 480 ticks)
+midi_data.extend([0x00, 0xFF, 0x2F, 0x00])  # End of track
+
+# Track 3: Synth Lead Track (Lead 1 Square, Channel 2)
+midi_data.extend(b'MTrk')  # Track identifier
+midi_data.extend([0x00, 0x00, 0x00, 0x2B])  # Track length
+midi_data.extend([0x00, 0xC1, 0x51])  # Program Change to Lead 1 Square (Channel 2)
+midi_data.extend([0x00, 0x91, 0x48, 0x64])  # Note On (C5, velocity 100, channel 2)
+midi_data.extend([0x81, 0x00, 0x81, 0x48, 0x64])  # Note Off (C5 after 480 ticks)
+midi_data.extend([0x00, 0xFF, 0x2F, 0x00])  # End of track
+
+# Saving the binary data to a .mid file
+with open('output.mid', 'wb') as midi_file:
+    midi_file.write(midi_data)
+
+print("MIDI file 'output.mid' created successfully.")
+```
+---
+
+This output **directly generates the binary data** without needing a hex-to-binary conversion, because the LLM generates the **correct MIDI binary data manually**. This binary data can immediately be written into a `.mid` file for playback in any MIDI-compatible software.
+
+---
+
+### Troubleshooting:
+
+The GetDownloadLinkError typically pops up when the custom GPT attempts to generate a download link but fails due to file handling or permissions issues. Here are a few common reasons for this error, especially in the context of creating .mid (MIDI) files:
+
+1. File Not Properly Saved or Accessible
+Issue: The custom GPT may generate the file, but if it’s not saved in an accessible location or the path is incorrect, the link generation will fail.
+Fix: Ensure the MIDI file is saved in a directory that the GPT environment recognizes. Confirm the full path and ensure it doesn’t have special characters or unusual directory nesting.
+
+2. File Path or Directory Structure Issue
+Issue: If the GPT can’t locate the .mid file due to unexpected directory structures (e.g., nested directories within ZIPs or inconsistencies in file paths), it will throw this error.
+Fix: Provide a clear, consistent path for the .mid files, especially if you’re bundling libraries in ZIPs. Try specifying absolute paths if possible, and keep the file structure simple.
+
+3. Permission Constraints or Missing Libraries
+Issue: Some environments have restrictions on writing or linking files, especially if the GPT requires additional libraries (like mido or MIDIUtil) to interact with MIDI files and these libraries aren’t correctly loaded.
+Fix: Ensure that the required libraries are present and loaded. Confirm that the GPT environment has permission to read/write in the working directory. Including these libraries directly in the ZIP, with correct paths, can sometimes resolve issues.
+
+4. Error in the Download Link Code Block
+Issue: If there’s an error in the syntax for generating the link (such as a typo or incorrect function), this can prevent link creation.
+Fix: Use a standard file download code block, for example:
+
+```python
+import os
+
+def save_and_get_download_link(file_path):
+    # Save the file in an accessible location
+    if os.path.exists(file_path):
+        # Generate a download link (replace with actual download code for GPT environment)
+        return f'<a href="{file_path}" download>Download MIDI File</a>'
+    else:
+        raise FileNotFoundError("File not found.")
+```
+5. Intermittent Environment Issues
+Issue: Sometimes, these errors are due to temporary glitches in the environment, especially if the download link works occasionally.
+Fix: Restarting the environment or re-uploading the libraries and files can sometimes resolve this.

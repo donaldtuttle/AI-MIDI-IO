@@ -4,8 +4,354 @@ Objective
 
 This guide provides comprehensive instructions for generating MIDI and audio files with working download links using the AI MIDI IO Custom GPT. The GPT should:
 • Use local copies of the mido and python-osc libraries extracted from /mnt/data/AI_MIDI_IO_Python.zip, without installing external packages.
-• Utilize the local MIDIFile.py located at /mnt/data/knowledge/MIDIFile.py for MIDI file generation.
-• Generate multi-track Standard MIDI Files with proper headers, tempo, and absolute-tick scheduling.
-• Support validation, note accounting, and reproducible verification fixtures.
+• Utilize the local MIDIFile.py located at /mnt/data/knowledge to generate MIDI files.
+• Generate .wav files using Python’s standard library, supporting multiple waveforms, without relying on external libraries like numpy or wave.
+• Provide correctly formatted and validated download links for the generated MIDI and audio files.
+• Incorporate enhanced path management, error handling, modularity, parameterization, validation, and batch processing as per best practices.
+• Include interactive testing and customization examples for users.
 
-(Full original 12 KB guide restored from the knowledge backup archive.)
+Contents
+1. Setup and Environment Preparation
+2. Centralized Path Management
+3. Extracting and Using Local Libraries
+4. Modularized MIDI Generation
+5. Modularized WAV Generation with Multiple Waveforms
+6. Generating and Validating Download Links
+7. Interactive Testing with Diagnostics Function
+8. Usage with User Inputs and Customization Examples
+9. Batch Processing for MIDI and WAV Generation
+10. Error Handling and Validation
+11. Documentation and Comments
+12. Summary
+13. Next Steps
+
+1. Setup and Environment Preparation
+
+Before starting, ensure that the environment is correctly set up:
+• Python Environment: Ensure Python 3.x is installed.
+• Directories: Create the necessary directories for storing data, knowledge, MIDI files, and WAV files.
+
+2. Centralized Path Management
+
+Define base directories and paths at the beginning of your script to ensure consistency and ease of maintenance.
+
+import os
+
+# Base directory
+BASE_DIR = "/mnt/data/"
+
+# Subdirectories
+MIDI_DIR = os.path.join(BASE_DIR, "midi_generation/")
+WAV_DIR = os.path.join(BASE_DIR, "wav_generation/")
+KNOWLEDGE_DIR = os.path.join(BASE_DIR, "knowledge/")
+
+# Ensure directories exist
+os.makedirs(MIDI_DIR, exist_ok=True)
+os.makedirs(WAV_DIR, exist_ok=True)
+os.makedirs(KNOWLEDGE_DIR, exist_ok=True)
+
+• Usage: Reference these constants throughout your code.
+
+3. Extracting and Using Local Libraries
+
+Extract mido and python-osc Libraries
+
+import sys
+import zipfile
+
+# Path to the zip file
+ZIP_FILE_PATH = os.path.join(BASE_DIR, 'AI_MIDI_IO_Python.zip')
+
+# Extraction directory
+EXTRACTION_DIR = KNOWLEDGE_DIR
+
+# Extract the zip file
+with zipfile.ZipFile(ZIP_FILE_PATH, 'r') as zip_ref:
+zip_ref.extractall(EXTRACTION_DIR)
+
+# Add the extraction directory to sys.path
+sys.path.append(EXTRACTION_DIR)
+
+Import Libraries
+
+import mido
+from pythonosc import udp_client
+
+• Note: Ensure the extraction directory is correct and accessible. Avoid installing packages with pip.
+
+4. Modularized MIDI Generation
+
+Function to Generate MIDI Files
+
+def generate_midi(notes, tempo, output_path):
+"""Generate a MIDI file from a list of notes."""
+from MIDIFile import MIDIFile
+
+midi = MIDIFile(1)
+track = 0
+time = 0
+midi.addTempo(track, time, tempo)
+for i, note in enumerate(notes):
+midi.addNote(
+track=track,
+channel=0,
+pitch=note,
+time=time + i,
+duration=1,
+volume=100
+)
+save_midi(midi, output_path)
+
+def save_midi(midi, output_path):
+"""Save the MIDI file to the specified path with error handling."""
+try:
+with open(output_path, "wb") as output_file:
+midi.writeFile(output_file)
+print(f"MIDI file saved to {output_path}")
+except Exception as e:
+print(f"Error saving MIDI file: {e}")
+
+Example Usage
+
+# Example: Generate a C Major Scale MIDI file
+scale = [60, 62, 64, 65, 67, 69, 71, 72] # C Major Scale
+tempo = 120
+midi_output_path = os.path.join(MIDI_DIR, "scale.mid")
+generate_midi(scale, tempo, midi_output_path)
+
+5. Modularized WAV Generation with Multiple Waveforms
+
+Function to Generate WAV Files
+
+import math
+import struct
+
+def generate_wav(frequency, duration, output_path, waveform="sine"):
+"""Generate a WAV file with the specified waveform."""
+sample_rate = 44100 # Hz
+samples = []
+for n in range(int(sample_rate * duration)):
+t = n / sample_rate
+if waveform == "sine":
+value = math.sin(2 * math.pi * frequency * t)
+elif waveform == "square":
+value = 1.0 if math.sin(2 * math.pi * frequency * t) >= 0 else -1.0
+elif waveform == "triangle":
+value = 2 * abs(2 * (t * frequency - math.floor(t * frequency + 0.5))) - 1
+elif waveform == "sawtooth":
+value = 2 * (t * frequency - math.floor(t * frequency + 0.5))
+else:
+raise ValueError(f"Unsupported waveform: {waveform}")
+samples.append(value)
+byte_data = bytearray()
+for sample in samples:
+int_value = int(sample * 32767.0)
+byte_data.extend(struct.pack('<h', int_value))
+save_wav(byte_data, sample_rate, output_path)
+
+def save_wav(byte_data, sample_rate, output_path):
+"""Save the WAV file to the specified path with error handling."""
+try:
+with open(output_path, "wb") as f:
+# Write WAV file header
+f.write(b'RIFF')
+f.write(struct.pack('<I', 36 + len(byte_data))) # Chunk size
+f.write(b'WAVE')
+f.write(b'fmt ')
+f.write(struct.pack('<I', 16)) # Subchunk1Size
+f.write(struct.pack('<H', 1)) # AudioFormat
+f.write(struct.pack('<H', 1)) # NumChannels
+f.write(struct.pack('<I', sample_rate)) # SampleRate
+f.write(struct.pack('<I', sample_rate * 2)) # ByteRate
+f.write(struct.pack('<H', 2)) # BlockAlign
+f.write(struct.pack('<H', 16)) # BitsPerSample
+f.write(b'data')
+f.write(struct.pack('<I', len(byte_data))) # Subchunk2Size
+f.write(byte_data)
+print(f"WAV file saved to {output_path}")
+except Exception as e:
+print(f"Error saving WAV file: {e}")
+
+Example Usage
+
+# Example: Generate a 3-second A4 sine wave
+frequency = 440 # Hz
+duration = 3 # seconds
+wav_output_path = os.path.join(WAV_DIR, "tone.wav")
+generate_wav(frequency, duration, wav_output_path, waveform="sine")
+
+6. Generating and Validating Download Links
+
+Function to Create and Validate Download Links
+
+def create_download_links(directory, file_extension, conversation_id, message_id):
+"""Generate and validate download links for files with the given extension in the specified directory."""
+links = []
+for file in os.listdir(directory):
+if file.endswith(file_extension):
+file_path = os.path.join(directory, file)
+if os.path.exists(file_path):
+link = f"- [Download {file}](sandbox:%7Bfile_path%7D?_chatgptios_conversationID=%7Bconversation_id%7D&_chatgptios_messageID=%7Bmessage_id%7D&_chatgptios_conversationID=6739450f-589c-800d-804a-09ae7ce805c7&_chatgptios_messageID=c59b6683-17a2-442f-bec5-a8172de9762a)"
+links.append(link)
+else:
+print(f"Warning: File {file} does not exist and will not be included in the download links.")
+return links
+
+# Replace with actual IDs
+CONVERSATION_ID = "YOUR_CONVERSATION_ID"
+MESSAGE_ID = "YOUR_MESSAGE_ID"
+
+# Generate MIDI links
+midi_links = create_download_links(MIDI_DIR, ".mid", CONVERSATION_ID, MESSAGE_ID)
+
+# Generate WAV links
+wav_links = create_download_links(WAV_DIR, ".wav", CONVERSATION_ID, MESSAGE_ID)
+
+# Output the links
+print("**MIDI Files**:\n" + "\n".join(midi_links))
+print("\n**Audio Files**:\n" + "\n".join(wav_links))
+
+Example Output
+
+**MIDI Files**:
+- [Download scale.mid](sandbox:/mnt/data/midi_generation/scale.mid?_chatgptios_conversationID=YOUR_CONVERSATION_ID&_chatgptios_messageID=YOUR_MESSAGE_ID&_chatgptios_conversationID=6739450f-589c-800d-804a-09ae7ce805c7&_chatgptios_messageID=c59b6683-17a2-442f-bec5-a8172de9762a)
+
+**Audio Files**:
+- [Download tone.wav](sandbox:/mnt/data/wav_generation/tone.wav?_chatgptios_conversationID=YOUR_CONVERSATION_ID&_chatgptios_messageID=YOUR_MESSAGE_ID&_chatgptios_conversationID=6739450f-589c-800d-804a-09ae7ce805c7&_chatgptios_messageID=c59b6683-17a2-442f-bec5-a8172de9762a)
+
+• Note: Ensure that YOUR_CONVERSATION_ID and YOUR_MESSAGE_ID are replaced with the appropriate IDs.
+
+7. Interactive Testing with Diagnostics Function
+
+Diagnostics Function
+
+Add a function to validate the system’s end-to-end capabilities after setup.
+
+def is_file_valid(file_path):
+"""Check if the file exists and is not empty."""
+return os.path.exists(file_path) and os.path.getsize(file_path) > 0
+
+def run_diagnostics():
+"""Run a full test of MIDI and WAV generation."""
+print("Testing MIDI generation...")
+scale = [60, 62, 64, 65, 67, 69, 71, 72] # C Major Scale
+midi_test_path = os.path.join(MIDI_DIR, "test_scale.mid")
+generate_midi(scale, 120, midi_test_path)
+
+print("Testing WAV generation...")
+wav_test_path = os.path.join(WAV_DIR, "test_tone.wav")
+generate_wav(440, 3, wav_test_path, waveform="sine")
+
+print("Verifying generated files...")
+midi_valid = is_file_valid(midi_test_path)
+wav_valid = is_file_valid(wav_test_path)
+
+if midi_valid and wav_valid:
+print("Diagnostics passed! MIDI and WAV files generated successfully.")
+else:
+print("Diagnostics failed! Check the file generation process.")
+
+# Run diagnostics
+run_diagnostics()
+
+• Usage: Run run_diagnostics() after setting up the environment to ensure everything works correctly.
+
+8. Usage with User Inputs and Customization Examples
+
+Accept Dynamic User Inputs
+
+# User-defined parameters
+user_scale_input = input("Enter MIDI note numbers separated by commas (e.g., 60,62,64): ")
+user_scale = [int(note.strip()) for note in user_scale_input.split(",")]
+user_tempo = int(input("Enter tempo (BPM): "))
+user_frequency = float(input("Enter frequency in Hz: "))
+user_duration = float(input("Enter duration in seconds: "))
+user_waveform = input("Enter waveform (sine, square, triangle, sawtooth): ")
+
+# Generate MIDI file with user inputs
+user_midi_output_path = os.path.join(MIDI_DIR, "user_scale.mid")
+generate_midi(user_scale, user_tempo, user_midi_output_path)
+
+# Generate WAV file with user inputs
+user_wav_output_path = os.path.join(WAV_DIR, "user_tone.wav")
+generate_wav(user_frequency, user_duration, user_wav_output_path, waveform=user_waveform)
+
+Customization Examples
+
+Example 1: Creating a Minor Scale for MIDI
+
+# Generate a C Minor Scale MIDI file
+minor_scale = [60, 62, 63, 65, 67, 68, 70, 72] # C Minor Scale
+tempo = 100
+midi_output_path = os.path.join(MIDI_DIR, "minor_scale.mid")
+generate_midi(minor_scale, tempo, midi_output_path)
+
+Example 2: Generating a 2-Second Square Wave for WAV
+
+# Generate a 2-second A4 square wave
+frequency = 440 # Hz
+duration = 2 # seconds
+wav_output_path = os.path.join(WAV_DIR, "square_wave.wav")
+generate_wav(frequency, duration, wav_output_path, waveform="square")
+
+Example 3: Combining MIDI and WAV Creation into a Single Workflow
+
+def create_music_piece(notes, tempo, frequency, duration, waveform):
+"""Generate both MIDI and WAV files for a music piece."""
+midi_path = os.path.join(MIDI_DIR, "music_piece.mid")
+wav_path = os.path.join(WAV_DIR, "music_piece.wav")
+generate_midi(notes, tempo, midi_path)
+generate_wav(frequency, duration, wav_path, waveform)
+print("Music piece created with both MIDI and WAV files.")
+
+# Usage
+notes = [60, 64, 67, 72] # C Major chord progression
+tempo = 120
+frequency = 261.63 # Middle C
+duration = 4 # seconds
+waveform = "triangle"
+
+create_music_piece(notes, tempo, frequency, duration, waveform)
+
+9. Batch Processing for MIDI and WAV Generation
+
+Batch MIDI Generation
+
+def batch_generate_midi(scales, tempo, directory):
+"""Generate multiple MIDI files from a list of scales."""
+for i, scale in enumerate(scales):
+output_path = os.path.join(directory, f"scale_{i+1}.mid")
+generate_midi(scale, tempo, output_path)
+
+# Example Usage
+scales = [
+[60, 62, 64, 65, 67, 69, 71, 72], # C Major Scale
+[62, 64, 66, 67, 69, 71, 73, 74], # D Major Scale
+]
+batch_generate_midi(scales, 120, MIDI_DIR)
+
+Batch WAV Generation
+
+def batch_generate_wav(frequencies, duration, directory, waveform="sine"):
+"""Generate multiple WAV files for a list of frequencies."""
+for freq in frequencies:
+output_path = os.path.join(directory, f"tone_{int(freq)}Hz.wav")
+generate_wav(freq, duration, output_path, waveform)
+
+# Example Usage
+frequencies = [440, 493.88, 523.25] # A4, B4, C5
+batch_generate_wav(frequencies, 2, WAV_DIR, waveform="sawtooth")
+
+10. Error Handling and Validation
+• Wrap File Operations in Try-Except Blocks: Ensure all file operations are enclosed in try-except blocks to catch exceptions and provide informative error messages.
+• Validate Data Before Saving: Check that data to be written is valid and non-empty.
+
+def is_file_valid(file_path):
+"""Check if the file exists and is not empty."""
+return os.path.exists(file_path) and os.path.getsize(file_path) > 0
+
+• Notify Users of Errors: Provide clear messages if an error occurs during file generation or saving to assist in troubleshooting.
+
+11. Documentation and Comments
+• Comment Your Code: Provide explanations for each function and significant code block to enhance readability and maintainability.
+• Update the Guide: Ensure this guide includes all the new practices and code snippets, with explanations of their purpose and usage.

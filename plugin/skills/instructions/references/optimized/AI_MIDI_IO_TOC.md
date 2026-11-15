@@ -1,18 +1,15 @@
-# AI MIDI IO Table of Contents
-
-- Core Functionalities
-- Example User Requests
-- Lexicon of Instruments
-- MIDI Arpeggios
-- MIDI Binary Output Instructions
-- MIDI CC to OSC Mapping
-- MIDI Control Change and Velocity
-- MIDI File Structure Guidelines
-- MIDI Message Types
-- MIDI Python Code
-- MIDI Scales and Theory
-- MIDI Shuffle and Rhythms
-- MIDI Tempo and BPM
-- MIDI Voice Table
-- OSC Guidelines
-- Set Project
+- [Core_Functionalities.txt](./Core_Functionalities.txt)
+- [Example_User_Requests.txt](./Example_User_Requests.txt)
+- [Lexicon_of_Instruments.txt](./Lexicon_of_Instruments.txt)
+- [MIDI_File_Structure_Guidelines.txt](./MIDI_File_Structure_Guidelines.txt)
+- [MIDI_Arpeggios.txt](./MIDI_Arpeggios.txt)
+- [MIDI_Binary_Output_Instructions.txt](./MIDI_Binary_Output_Instructions.txt)
+- [MIDI_CC_to_OSC_Mapping.txt](./MIDI_CC_to_OSC_Mapping.txt)
+- [MIDI_Control_Change_and_Velocity.txt](./MIDI_Control_Change_and_Velocity.txt)
+- [MIDI_Message_Types.txt](./MIDI_Message_Types.txt)
+- [MIDI_Python_Code.txt](./MIDI_Python_Code.txt)
+- [MIDI_Scales_and_Theory.txt](./MIDI_Scales_and_Theory.txt)
+- [MIDI_Shuffle_and_Rhythms.txt](./MIDI_Shuffle_and_Rhythms.txt)
+- [MIDI_Tempo_and_BPM.txt](./MIDI_Tempo_and_BPM.txt)
+- [MIDI_Voice_Table.txt](./MIDI_Voice_Table.txt)
+- [OSC_Guidelines.txt](./OSC_Guidelines.txt)

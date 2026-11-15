@@ -3,13 +3,194 @@
     {
       "name": "AI MIDI IO Guide.txt",
       "path": "references/AI MIDI IO Guide.txt",
-      "source": "original migrated reference"
+      "source": "original migrated reference; retained unchanged",
+      "size_bytes": 13138
+    },
+    {
+      "name": "AI_MIDI_IO_Python.zip",
+      "path": "references/AI_MIDI_IO_Python.zip",
+      "source": "original migrated reference; retained unchanged",
+      "size_bytes": 141730
     },
     {
       "name": "MIDI File Structure Guidelines.txt",
       "path": "references/MIDI File Structure Guidelines.txt",
-      "source": "original migrated reference"
+      "source": "original migrated reference; retained unchanged",
+      "size_bytes": 50265
+    },
+    {
+      "name": "MIDIFile.py",
+      "path": "references/MIDIFile.py",
+      "source": "original migrated reference; retained unchanged",
+      "size_bytes": 73304
+    },
+    {
+      "name": "MIDI_CC to OSC Mapping Implementation Guide.txt",
+      "path": "references/MIDI_CC to OSC Mapping Implementation Guide.txt",
+      "source": "original migrated reference; retained unchanged",
+      "size_bytes": 3573
+    },
+    {
+      "name": "MIDI_Control_Change_and_Velocity.txt",
+      "path": "references/MIDI_Control_Change_and_Velocity.txt",
+      "source": "original migrated reference; retained unchanged",
+      "size_bytes": 30446
+    },
+    {
+      "name": "MIDI_Python.txt",
+      "path": "references/MIDI_Python.txt",
+      "source": "original migrated reference; retained unchanged",
+      "size_bytes": 33099
+    },
+    {
+      "name": "MIDI_Scales_and_Theory.txt",
+      "path": "references/MIDI_Scales_and_Theory.txt",
+      "source": "original migrated reference; retained unchanged",
+      "size_bytes": 15984
+    },
+    {
+      "name": "MIDI_Voice_Table.txt",
+      "path": "references/MIDI_Voice_Table.txt",
+      "source": "original migrated reference; retained unchanged",
+      "size_bytes": 12769
+    },
+    {
+      "name": "set_project.txt",
+      "path": "references/set_project.txt",
+      "source": "original migrated reference; retained unchanged",
+      "size_bytes": 3122
+    },
+    {
+      "name": "Core_Functionalities.txt",
+      "path": "references/optimized/Core_Functionalities.txt",
+      "source": "user optimized ZIP",
+      "size_bytes": 4110,
+      "sha256": "4f8d92bba7f7ffbf55663371429cdd4652bf7a0a0a9383c8e22771ab3e0c73ea"
+    },
+    {
+      "name": "Example_User_Requests.txt",
+      "path": "references/optimized/Example_User_Requests.txt",
+      "source": "user optimized ZIP",
+      "size_bytes": 5290,
+      "sha256": "087dc2a286c1946c93591f037e3f8c5d9d126b89d1a6ba8b1af9ef855b1f4d7b"
+    },
+    {
+      "name": "Lexicon_of_Instruments.txt",
+      "path": "references/optimized/Lexicon_of_Instruments.txt",
+      "source": "user optimized ZIP",
+      "size_bytes": 47745,
+      "sha256": "fd76fe6dee0bba2fb2c9de19f07ce6fe917d359e7643c9d9bd6d30003f53af9d"
+    },
+    {
+      "name": "MIDI_File_Structure_Guidelines.txt",
+      "path": "references/optimized/MIDI_File_Structure_Guidelines.txt",
+      "source": "user optimized ZIP",
+      "size_bytes": 49128,
+      "sha256": "cdf769ffd0753bbbcea251438b263cc348c4f08af30464a95d92a942251ee10d"
+    },
+    {
+      "name": "MIDI_Arpeggios.txt",
+      "path": "references/optimized/MIDI_Arpeggios.txt",
+      "source": "user optimized ZIP",
+      "size_bytes": 4045,
+      "sha256": "d5e4cc78227e6c9822020b54c122ee5ccba7dbf6ec2616c79b2bece22c1bfc74"
+    },
+    {
+      "name": "MIDI_Binary_Output_Instructions.txt",
+      "path": "references/optimized/MIDI_Binary_Output_Instructions.txt",
+      "source": "user optimized ZIP",
+      "size_bytes": 12495,
+      "sha256": "23286f21e2bdd80186e0a88ca3087c69f54496789d13279cea5f20310aad48eb"
+    },
+    {
+      "name": "MIDI_CC_to_OSC_Mapping.txt",
+      "path": "references/optimized/MIDI_CC_to_OSC_Mapping.txt",
+      "source": "user optimized ZIP",
+      "size_bytes": 3495,
+      "sha256": "e76af25c9437ac926c76e6d7914f3b176ac8368cdec226c72a531642d7ea2833"
+    },
+    {
+      "name": "MIDI_Control_Change_and_Velocity.txt",
+      "path": "references/optimized/MIDI_Control_Change_and_Velocity.txt",
+      "source": "user optimized ZIP",
+      "size_bytes": 29922,
+      "sha256": "070a162e3fce198e82f40122feadd6c27756a15f8c3649dd73a415079833d6cd"
+    },
+    {
+      "name": "MIDI_Message_Types.txt",
+      "path": "references/optimized/MIDI_Message_Types.txt",
+      "source": "user optimized ZIP",
+      "size_bytes": 27404,
+      "sha256": "ff82a8ad941bcc1ad112a6c45abc7c5948ff660c6ac6a92ff1a24cf447d41e59"
+    },
+    {
+      "name": "MIDI_Python_Code.txt",
+      "path": "references/optimized/MIDI_Python_Code.txt",
+      "source": "user optimized ZIP",
+      "size_bytes": 32219,
+      "sha256": "2a68dfb8746ec9fed7898e7942ac5279ac42a4c77bfda503af7589f976a2ff5e"
+    },
+    {
+      "name": "MIDI_Scales_and_Theory.txt",
+      "path": "references/optimized/MIDI_Scales_and_Theory.txt",
+      "source": "user optimized ZIP",
+      "size_bytes": 15530,
+      "sha256": "02cd34094fc9c83deab18784fdb4652eb16830f308327a9d8cc7c4cb2dc66142"
+    },
+    {
+      "name": "MIDI_Shuffle_and_Rhythms.txt",
+      "path": "references/optimized/MIDI_Shuffle_and_Rhythms.txt",
+      "source": "user optimized ZIP",
+      "size_bytes": 6388,
+      "sha256": "42d2a56594e090e0fcea618fb1c527f6216d9d277c608b6c7745367035e6204f"
+    },
+    {
+      "name": "MIDI_Tempo_and_BPM.txt",
+      "path": "references/optimized/MIDI_Tempo_and_BPM.txt",
+      "source": "user optimized ZIP",
+      "size_bytes": 7312,
+      "sha256": "95047c54af25bc570cd2793c61d05d7150a2ee5825eb601cc70b4a174502c1b0"
+    },
+    {
+      "name": "MIDI_Voice_Table.txt",
+      "path": "references/optimized/MIDI_Voice_Table.txt",
+      "source": "user optimized ZIP",
+      "size_bytes": 12605,
+      "sha256": "5b263b51a2cdf34763af82fce9fd0068a9cc3ab385eedc5aa691675c5a4f9f5a"
+    },
+    {
+      "name": "OSC_Guidelines.txt",
+      "path": "references/optimized/OSC_Guidelines.txt",
+      "source": "user optimized ZIP",
+      "size_bytes": 3517,
+      "sha256": "7f854a19c9bac7d3e7360d25144928c91451aeae129ed6fb8e956a4958f519ad"
+    },
+    {
+      "name": "AI_MIDI_IO_TOC.md",
+      "path": "references/optimized/AI_MIDI_IO_TOC.md",
+      "source": "user optimized ZIP",
+      "size_bytes": 894,
+      "sha256": "5e39d896e03425a6bbc02b8335f8b55c608e380c48a7b75026d71d31e87b766f"
+    },
+    {
+      "name": "AI_MIDI_IO_Current_Prompt.txt",
+      "path": "references/source/AI_MIDI_IO_Current_Prompt.txt",
+      "source": "separate user upload",
+      "size_bytes": 4781,
+      "sha256": "532d32f1c05999d750c19e3b3248f8254d95cbe4fcf906d9dbdb6254cd35cc33"
+    },
+    {
+      "name": "AI_MIDI_IO_iOS_User_Guide(20261115-134555).md",
+      "path": "references/source/AI_MIDI_IO_iOS_User_Guide(20261115-134555).md",
+      "source": "separate user upload",
+      "size_bytes": 2808,
+      "sha256": "28f8c338a49e5ec608631c4b812a21201249f13bd461982abc38e2f8aedee522"
+    },
+    {
+      "name": "Runtime and migration notes",
+      "path": "references/Runtime_and_Migration_Notes.md",
+      "source": "0.63.2 repair documentation"
     }
   ],
-  "note": "Full index restored; see local archive for complete list of references."
+  "guidelines": "Resolve files[].path relative to the directory containing this skill's SKILL.md, not the lookup directory. Original and optimized files are separate preserved source sets. Current execution follows SKILL.md and scripts/ai_midi_io_runtime.py; old setup examples are historical. A missing index entry does not establish absence: inspect available packaged files. Do not treat a skill resource URI as a filesystem path."
 }

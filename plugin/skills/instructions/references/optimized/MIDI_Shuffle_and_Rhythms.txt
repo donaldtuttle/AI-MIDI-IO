@@ -1,5 +1,170 @@
-MIDI Shuffle and Rhythms
+### **Shuffle Rhythms in MIDI**
 
-Swing, shuffle, and common rhythmic patterns for use with AI MIDI IO.
+#### **What is a Shuffle Rhythm?**
 
-(Full original content from the synchronized archive.)
+A **shuffle rhythm** is a rhythmic feel where each beat is divided into three equal parts (triplets), and the first and third notes of each triplet are emphasized, while the middle note is skipped. This creates a "swing" or "shuffle" feel that is common in blues, jazz, rock, and swing music.
+
+Examples of delta time adjustments to create swing or shuffle rhythms based on the structured template.
+Rhythm is essential in dynamic soundtracks, and this will allow users to see how timing is handled programmatically.
+Example Addition:
+
+# Shuffle Rhythm (3/4 Time Signature)
+Delta-time of triplet division for shuffle:
+Note On:
+00 90 3C 64  ; Note On, Middle C, velocity 100
+Delta-time of first triplet (1/3rd of a beat)
+60 80 3C 64  ; Note Off, Middle C after 1/3rd of beat.
+
+In musical terms:
+- If you divide a beat into triplets (`1 & a`), the shuffle rhythm emphasizes the **"1"** and **"a"**, skipping the **"&"**.
+
+#### **How to Implement Shuffle Rhythms in MIDI**
+
+To create a shuffle rhythm in MIDI, you need to:
+1. Divide each beat into triplets.
+2. Play the first and third notes of each triplet, omitting the second (middle) note.
+
+##### **Python Example for Shuffle Rhythm**
+
+Here’s how to programmatically create a simple shuffle rhythm using Python and MIDI. The following example assumes a 4/4 time signature, and we’ll implement the shuffle by adjusting the timing of note on/off events.
+
+```python
+import mido
+import time
+
+# Open an output port to send MIDI messages
+out_port = mido.open_output('MIDI Output Name')
+
+# Define the basic parameters for the rhythm
+note = 60  # Middle C
+velocity = 64
+channel = 0
+
+# Define the triplet length in ticks (for example, 240 ticks per beat)
+triplet_length = 240 / 3  # Each triplet is 1/3 of a beat
+
+# Define a shuffle pattern where only the first and third triplet are played
+for _ in range(8):  # 8 iterations to make 2 bars of 4/4
+    # First note (play)
+    note_on = mido.Message('note_on', note=note, velocity=velocity, channel=channel)
+    out_port.send(note_on)
+    time.sleep(triplet_length / 1000)  # Convert ticks to seconds (adjust as needed)
+    
+    # Skip the second triplet (do nothing)
+    time.sleep(triplet_length / 1000)
+    
+    # Third note (play)
+    note_off = mido.Message('note_off', note=note, velocity=velocity, channel=channel)
+    out_port.send(note_off)
+    time.sleep(triplet_length / 1000)
+```
+
+**Explanation**:
+- The triplet is divided into three equal parts, and the program plays on the **first** and **third** parts while skipping the middle.
+- **`time.sleep()`** controls the timing between notes. The triplet length determines the delay between note on/off events.
+
+---
+
+### **2. Combining Shuffle Rhythms with Arpeggios**
+
+You can combine shuffle rhythms and arpeggios to create more complex and dynamic musical sequences. For instance, you could arpeggiate a chord using a shuffle rhythm by timing the notes to match a shuffled triplet feel.
+
+```python
+import mido
+import time
+
+# Open an output port to send MIDI messages
+out_port = mido.open_output('MIDI Output Name')
+
+# Define the chord (C major)
+chord = [60, 64, 67]
+velocity = 64
+channel = 0
+triplet_length = 240 / 3  # Assume 240 ticks per beat
+
+# Play arpeggio with shuffle feel (play only first and third triplet)
+for note in chord:
+    # First note of the triplet (play)
+    note_on = mido.Message('note_on', note=note, velocity=velocity, channel=channel)
+    out_port.send(note_on)
+    time.sleep(triplet_length / 1000)
+    
+    # Skip the second triplet
+    time.sleep(triplet_length / 1000)
+    
+    # Third note of the triplet (play)
+    note_off = mido.Message('note_off', note=note, velocity=velocity, channel=channel)
+    out_port.send(note_off)
+    time.sleep(triplet_length / 1000)
+```
+
+This approach lets you:
+- Use a shuffle rhythm to dictate the timing of each note in the arpeggio.
+- Play each note of the arpeggio according to the shuffled timing.
+
+---
+
+### **Conclusion**
+
+- **Shuffle rhythms** emphasize the first and third notes of a triplet, skipping the middle note to create a swing feel.
+
+def write_varlen(value):
+    """Handle variable-length encoding for time values larger than 127."""
+    result = []
+    buffer = value & 0x7F
+    while value > 127:
+        result.append((value & 0x7F) | 0x80)  # Add MSB to indicate more bytes follow
+        value >>= 7
+    result.append(value)  # Final byte without MSB set
+    return result
+
+# Use write_varlen to encode timing events exceeding 127
+
+# Binary data for a jazz shuffle drum track in MIDI format
+midi_data = bytearray()
+midi_data.extend(b'MThd')  # Header identifier
+midi_data.extend([0x00, 0x00, 0x00, 0x06])  # Header length
+midi_data.extend([0x00, 0x01])  # Format type 1
+midi_data.extend([0x00, 0x01])  # One track
+midi_data.extend([0x01, 0xE0])  # 480 ticks per quarter note
+
+# Track 1: Drum Track with shuffle rhythm
+midi_data.extend(b'MTrk')
+track_start_index = len(midi_data)
+midi_data.extend([0x00, 0x00, 0x00, 0x00])
+
+# Set tempo (70 BPM) and time signature (4/4)
+midi_data.extend([0x00, 0xFF, 0x51, 0x03, 0x0E, 0xDC, 0x28])  # Tempo
+midi_data.extend([0x00, 0xFF, 0x58, 0x04, 0x04, 0x02, 0x18, 0x08])  # Time signature
+
+# Drum Notes (kick, snare, hi-hat) using triplet timing
+kick = 36
+snare = 38
+hihat_closed = 42
+triplet_length = 160  # 1/3 of 480 ticks
+
+for _ in range(8):  # 2 bars
+    midi_data.extend([0x00, 0x99, kick, 0x40])  # Note On (Kick)
+    midi_data.extend(write_varlen(triplet_length))  # Handle triplet timing
+    midi_data.extend([0x89, kick, 0x40])  # Note Off (Kick)
+
+    midi_data.extend([0x00, 0x99, hihat_closed, 0x40])  # Hi-hat
+    midi_data.extend(write_varlen(triplet_length * 2))  # Handle triplet timing * 2
+    midi_data.extend([0x89, hihat_closed, 0x40])
+
+    midi_data.extend([0x00, 0x99, snare, 0x40])  # Snare
+    midi_data.extend(write_varlen(triplet_length))  # Snare triplet timing
+    midi_data.extend([0x89, snare, 0x40])
+
+# End of track
+midi_data.extend([0x00, 0xFF, 0x2F, 0x00])
+
+# Calculate track length and update placeholder
+track_length = len(midi_data) - track_start_index - 4
+midi_data[track_start_index:track_start_index+4] = track_length.to_bytes(4, byteorder='big')
+
+# Save the MIDI file
+with open("jazz_shuffle.mid", "wb") as midi_file:
+    midi_file.write(midi_data)
+
+print("Jazz shuffle drum track created successfully!")

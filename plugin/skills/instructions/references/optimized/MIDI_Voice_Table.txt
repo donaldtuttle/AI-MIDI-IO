@@ -1,5 +1,165 @@
-### **MIDI Voice Table** (optimized)
+### **MIDI Voice Table**
 
-Condensed General MIDI instrument list for the AI MIDI IO skill.
+The **MIDI Voice Table**, typically referring to the **General MIDI (GM) Instrument Patch List**, is a standardized set of 128 instrument sounds that can be selected using **Program Change** messages. Each instrument is assigned a number, and MIDI devices use this list to ensure that the same Program Change message will result in the same instrument sound across different devices.
 
-(Full optimized content restored from the synchronized archive.)
+This voice table is critical for consistency when transferring MIDI files between different systems, as it ensures that a piano sound on one device will be a piano sound on another.
+
+---
+
+General MIDI instruments list: with channels and program numbers, as used in your template.
+Why: Mapping of instruments to channels and program numbers reinforces the flexibility of your approach for dynamically creating MIDI files.
+Example Addition:
+
+# General MIDI Instruments Example for Soundtrack Composition
+Channel 1: Acoustic Grand Piano (Program Change C0 00)
+Channel 2: Lead 1 (Square) (Program Change C1 51)
+Channel 10: Percussion (e.g., kick drum, snare)
+
+#### **General MIDI (GM) Voice Table**:
+
+```plaintext
+**Program Numbers 0-127:**
+General MIDI uses Program Change messages to switch between different instrument sounds on a specific channel. Each program number corresponds to a particular instrument, such as a piano, guitar, or drum set.
+
+| **Program Number** | **Instrument Name**              | **Instrument Group**    |
+|-------------------|----------------------------------|------------------------|
+| 0                 | Acoustic Grand Piano             | Piano                  |
+| 1                 | Bright Acoustic Piano            | Piano                  |
+| 2                 | Electric Grand Piano             | Piano                  |
+| 3                 | Honky-tonk Piano                 | Piano                  |
+| 4                 | Electric Piano 1                 | Electric Piano         |
+| 5                 | Electric Piano 2                 | Electric Piano         |
+| 6                 | Harpsichord                      | Keyboard               |
+| 7                 | Clavinet                         | Keyboard               |
+| 8                 | Celesta                          | Chromatic Percussion   |
+| 9                 | Glockenspiel                     | Chromatic Percussion   |
+| 10                | Music Box                        | Chromatic Percussion   |
+| 11                | Vibraphone                       | Chromatic Percussion   |
+| 12                | Marimba                          | Chromatic Percussion   |
+| 13                | Xylophone                        | Chromatic Percussion   |
+| 14                | Tubular Bells                    | Chromatic Percussion   |
+| 15                | Dulcimer                         | Chromatic Percussion   |
+| 16                | Drawbar Organ                    | Organ                  |
+| 17                | Percussive Organ                 | Organ                  |
+| 18                | Rock Organ                       | Organ                  |
+| 19                | Church Organ                     | Organ                  |
+| 20                | Reed Organ                       | Organ                  |
+| 21                | Accordion                        | Organ                  |
+| 22                | Harmonica                        | Organ                  |
+| 23                | Tango Accordion                  | Organ                  |
+| 24                | Nylon Guitar                     | Guitar                 |
+| 25                | Steel Acoustic Guitar            | Guitar                 |
+| 26                | Jazz Electric Guitar             | Guitar                 |
+| 27                | Clean Electric Guitar            | Guitar                 |
+| 28                | Muted Electric Guitar            | Guitar                 |
+| 29                | Overdriven Guitar                | Guitar                 |
+| 30                | Distortion Guitar                | Guitar                 |
+| 31                | Guitar Harmonics                 | Guitar                 |
+| 32                | Acoustic Bass                    | Bass                   |
+| 33                | Fingered Electric Bass           | Bass                   |
+| 34                | Picked Electric Bass             | Bass                   |
+| 35                | Fretless Bass                    | Bass                   |
+| 36                | Slap Bass 1                      | Bass                   |
+| 37                | Slap Bass 2                      | Bass                   |
+| 38                | Synth Bass 1                     | Synth Bass             |
+| 39                | Synth Bass 2                     | Synth Bass             |
+| 40                | Violin                           | Strings                |
+| 41                | Viola                            | Strings                |
+| 42                | Cello                            | Strings                |
+| 43                | Contrabass                       | Strings                |
+| 44                | Tremolo Strings                  | Strings                |
+| 45                | Pizzicato Strings                | Strings                |
+| 46                | Orchestral Harp                  | Strings                |
+| 47                | Timpani                          | Strings                |
+| 48                | String Ensemble 1                | Ensemble               |
+| 49                | String Ensemble 2                | Ensemble               |
+| 50                | Synth Strings 1                  | Ensemble               |
+| 51                | Synth Strings 2                  | Ensemble               |
+| 52                | Choir Aahs                       | Ensemble               |
+| 53                | Voice Oohs                       | Ensemble               |
+| 54                | Synth Voice                      | Ensemble               |
+| 55                | Orchestra Hit                    | Ensemble               |
+| 56                | Trumpet                          | Brass                  |
+| 57                | Trombone                         | Brass                  |
+| 58                | Tuba                             | Brass                  |
+| 59                | Muted Trumpet                    | Brass                  |
+| 60                | French Horn                      | Brass                  |
+| 61                | Brass Section                    | Brass                  |
+| 62                | Synth Brass 1                    | Synth Brass            |
+| 63                | Synth Brass 2                    | Synth Brass            |
+| 64                | Soprano Sax                      | Reed                   |
+| 65                | Alto Sax                         | Reed                   |
+| 66                | Tenor Sax                        | Reed                   |
+| 67                | Baritone Sax                     | Reed                   |
+| 68                | Oboe                             | Reed                   |
+| 69                | English Horn                     | Reed                   |
+| 70                | Bassoon                          | Reed                   |
+| 71                | Clarinet                         | Reed                   |
+| 72                | Piccolo                          | Pipe                   |
+| 73                | Flute                            | Pipe                   |
+| 74                | Recorder                         | Pipe                   |
+| 75                | Pan Flute                        | Pipe                   |
+| 76                | Blown Bottle                     | Pipe                   |
+| 77                | Shakuhachi                       | Pipe                   |
+| 78                | Whistle                          | Pipe                   |
+| 79                | Ocarina                          | Pipe                   |
+| 80                | Square Lead                      | Synth Lead             |
+| 81                | Saw Lead                         | Synth Lead             |
+| 82                | Calliope Lead                    | Synth Lead             |
+| 83                | Chiffer Lead                     | Synth Lead             |
+| 84                | Charang Lead                     | Synth Lead             |
+| 85                | Voice Lead                       | Synth Lead             |
+| 86                | Fifths Lead                      | Synth Lead             |
+| 87                | Bass Lead                        | Synth Lead             |
+| 88                | New Age Pad                      | Synth Pad              |
+| 89                | Warm Pad                         | Synth Pad              |
+| 90                | Polysynth Pad                    | Synth Pad              |
+| 91                | Choir Pad                        | Synth Pad              |
+| 92                | Bowed Pad                        | Synth Pad              |
+| 93                | Metallic Pad                     | Synth Pad              |
+| 94                | Halo Pad                         | Synth Pad              |
+| 95                | Sweep Pad                        | Synth Pad              |
+| 96                | Ice Rain                         | Synth Effects          |
+| 97                | Soundtrack                       | Synth Effects          |
+| 98                | Crystal                          | Synth Effects          |
+| 99                | Atmosphere                       | Synth Effects          |
+| 100               | Brightness                       | Synth Effects          |
+| 101               | Goblins                          | Synth Effects          |
+| 102               | Echoes                           | Synth Effects          |
+| 103               | Sci-Fi                           | Synth Effects          |
+| 104               | Sitar                            | Ethnic                 |
+| 105               | Banjo                            | Ethnic                 |
+| 106               | Shamisen                         | Ethnic                 |
+| 107               | Koto                             | Ethnic                 |
+| 108               | Kalimba                          | Ethnic                 |
+| 109               | Bagpipes                         | Ethnic                 |
+| 110               | Fiddle                           | Ethnic                 |
+| 111               | Shanai                           | Ethnic                 |
+| 112               | Tinkle Bell                      | Percussive             |
+| 113               | Agogo                            | Percussive             |
+| 114               | Steel Drums                      | Percussive             |
+| 115               | Woodblock                        | Percussive             |
+| 116               | Taiko Drum                       | Percussive             |
+| 117               | Melodic Tom                      | Percussive             |
+| 118               | Synth Drum                       | Percussive             |
+| 119               | Reverse Cymbal                   | Percussive             |
+| 120               | Guitar Fret Noise                | Sound Effects          |
+| 121               | Breath Noise                     | Sound Effects          |
+| 122               | Seashore                         | Sound Effects          |
+| 123               | Bird Tweet                       | Sound Effects          |
+| 124               | Telephone Ring                   | Sound Effects          |
+| 125               | Helicopter                       | Sound Effects          |
+| 126               | Applause                         | Sound Effects          |
+| 127               | Gunshot                          | Sound Effects          |
+```
+
+---
+
+### **How MIDI Voices Are Selected and Interpreted**
+
+- **Program Change Messages**: 
+   - The **Program Change** message instructs the MIDI device to switch to a specific instrument. Program Change messages are sent on a particular channel and include a single data byte that specifies the desired instrument number (from 0 to 127). 
+   - Example: `C0 00` switches to Program 0, which is the **Acoustic Grand Piano**.
+  
+- **Consistency Across Devices**:
+   - Thanks to the General MIDI standard, the same Program Change message will produce the same instrument sound across

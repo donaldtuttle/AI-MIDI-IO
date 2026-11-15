@@ -2,7 +2,767 @@
 
 #### **Waldorf Streichfett String Synthesizer**
 1. **Strings Section**: 
-   - **Registration**: Morphs between classic string sounds such as **Violin**, **Viola**, **Cello**, and ensemble textures.
-   - Full instrument descriptions, synthesis notes, and usage guidance for General MIDI and common hardware.
+   - **Registration**: Morphs between classic string sounds such as **Violin**, **Viola**, **Cello**, **Brass**, **Organ**, and **Choir**.
+   - **Octave Selector**: Three positions – **Base**, **8va** (one octave up), and **Both** (octaves combined).
+   - **Ensemble Effect**: Enhances sound depth and width with three modes: **String**, **String + Chorus**, and **Chorus**.
+   
+2. **Solo Section**: 
+   - **Tone**: Includes synth tones such as **Bass**, **E-Piano**, **Clavi**, **Synth**, and **Pluto**.
+   - **Split Selector**: Allows key splits for solo sounds.
 
-(Full original 47 KB knowledge backup content restored.)
+3. **Effect Section**: 
+   - Effects like **Chorus**, **Phaser**, **Reverb**, and **Tremolo**.
+   
+4. **MIDI Control**: 
+   - Supports MIDI In and Out connections, as well as USB for MIDI over USB.
+1. Waldorf Streichfett String Synthesizer
+The Waldorf Streichfett provides a range of MIDI controllable parameters, including program change and control change messages for both the Strings and Solo sections, as well as effects controls. Below are the key MIDI parameters:
+
+Program Change Message:
+
+Format: Cc pp (Where c is the MIDI channel and pp is the program number from 0-11).
+Control Change Messages:
+
+String Section:
+CC 70: String Registration (0-127).
+CC 71: String Octaves (0 = Base, 1 = 8va, 2 = Both).
+CC 72: String Release (0-127).
+CC 73: String Crescendo (0-127).
+CC 74: String Ensemble Type (0 = String, 1 = String + Chorus, 2 = Chorus).
+CC 75: String Ensemble (0-127).
+Solo Section:
+CC 76: Solo Tone (0-127).
+CC 77: Solo Tremolo (0-127).
+CC 78: Solo Split (0 = Low, 1 = Layer, 2 = High).
+CC 79: Solo Sustain (0 = No sustain, 1 = Full sustain).
+CC 80: Solo Attack (0-127).
+CC 81: Solo Decay (0-127).
+Effects Section:
+CC 91: FX Type (0 = Reverb, 1 = Phaser, 2 = Animate).
+CC 92: FX Animate Amount (0-127).
+CC 93: FX Phaser Amount (0-127).
+CC 94: FX Reverb Amount (0-127).
+Additional MIDI Controls:
+
+Modulation Wheel: CC 1 (Mod Wheel position, 0-127).
+Damper Pedal (Sustain): CC 64 (0 = Off, >0 = On).
+All Sound Off: CC 120.
+Reset All Controllers: CC 121.
+Local Control: CC 122 (0 = Off, 127 = On).
+All Notes Off: CC 123.
+---
+
+#### **Waldorf Rocket Synthesizer**
+1. **Oscillator Section**: 
+   - **Waveforms**: **Pulse** and **Sawtooth** waves, offering both rich harmonic content and simple sound shaping.
+   - **Oscillator Sync**: The oscillator can be synced, allowing for more complex harmonic textures.
+   - **Polyphonic Mode**: Up to eight voices of sawtooth waves for rich polyphonic sounds.
+   
+2. **Filter Section**: 
+   - **VCF**: Low-pass filter with resonance control for sculpting the sound, from smooth to aggressive.
+   - **Filter FM**: Frequency modulation of the filter from the oscillator, allowing for dynamic and evolving timbres.
+
+3. **LFO/Arpeggiator Section**: 
+   - **LFO**: Modulates pitch, filter, and amplitude. Can sync to an external MIDI clock for rhythmic modulation.
+   - **Arpeggiator**: Steps through notes in a sequence for creating melodic patterns.
+
+4. **MIDI Control**: 
+   - Full MIDI implementation for all parameters. Can be powered via USB and used with software/hardware sequencers.
+Waldorf Rocket Synthesizer
+The Waldorf Rocket supports a variety of MIDI messages, enabling control over oscillators, filters, and more through the following parameters:
+
+Oscillator Section:
+
+CC 19: Oscillator 1 Wave (0-29).
+CC 20: Oscillator 1 Wave Interpolation (0-127).
+CC 21: Oscillator 1 Pulse Width (0-127).
+CC 22: Oscillator Sync Depth (0-127).
+CC 25: Oscillator Detune (0-127).
+Filter Section:
+
+CC 74: Filter Cutoff Frequency (0-127).
+CC 71: Filter Resonance (0-127).
+CC 27: Envelope Depth (0-127).
+CC 94: Filter Envelope Decay (0-127).
+LFO and Modulation:
+
+CC 80: LFO Speed (0-127).
+CC 81: LFO Depth (0-127).
+CC 82: LFO Sync (0 = Off, 127 = On).
+Arpeggiator Control:
+
+CC 75: Arpeggiator Mode (0 = Off, 1 = Up, 2 = Down, 3 = Up/Down).
+CC 76: Arpeggiator Range (0-2 octaves).
+CC 77: Arpeggiator Speed (0-127).
+---
+
+#### **Novation Circuit**
+1. **Synth Engine**: 
+   - **Synth 1 & 2**: Independent synthesizer engines with customizable waveforms, modulation, and effects.
+   - **Voice Modulation**: Polyphony modes, portamento, and pre-glide allow for complex voice leading and sound morphing.
+
+2. **Oscillators**: 
+   - Customizable waveforms and pulse width modulation for both **oscillator 1** and **oscillator 2**.
+   - Features include virtual sync, density detune, and individual control over semitone and cent pitch.
+
+3. **Mixer Section**: 
+   - Allows control over the levels of each oscillator, noise, and ring modulation, offering complex sound blending capabilities.
+   
+4. **Filter Section**: 
+   - Multi-mode filter with routing options for bypassing oscillators and drive effects for added warmth or distortion.
+
+5. **Effects and EQ**: 
+   - Onboard effects such as **distortion** and **chorus**. EQ control for bass, mid, and treble frequencies.
+Novation Circuit MIDI Parameters
+The Novation Circuit synthesizer has extensive MIDI parameters to control its two synthesizers, drums, and effects. Below are the key MIDI Control Change (CC) numbers:
+
+Synth 1 & 2 Parameters:
+
+CC 3: Polyphony Mode (0 = Mono, 1 = Mono AG, 2 = Poly).
+CC 5: Portamento Rate (0-127).
+CC 9: Pre-Glide (52-76).
+CC 19: Oscillator 1 Waveform (0-29).
+CC 21: Oscillator 1 Pulse Width (0-127).
+CC 35: Oscillator 2 Density (0-127).
+Filter Section:
+
+CC 60: Filter Routing (0 = Normal, 1 = Osc 1 Bypass, 2 = Both Oscillators Bypass).
+CC 63: Drive (0-127).
+CC 74: Frequency (0-127).
+CC 69: Filter Tracking (0-127).
+Effects:
+
+CC 88: Reverb Send Level for Synth 1 (0-127).
+CC 89: Reverb Send Level for Synth 2 (0-127).
+CC 110: Drum 4 Send Level (0-127).
+
+---
+Comprehensive Knowledge File: MIDI Controllers
+1. Overview of MIDI Controllers
+MIDI controllers are devices used to send MIDI messages to other hardware or software (such as synthesizers, DAWs, or samplers).
+They don't generate sound themselves but provide an interface to control various parameters of sound-generating devices.
+MIDI controllers often include pads, sliders, rotary encoders, knobs, and buttons, each sending MIDI control messages to manipulate sound parameters like volume, pitch, and effects.
+
+2. QuNeo 3D Pad Controller
+2.1 General Overview:
+
+The QuNeo is a pressure-sensitive, touch-sensitive controller with 16 square pads, sliders, rotary controls, and transport buttons.
+It is often used for triggering samples, controlling virtual instruments, and manipulating sound parameters in a DAW or MIDI-capable device.
+2.2 Key Features:
+
+16 Pressure-Sensitive Pads:
+Each pad can send velocity data (128 levels of pressure sensitivity).
+X-Y Location tracking for each pad, allowing users to modulate parameters based on the position of their touch.
+Horizontal and Vertical Sliders:
+These sliders send continuous Control Change (CC) messages that can be assigned to modulate various sound parameters, such as filter sweeps, volume, or panning.
+Rotary Controls:
+Each rotary detects both pressure and rotation to control DAW or synth parameters like gain or effect levels.
+Transport Controls:
+Buttons for play, pause, record, and other common DAW commands.
+2.3 MIDI Parameters:
+
+Each pad, slider, and rotary control sends MIDI CC messages that can be assigned in your DAW or hardware.
+
+Pads:
+
+Velocity Sensitivity: 128 levels.
+X and Y Axes: Pads send positional data as CC messages based on the X and Y positions.
+Continuous Pressure: Pads can continuously transmit pressure levels while held, allowing for modulation over time.
+Sliders:
+
+Both horizontal and vertical sliders send continuous control (CC) messages.
+Each slider can be assigned to control volume, filters, or any other MIDI-enabled parameter.
+Rotaries:
+
+Continuous rotary controls that detect direction and pressure.
+MIDI CC messages from rotaries can be mapped to various software or hardware parameters for smooth adjustments.
+Buttons:
+
+Transport buttons send MIDI note or CC messages, typically used for controlling playback, stop, record, or automation controls in a DAW.
+2.4 Assignable MIDI Parameters:
+
+The QuNeo allows for custom MIDI mappings depending on the software or hardware setup.
+You can reassign pads, sliders, and rotary controls to specific MIDI CC numbers in compatible software or DAWs.
+Typical assignments include:
+Volume (CC7).
+Pan (CC10).
+Modulation (CC1).
+Filter cutoff and resonance (CC74 for filter cutoff, CC71 for resonance).
+2.5 Multi-Layer Control:
+
+QuNeo supports multiple layers of control via bank switching, allowing users to map different CC messages to the same control depending on the active layer.
+Each slider and pad can control different MIDI parameters across different layers, providing vast control options without switching between physical devices.
+2.6 Integration with DAWs:
+
+The QuNeo has presets for popular DAWs like Ableton Live, Logic Pro, and FL Studio, with pre-mapped functions for pads, sliders, and rotaries.
+Users can create their own mappings through MIDI Learn functionality in most DAWs.
+2.7 Connectivity:
+
+USB-powered and connects directly to a computer for MIDI control.
+MIDI Expander allows connection to external MIDI hardware via 5-pin MIDI ports.
+3. Key MIDI CC Numbers for Controllers
+Controllers like the QuNeo and others frequently map their controls to specific MIDI Control Change (CC) numbers. Here's a list of common CC numbers used across different controllers:
+
+CC Number	Parameter	Range
+1	Modulation	0 - 127
+7	Volume	0 - 127
+10	Pan	0 - 127
+64	Sustain Pedal (On/Off)	0 - 127
+71	Filter Resonance	0 - 127
+74	Filter Cutoff Frequency	0 - 127
+91	Reverb Send Level	0 - 127
+93	Chorus Send Level	0 - 127
+120	All Sound Off	N/A
+121	Reset All Controllers	N/A
+123	All Notes Off	N/A
+4. Example Use Cases with the QuNeo
+4.1 Sample Triggering:
+
+The pads on the QuNeo are ideal for triggering drum samples or loops within a DAW. By mapping each pad to specific MIDI notes, the QuNeo can act as a controller for drum racks or samplers.
+4.2 FX Automation:
+
+Assign the rotary controls or sliders to filter cutoff or reverb send to create dynamic, real-time effects during live performance.
+4.3 Live Performance:
+
+Use the pressure-sensitive pads to control effects like delay feedback or synth modulation by continuously modulating parameters with your fingers during performance.
+
+#### **QuNeo 3D Pad Controller**
+1. **Pads**: 
+   - 16 square pads with 128 levels of velocity response. Each pad is pressure-sensitive and can detect X-Y location and continuous pressure.
+   
+2. **Sliders**: 
+   - Horizontal and vertical sliders with multiple banks, allowing for dynamic control over multiple parameters in a performance or production setup.
+
+3. **Rotaries**: 
+   - Continuous rotary controllers that detect pressure, direction, and location, making them ideal for controlling parameters like volume or filter sweeps.
+   
+4. **Transport Controls**: 
+   - Buttons for controlling playback, record, and stop functions, typically used for DAW integration.
+
+5. **MIDI Expander**: 
+   - Allows connection to MIDI hardware devices via standard 5-pin MIDI cables, enabling the controller to interact with synthesizers, drum machines, and other MIDI-enabled gear.
+
+---
+
+2. Novation Circuit as a Controller
+2.1 General Overview:
+
+The Novation Circuit is both a standalone groovebox and a powerful MIDI controller. It features a grid of 32 velocity-sensitive pads, macro knobs, and multiple buttons that can be assigned to various MIDI parameters.
+As a MIDI controller, the Circuit can control external hardware synthesizers, drum machines, and DAWs by sending MIDI Control Change (CC) messages, MIDI Note messages, and Program Change messages.
+2.2 Key Features:
+
+Synth 1 and 2 Engines: These can be used to send MIDI Note and CC messages to external gear or DAWs. The Circuit’s built-in synthesizer engines allow for detailed control over parameters like oscillators, filters, and envelopes, which can be mapped to external devices.
+Drum Pads: The four drum tracks can also send MIDI Note messages, making the Circuit ideal for controlling external drum machines or triggering samples in a DAW.
+Macro Knobs: Eight macro knobs provide real-time control over various parameters. These knobs can send MIDI CC messages to modulate parameters like volume, pan, filter cutoff, and more.
+2.3 MIDI Mapping for the Novation Circuit: The Circuit sends MIDI Note and MIDI CC messages from its grid, macro knobs, and buttons. These mappings can be customized for controlling external devices or software.
+
+Grid Pads (Synth 1 & 2, Drum Tracks):
+
+Velocity-Sensitive Pads: Send MIDI Note messages with corresponding velocity values (0-127). This can be mapped to control instruments or trigger samples.
+Pads CC Messages: The pads can also send MIDI CC messages to control synth or drum parameters such as volume, reverb, filter cutoff, and pitch.
+Macro Knobs:
+
+The eight macro knobs are mapped to MIDI CCs, controlling various synth parameters in a DAW or external hardware.
+MIDI CC Assignments: Common mappings include:
+CC 1: Modulation.
+CC 10: Pan.
+CC 74: Filter cutoff.
+CC 71: Filter resonance.
+2.4 Detailed MIDI Control Change (CC) Parameters:
+
+Parameter	MIDI CC Number	Description
+Synth 1 & 2 Filter Cutoff	CC 74	Controls filter cutoff for external devices.
+Synth 1 & 2 Resonance	CC 71	Adjusts resonance for external filters.
+Synth 1 & 2 Volume	CC 7	Controls overall volume for external synths.
+Drum 1-4 Volume	CC 7	Controls the volume of external drum kits.
+Synth 1 & 2 Reverb Send	CC 88	Sends reverb level for external devices.
+Drum 1-4 Reverb Send	CC 90	Sends reverb level for external drum kits.
+Pan (All Synths and Drums)	CC 10	Pans the sound left or right.
+Drum 1-4 Pitch	CC 93	Controls the pitch of external drum kits.
+Macro Knob 1-8	Custom	Mappable to any CC for controlling other effects.
+2.5 Circuit Control as a MIDI Clock Source
+
+Clock Syncing: The Circuit can act as a MIDI clock source, sending tempo information to external gear. This allows you to sync external synths or drum machines to the Circuit’s internal tempo, ensuring that all devices play in time.
+MIDI Clock Output: When using the Circuit with external gear, you can send the MIDI clock via standard 5-pin MIDI or USB. This ensures that tempo-based effects (like LFO rates or arpeggiator speeds) stay synchronized.
+2.6 Integration with DAWs
+
+MIDI Control via USB: When connected to a computer, the Circuit can act as a MIDI controller for DAWs such as Ableton Live, Logic Pro, or FL Studio. The grid pads can be mapped to trigger samples or control virtual instruments, while the macro knobs can be used for real-time modulation of parameters like filters, effects, or automation.
+MIDI Mapping in DAWs: Most DAWs feature a MIDI Learn mode, which allows you to assign specific CC numbers from the Circuit’s controls to various software parameters. For example, you can map the Circuit’s macro knobs to control synth filter cutoff, reverb sends, or even parameters in third-party plugins.
+2.7 Circuit's Performance Mode
+
+The performance mode on the Circuit allows users to create real-time changes to their live set using the grid pads, macro knobs, and tempo controls. In this mode, the Circuit can:
+Trigger MIDI clips and loops in sync with external hardware.
+Adjust effects like delay, reverb, and filters on external synths or drums.
+Manipulate volume and panning dynamically during a performance.
+3. Example Use Cases for the Novation Circuit as a MIDI Controller
+
+3.1 Controlling External Synths:
+
+Setup: Use the Circuit’s Synth 1 & 2 engines to send MIDI notes to external hardware synths like the Waldorf Rocket or Moog Sub 37.
+MIDI Mapping: Assign the macro knobs to control external filter cutoff (CC 74) and resonance (CC 71), while the pads trigger notes or sequences.
+Clock Syncing: Sync the external synth’s LFO or arpeggiator to the Circuit’s internal clock for tight, tempo-synced performances.
+3.2 Live Drumming and Sample Triggering:
+
+Setup: Connect the Circuit to a DAW like Ableton Live and map the drum pads to trigger samples or virtual drum kits.
+MIDI Mapping: Assign each drum pad to a MIDI note in the DAW, while using the macro knobs to adjust the pitch (CC 93) or reverb level (CC 90) of each drum sound.
+Performance Mode: Use the Circuit’s performance mode to layer drum patterns, manipulate effects in real-time, and switch between different drum kits on the fly.
+3.3 DAW Control and Automation:
+
+Setup: Use the Circuit as a MIDI controller for software instruments in Logic Pro or FL Studio.
+MIDI Mapping: Map the macro knobs to control automation parameters like filter sweeps or effect send levels for synths and drum machines.
+Automation Recording: Record real-time changes to parameters like volume, reverb, and delay during playback.
+Summary of Novation Circuit as a Controller:
+The Novation Circuit offers flexible and detailed MIDI control with its velocity-sensitive pads, macro knobs, and ability to send MIDI CC, Note, and Program Change messages.
+Ideal for live performances, studio work, and MIDI sequencing, the Circuit’s macro knobs provide continuous control over parameters like filter cutoff, resonance, volume, and effects.
+The Circuit’s ability to function as a MIDI clock source makes it a powerful tool for syncing external gear, ensuring tight, tempo-based control across all devices.
+
+
+MIDI composition using the Novation Circuit as the master MIDI controller, with each of the connected devices playing a key role in this setup. Here’s how I’ll structure the composition and detail the interaction between the Circuit, Behringer Model D, Streichfett, Waldorf Rocket, and TR-08:
+
+Overview of the Composition:
+Bass: Controlled by the Circuit’s Synth 1 engine, which sends MIDI to both the Behringer Model D (for deep analog bass) and the Streichfett (for pad-like reinforcement of the bass line).
+Lead: Controlled by the Circuit’s Synth 2, sending melodic lead lines to the Waldorf Rocket. The lead will emphasize soaring, expressive arpeggios and filter sweeps.
+Drums: The TR-08 receives MIDI drum data from the Circuit's Drum 1-4 channels, handling kick, snare, hats, and cymbals for a driving, punchy rhythm.
+Composition Structure:
+Intro (0:00 - 0:30):
+
+Behringer Model D plays a deep, resonant bass drone using MIDI notes from Circuit’s Synth 1. This section uses the Model D’s filter cutoff (CC 74) to create a slow fade-in effect.
+Streichfett pads support the bass line, with an emphasis on string registration (CC 70) and ensemble effect (CC 74) for a lush, evolving sound.
+Waldorf Rocket lead remains silent, building anticipation.
+TR-08 starts with a minimal kick and snare pattern, setting the foundation for the rhythm (kicks on MIDI notes 35, snares on 38).
+Verse 1 (0:30 - 1:30):
+
+Bass: The Circuit sends an arpeggiated bassline to the Behringer Model D with subtle resonance control (CC 71) and pitch variations. The Streichfett follows the bass line, with sustained pads adding depth.
+Lead: Waldorf Rocket comes in with a plucky, high-energy melody (arpeggiated lead), utilizing pulse wave modulation and filter sweeps (CC 74 for filter cutoff). The lead focuses on high-octave notes for contrast.
+Drums: The TR-08 intensifies with hi-hats (closed on MIDI 42, open on MIDI 46), adding groove to the track. A clap on MIDI note 39 complements the snare.
+Chorus 1 (1:30 - 2:00):
+
+Bass: The bassline shifts to a more rhythmic pattern on the Behringer Model D, with increased emphasis on the lower octaves and decay control (CC 75). The Streichfett layers richer, orchestral strings using the ensemble effect (CC 74) for grandeur.
+Lead: The Rocket lead opens up, using wider filter sweeps and glide to soar above the rest of the composition.
+Drums: The TR-08 introduces cymbals (MIDI note 49) and more intense snare fills, building excitement.
+Breakdown (2:00 - 2:30):
+
+Bass: The bass from the Model D becomes more sparse, and the Streichfett moves to softer, almost ghostly pads. Modulation wheel (CC 1) controls the filter cutoff for a sweeping effect.
+Lead: The Rocket lead fades out, but keeps subtle arpeggios running in the background.
+Drums: The TR-08 drops back to just a kick drum and occasional hi-hats for a minimalist breakdown.
+Verse 2 (2:30 - 3:30):
+
+Bass: The Model D bass reintroduces a heavier, more syncopated rhythm, with pitch bends and modulation for more variation.
+Lead: The Rocket lead returns with a faster arpeggio pattern, emphasizing the higher frequencies, while utilizing resonance control for sharper tones.
+Drums: The TR-08 adds more complex drum fills, and the open hi-hat patterns become more prominent, complementing the intensified bass and lead.
+Chorus 2 (3:30 - 4:00):
+
+Bass: The Circuit sends faster, more aggressive bass sequences to the Model D. The Streichfett supports with high-energy string pads, enhanced by crescendo (CC 73) for a swelling effect.
+Lead: The Waldorf Rocket lead becomes the focal point, with soaring pulse wave arpeggios and dramatic filter sweeps (CC 74) that open and close in sync with the progression.
+Drums: The TR-08 builds to its peak with rolling snares (MIDI 38), heavy kick drums, and splash cymbals for dramatic impact.
+Outro (4:00 - 4:30):
+
+Bass: The Model D bass gradually filters out, using filter cutoff (CC 74) to slowly close off the sound.
+Lead: The Rocket fades into a subtle, sustained lead, with long decay and reverb for an atmospheric finish.
+Drums: The TR-08 pulls back to a simple, echoing snare and kick, with the final hits providing closure to the composition.
+MIDI Routing and Control Overview
+Circuit Synth 1 (Bass):
+
+MIDI Channel 1: Controls Behringer Model D bassline with modulation via CC 74 (Filter Cutoff) and CC 71 (Resonance).
+MIDI Channel 2: Sends MIDI to Streichfett, layering strings using CC 70 (String Registration) and CC 74 (Ensemble).
+Circuit Synth 2 (Lead):
+
+MIDI Channel 3: Controls Waldorf Rocket for lead arpeggios, with dynamic filter sweeps (CC 74) and pulse width modulation.
+Circuit Drum 1-4 (Drums):
+
+MIDI Channels 10-14: Sends kick (MIDI 35), snare (MIDI 38), hi-hats (MIDI 42, 46), and cymbals (MIDI 49) to the TR-08.
+Tips for Live Performance:
+Macro Knobs: Use the Circuit’s Macro Knobs to control multiple parameters in real-time. For example, assign Macro 1 to control both the filter cutoff on the Behringer Model D and resonance on the Rocket for simultaneous sweeping effects.
+Scene Changes: Save each section of the composition as a Scene on the Circuit, allowing you to switch between the Intro, Verse, Chorus, and Breakdown sections with ease during a live performance.
+Real-Time FX: Use the Circuit’s FX Sends to add reverb or delay to individual instruments during the performance. For example, apply reverb to the Rocket lead during the breakdown for a spacious, ambient effect.
+---
+
+Comprehensive MIDI Parameter Documentation: QuNexus
+1. MIDI Expression and Control Features
+The QuNexus offers advanced MIDI control through its highly responsive keys and pads. The controller supports the following MIDI-related features:
+
+MIDI Output Types:
+MIDI Notes: QuNexus keys send MIDI Note On/Off messages with velocity (0-127).
+Polyphonic Aftertouch: Each key sends individual pressure values after a note is pressed.
+Pitch Bend: Per-key tilt can be mapped to send MIDI Pitch Bend messages.
+Control Changes (CCs): Up to three different Control Change (CC) messages can be sent via the keys, based on pressure or tilt.
+MPE (MIDI Polyphonic Expression):
+Polyphonic Expression: QuNexus supports MPE, allowing each key to send independent data for pitch bend, aftertouch, and control change (CC74).
+MPE Channels: The default configuration uses 13 MIDI channels for MPE, allowing each key to control its own set of parameters (pitch, pressure, etc.).
+2. MIDI Control Change (CC) Parameters
+The QuNexus keys and expression features are mapped to specific MIDI CC numbers, allowing deep control over external synths or DAWs. Below are some key CC mappings:
+
+Pressure:
+
+Sent as Aftertouch or Polyphonic Aftertouch on individual keys.
+Tilt (Y-Axis):
+
+Can be mapped to Pitch Bend or any desired CC message (e.g., filter cutoff or modulation).
+Control Change Assignments:
+
+Up to three CC numbers can be assigned per key, allowing the user to map tilt, pressure, or external controllers like expression pedals to control different sound parameters in real time.
+3. Sequencer and Arpeggiator
+QuNexus also features a 3-track sequencer and arpeggiator, each of which can send MIDI data:
+
+Track MIDI Channels:
+
+Each track can be routed to different MIDI channels (or MPE channels for track 1).
+Users can assign each track to specific channels to control different hardware devices or soft synths.
+Clock Synchronization:
+
+The sequencer/arpeggiator is clocked to MIDI, allowing sync with external hardware or DAWs.
+The internal clock can be overridden by an external MIDI clock for tight synchronization with other devices.
+4. CV (Control Voltage) Integration
+The QuNexus has CV Output capabilities, allowing it to control analog gear:
+
+Gate and CV Outputs:
+Gate Out: Sends note on/off data as a 5V signal.
+CV1, CV2, CV3: Can be mapped to parameters like pitch, pressure, or tilt, allowing seamless control of modular or analog synths.
+5. Expression Pedal and External Control
+Expression Pedal:
+When connected, the expression pedal sends MIDI CC messages (default: CC112 for CV1 and CC113 for CV2).
+This can be customized through the QuNexus editor software, allowing the pedal to control various parameters in real time.
+6. LED Control
+The QuNexus' LEDs can be controlled using MIDI notes. Specifically:
+
+LED MIDI Notes: MIDI notes ranging from 48 (C2) to 72 (C4) are mapped to control the LEDs on the QuNexus, allowing for visual feedback based on external MIDI triggers or sequencer steps.
+7. MPE Configuration
+The QuNexus allows users to configure MPE settings:
+
+Enabling MPE:
+To enable MPE, users can set track 1 to MPE mode, using multiple MIDI channels (default: 13 channels).
+MPE Messages: The key pressure is sent as channel aftertouch, and tilt is sent as CC74 on each channel, offering per-key modulation of external devices.
+Summary of Key Features:
+MIDI Outputs: Sends Note On/Off, Aftertouch, Polyphonic Aftertouch, CC messages, and Pitch Bend.
+MPE Compatibility: Full support for MIDI Polyphonic Expression, enabling per-key control of multiple parameters.
+Control Change (CC) Assignments: Keys can send up to three CC messages based on pressure, tilt, or external controllers.
+Sequencer/Arpeggiator: 3-track sequencer with full MIDI clock sync and step-based note control.
+CV Integration: Outputs gate and CV data, making it a versatile controller for both digital and analog systems.
+LED Control via MIDI: Use MIDI notes to control the keyboard's visual feedback.
+
+QuNexus RED MIDI Control Change (CC) Table for Keys
+The QuNexus keys are capable of sending different types of MIDI messages based on key pressure, tilt, and velocity. These can be assigned using the QuNexus editor.
+
+Parameter	MIDI CC Number	Range	Description
+Velocity	N/A	0-127	Sent when a key is struck, represents initial key velocity.
+Pressure	CC (user-defined)	0-127	Continuous value representing the pressure applied to the QuNexus keys after a note is triggered. Can be assigned to Aftertouch or Polyphonic Aftertouch.
+Tilt (Y-Axis)	CC (user-defined)	0-127	Continuous value representing the tilt or slide of the key along the Y-axis. Typically used for controlling parameters like filter cutoff or modulation.
+Expression Pedal	CC 112 (default)	0-127	When connected, the expression pedal sends this CC. It can be reassigned in the QuNexus editor.
+Pitch Bend	Pitch Bend	-8192 to 8191	Controls pitch bending for each key or globally, depending on the configuration.
+Aftertouch	Channel Aftertouch	0-127	Applies pressure sensitivity to the entire channel.
+Polyphonic Aftertouch	Poly Aftertouch	0-127	Sends independent pressure data for each key pressed.
+CC Assignment (3 Slots)	CC (user-defined)	0-127	Up to 3 CC messages can be assigned to keys for tilt, pressure, and other custom controls. These can be mapped in the QuNexus editor.
+Customizable MIDI CC Mapping
+Using the QuNexus Editor, users can map different CC numbers to specific key behaviors:
+
+Pressure: Assign CC for aftertouch or other parameters, e.g., modulation or effects.
+Tilt (Y-Axis): Assign a CC for tilt, commonly used to control filter cutoff or pitch modulation.
+Expression Pedal: Map the expression pedal to control volume, filter, or any other CC-assigned parameters.
+This flexibility allows the QuNexus to serve as an expressive controller for both MPE and non-MPE setups.
+
+---
+
+MIDI Control Change (CC) Table for MX-1
+The MX-1 supports MIDI CC messages to control mixer parameters such as volume, tone, effects, and channel selection. These CC messages allow for seamless control via external MIDI devices.
+
+CC Number	Parameter	Description
+3	TONE/FILTER Knob 1	Controls Tone or Filter FX for Channel 1
+9	TONE/FILTER Knob 2	Controls Tone or Filter FX for Channel 2
+14	TONE/FILTER Knob 3	Controls Tone or Filter FX for Channel 3
+15	TONE/FILTER Knob 4	Controls Tone or Filter FX for Channel 4
+16	TONE/FILTER Knob 5/6	Controls Tone or Filter FX for Channels 5/6
+23	LEVEL Fader 1	Adjusts the volume level for Channel 1
+24	LEVEL Fader 2	Adjusts the volume level for Channel 2
+25	LEVEL Fader 3	Adjusts the volume level for Channel 3
+26	LEVEL Fader 4	Adjusts the volume level for Channel 4
+27	LEVEL Fader 5/6	Adjusts the volume level for Channels 5/6
+46-56	MUTE Buttons (Channels 1-5/6, Digital, USB 1-4, PC)	Mutes the corresponding channels
+57-69	MFX Buttons (Channels 1-4, Digital, USB 1-4, PC)	Applies Master FX on/off for each channel
+81-97	BFX Buttons (Channels 1-4, Digital, USB 1-4, PC)	Applies Beat FX on/off for each channel
+2. Key MIDI Functions
+Program Change:
+
+Scene Memory Recall: The MX-1 responds to Program Change messages to recall scene memories. Program Change numbers 0–63 correspond to Scene Memory 1–64.
+System Real-Time Messages:
+
+MIDI Timing Clock: The MX-1 can send and receive MIDI timing clock messages (F8H) for synchronizing tempo with external devices.
+MIDI Start/Stop: Start (FAH) and Stop (FCH) messages are supported, controlling the MX-1’s playback.
+MIDI Sync:
+
+MIDI Clock Master: You can select between internal and external clock sources. The MX-1 can sync to USB, MIDI, or AIRA devices, depending on the setup.
+3. Master FX and Beat FX
+The MX-1 allows you to apply effects to individual channels or the master output. These effects can be controlled via MIDI CCs, and specific settings can be stored and recalled through Scene Memories.
+
+Master FX: Includes Delay, Filter, Scatter, Flanger, Bit Crush, and Roll.
+Beat FX: Applies effects like Filter, Side Chain, or Slicer to individual steps in synchronization with the tempo.
+MIDI CC messages can be used to control these effects, such as selecting different effects or adjusting effect depth on a per-channel basis.
+
+4. Mixer Section Controls via MIDI
+The MX-1 supports external MIDI control for most of its mixer functions. You can adjust channel levels, mute channels, and control FX parameters through MIDI CC messages.
+
+Tone/Filter FX: The TONE/FILTER knobs for each channel are assigned to CC numbers, allowing real-time control of filter and EQ parameters.
+Level Faders: Each channel’s volume can be adjusted via MIDI by sending CC messages for the corresponding fader.
+Mute and FX On/Off: Mute channels and enable/disable effects through dedicated CC numbers.
+5. Use with DAWs and External MIDI Devices
+The MX-1 can operate as a control surface for DAWs or be used to mix external hardware. It features modes such as MIXER Mode (for controlling connected hardware) and SURFACE Mode (for controlling DAWs).
+
+MIDI Mapping: In SURFACE Mode, the MX-1 assigns MIDI channels to control faders, mutes, and FX for use in DAWs.
+External Sync: The MX-1 can sync to external MIDI devices via the MIDI IN/OUT ports, or it can act as the MIDI clock master.
+6. Scene Memory and Control Setup
+Scene Memory: The MX-1 allows you to store and recall up to 64 scene memories, each storing mixer, effect, and channel settings.
+MIDI Scene Recall: Scene memories can be recalled using MIDI Program Change messages, allowing integration into larger performance setups.
+
+Using the MX-1 as a MIDI Master
+1. MIDI Clock Master
+The MX-1 can serve as the master clock in your setup, sending MIDI Timing Clock messages (F8H) to synchronize external devices. This ensures that all connected gear (synths, drum machines, DAWs) stays in sync with the MX-1's tempo.
+The MX-1’s Tempo Control can adjust the global tempo, which will be sent via MIDI to all synced devices.
+2. Start/Stop Control
+You can use the MX-1 to send Start (FAH) and Stop (FCH) messages, triggering playback on connected sequencers, drum machines, and DAWs. This allows for centralized control over starting and stopping performances.
+These messages can be sent manually or automatically when using the Transport Controls in DAW integration.
+3. Scene Recall via MIDI
+As the master controller, the MX-1 can recall Scene Memories (1–64) using MIDI Program Change messages (PC 0–63). This allows for rapid switching of mixer and effects settings across your entire performance setup.
+Each scene stores the following:
+Mixer levels
+Tone and filter settings
+Master and Beat FX
+Mute status of channels
+4. Master and Beat Effects Control
+Master FX and Beat FX can be controlled via MIDI CC messages, enabling you to apply effects like Delay, Scatter, Slicer, and Filter across channels in real time.
+As the master controller, the MX-1 can sync its effects to the tempo of connected devices via the MIDI Clock.
+5. MIDI Sync with DAWs
+In SURFACE Mode, the MX-1 acts as a MIDI controller for DAWs, allowing you to control mixer levels, effects, and transport functions. The MX-1 can be used as a control surface for software like Ableton Live or Logic Pro, sending MIDI CCs to adjust track levels and apply effects directly in your DAW.
+The MX-1 can also serve as the master clock in a DAW setup, ensuring that all tracks and external hardware stay in sync with the session tempo.
+6. Control Surface for External Devices
+In MIXER Mode, the MX-1 can control external synths, drum machines, and hardware via MIDI. You can send MIDI CC messages from the MX-1’s faders and knobs to adjust parameters like filter cutoff, resonance, or LFO speed on external gear.
+7. Full Channel Control via MIDI
+The MX-1’s faders, mute buttons, and FX controls send and receive MIDI CC messages, allowing you to adjust volume levels, mute/unmute channels, and apply effects to connected devices, all while acting as the hub for MIDI control.
+Maximizing the MX-1 as a Master:
+Tempo Sync: Set the MX-1 as the tempo master, ensuring all devices are in sync with its BPM settings.
+Scene Recall: Use MIDI Program Change to quickly recall scene memories during live performances.
+MIDI Control for Effects: Apply and control effects across multiple devices using MIDI CC.
+Full Integration with DAWs: Use the MX-1 in SURFACE Mode to control your DAW and sync with external MIDI hardware.
+Centralized Transport Control: Start and stop all connected sequencers and DAWs with the MIDI Start/Stop function.
+
+Optimizing the Roland MX-1 as a Master Controller: Specific Use Cases
+1. Full MIDI Sync with External Devices
+The MX-1 can act as a master clock for your entire setup, syncing external hardware like drum machines, synthesizers, and other MIDI-compatible devices.
+
+Example Setup:
+
+MX-1 as the master clock, sending MIDI Timing Clock to:
+Roland TR-8 (Drum machine).
+Korg Minilogue (Analog synth).
+Ableton Live (DAW).
+Steps:
+
+Set MX-1 as Master Clock: Ensure the MX-1’s MIDI Clock Source is set to internal. This can be done in the settings.
+
+Now, the MX-1 will send clock data to all connected devices, ensuring that tempos are synced.
+Start and Stop Control: Use the MX-1’s transport controls to start and stop playback on all connected devices.
+
+The MX-1 will send MIDI Start (FAH) and MIDI Stop (FCH) messages to trigger playback on the TR-8 and Minilogue in sync with your DAW.
+Adjust Tempo: Control the global tempo from the MX-1. As you adjust the BPM, all connected devices will adjust their timing accordingly, keeping everything locked to the master clock.
+
+2. Central Control of Mixer Levels and Effects via MIDI
+Use the MX-1 to control volume levels, mutes, and effects on connected hardware through MIDI CC messages.
+
+Example Setup:
+
+MX-1 controls Korg Minilogue and Roland TR-8.
+Each fader on the MX-1 corresponds to a MIDI channel assigned to the external synth or drum machine.
+Steps:
+
+Map Volume Control:
+
+Assign the MX-1’s faders to send MIDI CC messages (e.g., CC 7 for volume control) to each connected device.
+For example, use Fader 1 to control the volume of the Korg Minilogue on MIDI Channel 1 and Fader 2 to control the volume of the TR-8 on MIDI Channel 2.
+Apply Real-Time Effects:
+
+Use the Tone/Filter knobs to send MIDI CC 74 (Filter Cutoff) to the Minilogue, controlling its filter settings directly from the MX-1.
+Apply Master FX like reverb or delay to specific channels by assigning the MX-1’s macro controls to send CC messages to adjust external effects processors.
+Mute Channels with MIDI:
+
+Each channel’s mute button on the MX-1 can be mapped to MIDI CCs (e.g., CC 120 for all sound off or CC 64 for mute toggle). This allows you to mute/unmute tracks on the TR-8 and Minilogue without physically touching them.
+3. Scene Recall for Live Performances
+Using MIDI Program Change messages, the MX-1 can recall different Scene Memories that store entire mixer configurations, effects, and settings for different parts of a performance.
+
+Example Setup:
+
+Scene 1: Smooth, ambient intro with reverb-heavy synths.
+Scene 2: Full band with drums, bass, and effects.
+Scene 3: Stripped-down outro with minimal instruments.
+Steps:
+
+Program Scene Memories: Set up your desired mixer levels, tone settings, and effects in each scene and save them to Scene Memories 1-64.
+
+Scene 1 might have lower volumes and lots of reverb, while Scene 2 might be more aggressive with full levels and added delay.
+MIDI Program Change for Scene Recall:
+
+During a live performance, send Program Change messages from an external MIDI controller or DAW to recall different Scene Memories on the MX-1.
+For example, sending Program Change 0 recalls Scene Memory 1, Program Change 1 recalls Scene 2, and so on.
+Seamless Transitions: Use the MX-1’s tempo-synced effects (like Delay or Scatter) to create smooth transitions between scenes.
+
+4. DAW Integration with MIDI Control
+In SURFACE Mode, the MX-1 becomes a full MIDI control surface for DAWs like Ableton Live, Logic Pro, or FL Studio.
+
+Example Setup:
+
+MX-1 controls track levels and effects in Ableton Live.
+The faders on the MX-1 control volume levels for tracks 1–4 in Ableton.
+The Tone/Filter knobs are assigned to control EQ and filter settings in each track.
+Steps:
+
+Set MX-1 to SURFACE Mode: In this mode, the MX-1 will send MIDI CCs corresponding to each fader, knob, and button to control the DAW.
+
+Faders: Assigned to track volumes (CC 7 for each channel).
+Knobs: Control EQ and Filter effects on each track (CC 74 for Filter Cutoff, CC 71 for Resonance).
+MIDI Learn in DAW:
+
+Use the MIDI Learn function in Ableton or Logic to map the MX-1 controls to the DAW’s parameters.
+For example, map Fader 1 to control the volume of Track 1 in Ableton, and map the Tone knob to control the filter cutoff in a virtual instrument on Track 2.
+Control Effects in Real-Time:
+
+Use the FX knobs to adjust effects sends (e.g., reverb, delay) on individual tracks.
+The Master FX can be synced with Ableton’s tempo, allowing you to apply tempo-synced effects like delays directly from the MX-1.
+5. Using the MX-1 as a Master Clock for Modular Synths
+The MX-1 can also send MIDI Clock to modular synths via a MIDI-to-CV converter, allowing for perfect sync between digital and analog devices.
+
+Example Setup:
+
+MX-1 as master clock, sending tempo data to a modular synth via a MIDI-to-CV interface.
+Modular synth LFOs and sequencers sync to the MX-1’s tempo.
+Steps:
+
+Connect the MX-1 to a MIDI-to-CV Interface: Use the MX-1’s MIDI OUT port to send clock data to the modular synth via a MIDI-to-CV converter.
+Sync LFOs and Sequencers: Set the modular synth’s sequencer or LFO to receive the clock from the MX-1, ensuring all modular elements are in sync with the digital gear.
+Control the Tempo: Adjust the tempo on the MX-1 to control the speed of the modular synth’s sequencer or LFO in real-time.
+General Tips for Optimizing MX-1 in Master Mode
+MIDI Routing: Plan out your MIDI routing to ensure that all connected devices receive the correct clock, CC messages, and program changes. Using a MIDI thru box or DAW routing can help manage multiple devices more efficiently.
+
+FX Depth Control: Use MIDI CC mapping to control the depth of effects applied to external devices. For example, map the MX-1’s knobs to control the filter cutoff on a connected synth or adjust reverb sends for a drum machine.
+
+Centralize Your Performance: By using the MX-1 as the master clock and control hub, you can centralize all tempo, start/stop, scene switching, and effect control for both hardware and software in one place. This is ideal for live performances or complex studio setups.
+
+Automation in DAW: Record automation for effects, filter sweeps, and volume changes directly from the MX-1 into your DAW for post-performance editing or live session control.
+---
+
+Roland TR-08 MIDI Control Change (CC) Table
+The TR-08 provides various MIDI CC numbers for controlling drum parameters such as tuning, decay, level, and more for each drum instrument. Below is the list of the MIDI CC numbers and their corresponding functions:
+
+CC Number	Control	Instrument/Parameter
+20	BD TUNE	Bass Drum Tuning
+21	BD TONE	Bass Drum Tone
+22	BD COMP	Bass Drum Compression
+23	BD DECAY	Bass Drum Decay
+24	BD LEVEL	Bass Drum Level
+25	SD TONE	Snare Drum Tone
+26	SD SNAPPY	Snare Drum Snappy
+27	SD COMP	Snare Drum Compression
+28	SD DECAY	Snare Drum Decay
+29	SD LEVEL	Snare Drum Level
+46	LT TUNE	Low Tom Tuning
+47	LT DECAY	Low Tom Decay
+48	LT LEVEL	Low Tom Level
+49	MT TUNE	Mid Tom Tuning
+50	MT DECAY	Mid Tom Decay
+51	MT LEVEL	Mid Tom Level
+52	HT TUNE	High Tom Tuning
+53	HT DECAY	High Tom Decay
+54	HT LEVEL	High Tom Level
+55	RS TUNE	Rim Shot Tuning
+56	RS DECAY	Rim Shot Decay
+57	RS LEVEL	Rim Shot Level
+58	CP TUNE	Hand Clap Tuning
+59	CP DECAY	Hand Clap Decay
+60	CP LEVEL	Hand Clap Level
+61	CH TUNE	Closed Hi-Hat Tuning
+62	CH DECAY	Closed Hi-Hat Decay
+63	CH LEVEL	Closed Hi-Hat Level
+71	ACCENT	Global Accent
+80	OH TUNE	Open Hi-Hat Tuning
+81	OH DECAY	Open Hi-Hat Decay
+82	OH LEVEL	Open Hi-Hat Level
+83	CY TONE	Cymbal Tone
+84	CY DECAY	Cymbal Decay
+85	CY LEVEL	Cymbal Level
+86	CB TUNE	Cowbell Tuning
+87	CB DECAY	Cowbell Decay
+88	CB LEVEL	Cowbell Level
+Additional Key MIDI Features
+Accent Control (CC 71): Adjusts the global accent for the entire pattern, affecting the dynamics of accented beats.
+Individual Instrument Control: You can adjust tuning, decay, level, and tone for each instrument (e.g., bass drum, snare drum, toms, cymbals, and more), allowing detailed control over the sound and performance in real-time via MIDI.
+Global Control via MIDI: You can use external devices or DAWs to control and automate these parameters in real-time, making the TR-08 a highly flexible tool in both live and studio environments.
+MIDI Note Mapping for Drum Sounds
+In addition to the CCs, the TR-08 responds to MIDI Note On/Off messages to trigger drum sounds. Below is the note mapping:
+
+Instrument	MIDI Note Number
+Bass Drum	35, 36
+Rim Shot	37
+Snare Drum	38, 40
+Hand Clap	39
+Closed Hi-Hat	42, 44
+Open Hi-Hat	46
+Low Tom	41, 43
+Mid Tom	45, 47
+High Tom	48, 50
+Cymbal	49
+Cowbell	51, 56
+Congas	62 (High), 63 (Mid), 64 (Low)
+Maracas	70
+Claves	75
+MIDI Implementation
+The TR-08 supports standard MIDI features including:
+
+Start/Stop: The TR-08 can respond to MIDI Start/Stop messages to synchronize playback with external MIDI gear or DAWs.
+MIDI Clock Sync: The TR-08 can sync to an external MIDI Clock, ensuring that its patterns play in time with other devices.
+System Real-Time Messages: It supports MIDI Clock, Start, Stop, and Continue messages for integration in live performances or studio recording setups.
+Practical Applications
+Live Performance: Use an external MIDI controller to adjust parameters like snare tone or bass drum decay in real-time, adding dynamic control over the TR-08’s sounds during a performance.
+Studio Automation: In a DAW, automate the CCs for various parameters (e.g., tuning, decay) to create evolving, dynamic drum patterns that change over the course of a track.
+Sync with Other Gear: The TR-08’s ability to sync with external devices using MIDI Clock makes it perfect for integration into larger setups with multiple drum machines, synths, or sequencers.
+
+---
+
+Behringer Model D is a classic analog synthesizer with comprehensive MIDI implementation. Based on the MIDI section and other details from the user manual, here is a summary of key MIDI parameters and controls for the Model D:
+
+1. MIDI Implementation
+The Model D supports the following core MIDI functions:
+
+MIDI In/Out and Thru: MIDI input can come from a keyboard or external sequencer, and MIDI Thru allows chaining to other MIDI devices.
+Poly Chain: Multiple Model D units can be chained together for polyphonic play, with MIDI channels set for each unit.
+2. MIDI CC Assignments
+The Model D features various MIDI Control Change (CC) parameters for real-time control of modulation, filter, and oscillator settings:
+
+CC Number	Control	Description
+1	Modulation Wheel	Control depth for modulation
+7	Main Volume	Master volume control
+10	Pan	Panning control
+16	General Purpose 1	Can be assigned to various params
+17	General Purpose 2	Can be assigned to various params
+74	Filter Cutoff	Controls the cutoff frequency
+71	Resonance	Adjusts resonance of the filter
+73	Attack Time	Controls attack phase of envelopes
+75	Decay Time	Controls decay phase of envelopes
+76	Sustain Level	Controls sustain level
+These CCs allow for controlling key synthesis parameters remotely, whether from a DAW or a MIDI controller.
+
+3. MIDI Note and Pitch Control
+The Model D receives MIDI Note On/Off messages to play sounds and includes additional features such as:
+
+Pitch Bend: Adjusts pitch within the range defined by MIDI messages.
+Poly Chain Mode: Enables multi-note polyphony when multiple Model D units are connected.
+4. MIDI System Exclusive (SysEx) Commands
+For deeper control, including firmware updates and calibration, the Model D supports SysEx commands. These allow for tuning, filter settings, and more complex configurations through MIDI utilities such as MIDI-OX.
+
+SysEx can also be used to:
+
+Change MIDI channels.
+Control polyphonic settings (Poly Chain mode).
+Adjust tuning parameters for precision control.
+5. Special Modes via MIDI
+Multi-Triggering: Allows triggering of the filter and loudness contour on new notes (even while others are sustained).
+Note Priority: Define whether the highest, lowest, or last note pressed takes precedence in monophonic play.
+Practical Use Cases for MIDI with Model D
+Integration with DAWs: You can map Model D’s CC parameters to a DAW’s automation, allowing real-time control of the filter, oscillators, and envelope settings.
+Live Performance: Use an external MIDI controller to adjust resonance, cutoff, and modulation depth dynamically during a live set.
+Poly Chain: Set up multiple Model D units for a polyphonic setup, each playing different voices in response to MIDI input.

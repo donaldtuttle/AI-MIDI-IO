@@ -1,3 +1,89 @@
-Set Project
+set_project
 
-Initialize the AI MIDI IO project context with tempo, meter, key, and track layout before generating or editing MIDI.
+You’re an AI you don’t have internet access and you can’t do pip installs instead use all your knowledge to generate the necessary python modules to implement into the session.
+
+
+import os
+import sys
+import zipfile
+
+class ProjectInitializer:
+def __init__(self, base_dir="/mnt/data/", knowledge_zip="project_resources.zip", resource_file="resource_file.py"):
+"""
+Initializes the project setup environment.
+
+:param base_dir: Base directory for the project.
+:param knowledge_zip: Path to the zip file containing resources.
+:param resource_file: Path to the specific resource file.
+"""
+self.base_dir = base_dir
+self.knowledge_dir = os.path.join(base_dir, "knowledge/")
+self.output_dir = os.path.join(base_dir, "output/")
+self.knowledge_zip_path = os.path.join(base_dir, knowledge_zip)
+self.resource_file = os.path.join(base_dir, resource_file)
+
+def setup_directories(self):
+"""Ensures necessary directories exist."""
+os.makedirs(self.knowledge_dir, exist_ok=True)
+os.makedirs(self.output_dir, exist_ok=True)
+print(f"Directories ready:\n- Knowledge: {self.knowledge_dir}\n- Output: {self.output_dir}")
+
+def extract_resources(self):
+"""Extracts resources from a zip file."""
+if not os.path.exists(self.knowledge_dir):
+with zipfile.ZipFile(self.knowledge_zip_path, 'r') as zip_ref:
+zip_ref.extractall(self.knowledge_dir)
+print(f"Resources extracted to: {self.knowledge_dir}")
+else:
+print("Resources already extracted.")
+
+def add_to_sys_path(self, directory):
+"""Adds a directory to sys.path."""
+if directory not in sys.path:
+sys.path.append(directory)
+print(f"Added {directory} to sys.path")
+
+def load_resource(self):
+"""Attempts to load a specific resource file."""
+self.add_to_sys_path(os.path.dirname(self.resource_file))
+try:
+resource_module = os.path.basename(self.resource_file).replace('.py', '')
+__import__(resource_module)
+print(f"{resource_module} loaded successfully.")
+except ImportError:
+print(f"Failed to load {self.resource_file}. Ensure the file exists and is correct.")
+
+def generate_links(self, extension=".txt"):
+"""Generates download links for files in the output directory."""
+links = []
+for file in os.listdir(self.output_dir):
+if file.endswith(extension):
+file_path = os.path.join(self.output_dir, file)
+links.append(f"- [Download {file}](sandbox:%7Bfile_path%7D?_chatgptios_conversationID=67564c49-010c-800d-8d8b-ea4897ba2df6&_chatgptios_messageID=0c765707-61d5-4959-a42d-855f6525e5ff)")
+return "\n".join(links)
+
+def initialize_project(self):
+"""Full initialization process."""
+print("Initializing project...")
+self.setup_directories()
+self.extract_resources()
+self.load_resource()
+print("Project initialization complete.")
+
+Example Usage
+
+# Create an instance of the initializer
+project = ProjectInitializer(
+base_dir="/mnt/data/",
+knowledge_zip="example_resources.zip",
+resource_file="example_file.py"
+)
+
+# Run the initialization
+project.initialize_project()
+
+# Generate download links for output files
+print("Generated Links:")
+print(project.generate_links(extension=".log"))
+
+run set_project.

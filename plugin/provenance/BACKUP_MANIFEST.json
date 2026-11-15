@@ -1,7 +1,57 @@
 {
-  "manifest_version": 1,
-  "files": [
-    {"path": "AI MIDI IO Guide.txt", "bytes": 13138, "sha256": "811e16393343edd64f7bf4a5dbf8d7a2ec4a1f5c9cb96162f3c9e24d4ec69e7b"}
+  "archive": "AI MIDI IO knowledge backup",
+  "created_utc": "2026-11-15T15:44:48.073351+00:00",
+  "original_files": [
+    {
+      "path": "AI MIDI IO Guide.txt",
+      "bytes": 13138,
+      "sha256": "811e16393343edd64f7bf4a5dbf8d7a2ec4a1f5c9cb96162f3c9e24d4ec69e7b"
+    },
+    {
+      "path": "AI_MIDI_IO_Python.zip",
+      "bytes": 141730,
+      "sha256": "955bc2a0cac2d5e87fb75b9a5f6ca53502a53a44f33135701123d2d6189a5f20"
+    },
+    {
+      "path": "MIDI File Structure Guidelines.txt",
+      "bytes": 50265,
+      "sha256": "b8200da8ee58fd7d908ed09ba1a572f493e4a62301eeaba84be81c53770e8d93"
+    },
+    {
+      "path": "MIDIFile.py",
+      "bytes": 73304,
+      "sha256": "4539cc29aa013f30231815b819b917bd395facfd01e7d5556849649fe847728c"
+    },
+    {
+      "path": "MIDI_CC to OSC Mapping Implementation Guide.txt",
+      "bytes": 3573,
+      "sha256": "20fb9c45ba8938149b18f1ddec149f5e83a4d7ddbed818e23a4a6eadc7f15e32"
+    },
+    {
+      "path": "MIDI_Control_Change_and_Velocity.txt",
+      "bytes": 30446,
+      "sha256": "48b34efa1edc42c6c774d5c6a47e8bc6b1383252052ea640b684f6071bec9bba"
+    },
+    {
+      "path": "MIDI_Python.txt",
+      "bytes": 33099,
+      "sha256": "c5f9e0cec3d7e60603b0d8d5b38c7d270f5cd30abf33bac0987c0d2414a16915"
+    },
+    {
+      "path": "MIDI_Scales_and_Theory.txt",
+      "bytes": 15984,
+      "sha256": "e1a3b83dc168e62da3fc4a1e9b6de392217722bce0b952073ccf5cf8e4069d29"
+    },
+    {
+      "path": "MIDI_Voice_Table.txt",
+      "bytes": 12769,
+      "sha256": "3f6b648fcbedb620a634dcb43036943fd9f2737d63593094cd438f9e9f63fed3"
+    },
+    {
+      "path": "set_project.txt",
+      "bytes": 3122,
+      "sha256": "e99a5ececaeed8fc217841b021768a38b934ffaa8818b852250850f3ba0eaff4"
+    }
   ],
-  "note": "Full manifest in local tree."
+  "notes": "Original uploaded knowledge/source files preserved byte-for-byte. The nested AI_MIDI_IO_Python.zip contains bundled Python libraries."
 }

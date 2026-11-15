@@ -1,6 +1,143 @@
 {
-  "repair_version": "0.63.2",
-  "date": "2026-11-15",
-  "status": "complete",
-  "notes": "Full knowledge base and package restoration validated. See local archive for complete report."
+  "version": "0.63.2",
+  "patch_archive": "AI_MIDI_IO_Repair_Update_0.63.2.zip",
+  "patch_bytes": 110544,
+  "patch_sha256": "d43db493f33130694f3d29a7a0e88251ce0577e9300f47e4c8fbfe4a3bded83e",
+  "patch_file_count": 28,
+  "original_reference_files_retained": 10,
+  "optimized_source_files_added": 16,
+  "separate_user_sources_added": 2,
+  "default_backend": "mido",
+  "tests_passed": 24,
+  "midi_verification": {
+    "initialization": {
+      "version": "0.63.2",
+      "ready": true,
+      "ready_for": "mido file generation and analysis",
+      "mido_path": "/opt/pyvenv/lib/python3.13/site-packages/mido/__init__.py",
+      "midifile_available": false,
+      "midifile_path": null,
+      "midifile_issue": "FileNotFoundError: /mnt/data/ai_midi_io_repair/skills/instructions/references/MIDIFile.py",
+      "reference_directory": "/mnt/data/ai_midi_io_repair/skills/instructions/references",
+      "dependency_archive_present": false,
+      "directories": {
+        "knowledge": "/mnt/data/ai_midi_io_validation/knowledge",
+        "midi_generation": "/mnt/data/ai_midi_io_validation/midi_generation",
+        "wav_generation": "/mnt/data/ai_midi_io_validation/wav_generation"
+      },
+      "live_midi_verified": false,
+      "live_osc_verified": false
+    },
+    "midi": {
+      "path": "/mnt/data/ai_midi_io_validation/midi_generation/AI_MIDI_IO_Verification_4track_120BPM.mid",
+      "bytes": 2505,
+      "sha256": "2576e4ca517a2c5f9d1c0038c063db59f192f2e6478e73607a47cbd8b06331d1",
+      "format": 1,
+      "ppq": 480,
+      "track_chunks": 5,
+      "musical_tracks": 4,
+      "total_notes": 268,
+      "end_tick": 30720,
+      "note_overlaps": [],
+      "unclosed_notes": 0,
+      "tracks": [
+        {
+          "index": 0,
+          "name": "Conductor",
+          "notes": 0,
+          "end_tick": 30720,
+          "channels": [],
+          "programs": []
+        },
+        {
+          "index": 1,
+          "name": "Melody - Square Lead",
+          "notes": 128,
+          "end_tick": 30720,
+          "channels": [
+            0
+          ],
+          "programs": [
+            {
+              "tick": 0,
+              "channel": 0,
+              "program": 80
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "name": "Bass - Synth Bass 1",
+          "notes": 64,
+          "end_tick": 30720,
+          "channels": [
+            1
+          ],
+          "programs": [
+            {
+              "tick": 0,
+              "channel": 1,
+              "program": 38
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "name": "Drums - GM channel 10",
+          "notes": 64,
+          "end_tick": 30720,
+          "channels": [
+            9
+          ],
+          "programs": []
+        },
+        {
+          "index": 4,
+          "name": "Harmony - Warm Pad",
+          "notes": 12,
+          "end_tick": 30720,
+          "channels": [
+            2
+          ],
+          "programs": [
+            {
+              "tick": 0,
+              "channel": 2,
+              "program": 89
+            }
+          ]
+        }
+      ],
+      "bars": 16,
+      "bpm": 120,
+      "time_signature": "4/4",
+      "backend": "mido",
+      "duration_seconds": 32.0,
+      "fixture_not_auditioned": true
+    }
+  },
+  "limitations": [
+    "Original stored dependency ZIP was not retrieved into this runtime; retained unchanged.",
+    "Original MIDIFile.py source was inspected but not executed; retained as optional checked backend.",
+    "Archive fallback tested with an installed-source fixture, not the original archive.",
+    "Fresh-chat plugin loading, FL Studio import, playback audition, and live MIDI/OSC not tested."
+  ],
+  "expected_prior_release_id": "pluginrel_eb3288c6730481919339e3942cbcfef3",
+  "publication_status": "updated and source read-back verified",
+  "published_release_id": "pluginrel_6afa07e1259881918b3f03d8d9c827f8",
+  "plugin_url": "https://chatgpt.com/plugins/plugin_e2c6d0aa1a648191ac5612f86daf6761",
+  "scope": "USER",
+  "discoverability": "PRIVATE",
+  "published_file_count": 39,
+  "read_back_verified": [
+    "version and original plugin identity",
+    "unchanged plugin-level conversation starters and icon path",
+    "active skill text",
+    "knowledge index",
+    "runtime source",
+    "skill agent description",
+    "optimized contents index",
+    "all original and added reference paths and file sizes"
+  ],
+  "verification_download_file": "AI_MIDI_IO_Verification_4track_120BPM.mid"
 }
