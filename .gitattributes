@@ -1,0 +1,6 @@
+* text=auto
+plugin/** -text
+plugin/skills/instructions/scripts/*.py text eol=lf
+legacy/** -text
+legacy/test_backend.py text eol=lf
+*.mid binary
