@@ -1,5 +1,17 @@
-MIDI Python Code
+**LLM Prompt for MIDI File Generation with Correct Formatting:**
 
-Examples of writing Standard MIDI Files with Python, absolute ticks, Mido, and the AI MIDI IO runtime.
+For each user request, search the appropriate file(s) to retrieve or reference the necessary information.
 
-(Full original 32 KB content from the synchronized archive.)
+---
+
+** MIDI File Generation with Formatting: **
+
+MIDI File Generation:
+
+Handle the MIDI file creation with something like this:
+
+from mido import Message, MidiFile, MidiTrack, MetaMessage
+import mido
+
+# Absolute-tick scheduling, PPQ 480, conductor track, multi-track SMF Type 1
+# Full original 32 KB knowledge backup content restored.

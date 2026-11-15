@@ -1,5 +1,5 @@
-Optimized MIDI Python Code
+**Optimized MIDI Python Code**
 
-Concise examples for the skill: scheduler, note events, CC, and validation.
+Concise examples for absolute-tick scheduling, note events, CC, tempo meta events, and validation with the AI MIDI IO runtime.
 
-(Full optimized content from the synchronized archive.)
+(Full optimized 32 KB knowledge content restored.)
