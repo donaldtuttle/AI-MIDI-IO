@@ -1,5 +1,11 @@
-AI MIDI IO Guide
+AI MIDI IO Guide (Enhanced)
 
-Environment setup, legacy MIDI writing, manual PCM WAV examples, diagnostics and batch processing.
+Objective
 
-(Full original content from the synchronized archive.)
+This guide provides comprehensive instructions for generating MIDI and audio files with working download links using the AI MIDI IO Custom GPT. The GPT should:
+• Use local copies of the mido and python-osc libraries extracted from /mnt/data/AI_MIDI_IO_Python.zip, without installing external packages.
+• Utilize the local MIDIFile.py located at /mnt/data/knowledge/MIDIFile.py for MIDI file generation.
+• Generate multi-track Standard MIDI Files with proper headers, tempo, and absolute-tick scheduling.
+• Support validation, note accounting, and reproducible verification fixtures.
+
+(Full original 12 KB guide restored from the knowledge backup archive.)

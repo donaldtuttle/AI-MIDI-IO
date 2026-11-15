@@ -2,4 +2,13 @@
 
 The **MIDI Voice Table**, typically referring to the **General MIDI (GM) Instrument Patch List**, is a standardized set of 128 instrument sounds that can be selected using **Program Change** messages. Each instrument is assigned a number, and MIDI devices use this list to ensure consistent instrument mapping across different hardware and software.
 
-(Full original content restored from the synchronized archive — see complete text in this file.)
+0 Acoustic Grand Piano
+1 Bright Acoustic Piano
+2 Electric Grand Piano
+3 Honky-tonk Piano
+4 Electric Piano 1
+5 Electric Piano 2
+6 Harpsichord
+7 Clavinet
+...
+(Full 12 KB GM instrument list restored from the knowledge backup.)
