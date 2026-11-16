@@ -85,9 +85,18 @@ A standalone Windows x64 MIDI player is included in [apps/windows-midi-player](a
 
 The package handles PPQ Standard MIDI Files and explicit note releases. Type 0 and Type 1 exports are exercised, and the validator checks Type 2 sequences independently. The validator reports same-pitch overlaps and preserves them in the file workflow. Hardware MIDI, OSC, receiver-side tuning, DAW playback and the mobile browser app were outside the verified runtime. The WAV helper generates four diagnostic oscillator shapes as mono PCM. The scale, rhythm, arpeggio, instrument and tuning documents remain available as musical references.
 
-## Authorship and licensing
+## License
 
-Donald Tuttle created AI MIDI IO. Mark Conway Wirt’s MIDIUtil writer and the Mido project retain their respective attribution and MIT license terms. Historical source references are preserved with their provenance. See [licensing and publication review](docs/LICENSING.md) for third-party notices and prerequisites for a public release.
+AI MIDI IO's original Python toolkit and C# Windows MIDI Player source are
+licensed under the [MIT License](LICENSE).
+
+Copyright (c) 2026 Donald Tuttle.
+
+Third-party MIDI libraries retain their original attribution and license
+terms. Preserved plugin archives, imported references and external assets
+are not automatically relicensed. See the
+[third-party notices](THIRD_PARTY_NOTICES.md) and
+[licensing documentation](docs/LICENSING.md) for scope and redistribution details.
 
 ## Run the tests
 

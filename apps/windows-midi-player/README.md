@@ -15,3 +15,13 @@ Player.cs contains the Windows interface. MidiFile.cs reads and times MIDI event
 Choose a Windows MIDI output in the dropdown next to Open MIDI. For a DAW such as FL Studio, use a Windows virtual MIDI port and select that same port as an input in the DAW. Route the input to a software instrument. For hardware, choose the MIDI interface or USB-MIDI output for the connected instrument. Press Play in MIDI Player.
 
 The player follows the timing in the file. Output sends MIDI channel messages. MIDI clock and external transport synchronization are outside this version.
+
+## License
+
+The original MIDI Player C# source and build script are licensed under the
+[MIT License](../../LICENSE), copyright (c) 2026 Donald Tuttle.
+
+The application uses the `gm.dls` sound bank installed with Windows. Those
+samples are not bundled with this project and are not covered by its MIT grant.
+Other third-party assets and historical materials retain their own rights;
+see [third-party notices](../../THIRD_PARTY_NOTICES.md).
