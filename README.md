@@ -71,6 +71,18 @@ For a Type 1 arrangement, append a conductor track with tempo and meter, then ap
 
 A standalone Windows x64 MIDI player is included in [apps/windows-midi-player](apps/windows-midi-player/README.md). Its C# source provides file playback, offline General MIDI DLS synthesis, and optional Windows MIDI Out for connected instruments, virtual MIDI ports, or DAWs. The player is independent of the Python library and can open exported Standard MIDI Files directly. See the [source and build notes](apps/windows-midi-player/ABOUT.md).
 
+## Public plugin distribution
+
+Build a privacy-reviewed skills plugin using:
+
+```sh
+python tools/build_public_plugin.py dist/AI-MIDI-IO-plugin-public.zip
+```
+
+This ZIP includes the Python engine, a standalone MIDI skill, a concise MIDI reference, a working icon, and its third-party notices. It intentionally excludes the archived prompts and historical reference collection. The plugin requires an available Python runtime and Mido for generation or validation; installation alone does not create a Python execution environment.
+
+See [public release and installation instructions](docs/PUBLIC_RELEASE.md) before changing repository visibility. The private repository includes historical references and identifiers in previous commits that must not be exposed by simply making it public.
+
 ## Documentation
 
 - [Python API and file validation](docs/API.md)
