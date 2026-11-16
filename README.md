@@ -65,6 +65,11 @@ For a Type 1 arrangement, append a conductor track with tempo and meter, then ap
 | `examples/` | Reproducible MIDI fixture with its validation report |
 | `tests/` | Standalone package and staged plugin tests |
 | `tools/build_plugin.py` | Local plugin overlay builder using the same package source |
+| `apps/windows-midi-player/` | Independent C# Windows player with offline GM playback and external MIDI output |
+
+## Windows MIDI Player
+
+A standalone Windows x64 MIDI player is included in [apps/windows-midi-player](apps/windows-midi-player/README.md). Its C# source provides file playback, offline General MIDI DLS synthesis, and optional Windows MIDI Out for connected instruments, virtual MIDI ports, or DAWs. The player is independent of the Python library and can open exported Standard MIDI Files directly. See the [source and build notes](apps/windows-midi-player/ABOUT.md).
 
 ## Documentation
 

@@ -1,0 +1,37 @@
+name: Windows MIDI Player build
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "apps/windows-midi-player/**"
+      - ".github/workflows/windows-midi-player.yml"
+  pull_request:
+    paths:
+      - "apps/windows-midi-player/**"
+      - ".github/workflows/windows-midi-player.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Windows MIDI Player x64
+        working-directory: apps/windows-midi-player
+        shell: pwsh
+        run: .\build.ps1
+      - name: Verify executable exists
+        shell: pwsh
+        run: |
+          if (-not (Test-Path -LiteralPath 'apps/windows-midi-player/MIDI Player.exe')) {
+            throw 'Build did not produce the expected MIDI Player.exe'
+          }
+      - name: Upload built player
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-midi-player-x64
+          path: apps/windows-midi-player/MIDI Player.exe
+          if-no-files-found: error
