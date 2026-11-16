@@ -1,8 +1,20 @@
 # AI MIDI IO
 
-AI MIDI IO is a Python toolkit for MIDI composition, Standard MIDI File generation, structural validation, and repeatable music-production workflows. It combines a standalone command-line interface with reusable Python modules and a companion plugin.
+**AI MIDI IO is a MIDI toolkit for AI-assisted composition**, originally created by Donald Tuttle as a Custom GPT. It is designed to let an AI agent, plugin, or skill interpret musical instructions, draw on MIDI and music-theory references, and use executable tools to generate and validate Standard MIDI Files.
 
-The package uses [Mido](https://mido.readthedocs.io/) to construct, serialize and reopen Standard MIDI Files. AI MIDI IO adds absolute-tick scheduling, structural validation, note accounting, project initialization and a reproducible four-part composition. The core file workflows run locally without a hosted service.
+The Python package is the project's local MIDI execution layer, not its entire identity. Built on [Mido](https://mido.readthedocs.io/), it provides absolute-tick scheduling, MIDI file serialization, structural validation, note accounting, project initialization, and a reproducible four-part demonstration. Its file workflows also work independently of an AI service.
+
+## From Custom GPT to AI-assisted MIDI workflows
+
+AI MIDI IO began as a knowledge-driven Custom GPT focused on MIDI composition, music theory, instrument selection, and practical MIDI workflows. The project now supports multiple ways of using that foundation:
+
+1. **AI agent, ChatGPT plugin, or compatible skill:** Interprets prompts about tempo, key, harmony, instrumentation, arrangement, and expression, then coordinates an appropriate MIDI workflow.
+2. **Python MIDI toolkit and CLI:** Turns explicit MIDI events into standard `.mid` files, performs repeatable generation and structural checks, and provides an interface that agents and developers can call.
+3. **Windows MIDI Player:** Independently opens exported MIDI files for playback using the Windows General MIDI sound bank, with optional MIDI Out routing.
+
+The intended flow is **musical prompt → AI agent or skill → Python MIDI generation and validation → MIDI file → player, DAW, or other MIDI software**.
+
+The Python package does not contain its own language model or autonomously interpret natural-language prompts. AI-assisted composition requires a compatible agent or plugin with access to the tools; actual file generation requires a Python execution environment with Mido. Developers can also use the Python modules directly without an AI agent.
 
 ## Install
 

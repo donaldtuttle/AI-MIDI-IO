@@ -1,5 +1,7 @@
 # AI MIDI IO plugin integration
 
+AI MIDI IO originated as a Custom GPT for AI-assisted MIDI composition and music-theory workflows. Its agent-facing plugin and skills provide musical instructions and reference context, while the maintained Python package supplies reproducible MIDI file generation and validation. This separation also allows developers to use the Python tools independently.
+
 The plugin uses the same Python source as the standalone package. The two manifests, skill instructions, conversation starters, and lookups retain their supplied v0.63.2 bytes and plugin identity. The plugin version and the Python distribution version describe separate packages.
 
 ## Run the adapter locally

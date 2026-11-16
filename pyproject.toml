@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "ai-midi-io"
 version = "0.1.0"
-description = "Local MIDI composition, export and validation tools from AI MIDI IO"
+description = "MIDI tools for AI-assisted composition, generation, and validation workflows"
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [{ name = "DT, original AI MIDI IO creator" }]
