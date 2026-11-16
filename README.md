@@ -81,7 +81,7 @@ python tools/build_public_plugin.py dist/AI-MIDI-IO-plugin-public.zip
 
 This ZIP includes the Python engine, a standalone MIDI skill, a concise MIDI reference, a working icon, and its third-party notices. It intentionally excludes the archived prompts and historical reference collection. The plugin requires an available Python runtime and Mido for generation or validation; installation alone does not create a Python execution environment.
 
-See [public release and installation instructions](docs/PUBLIC_RELEASE.md) before changing repository visibility. The private repository includes historical references and identifiers in previous commits that must not be exposed by simply making it public.
+See the [publication assessment](docs/PUBLICATION_ASSESSMENT.md) and [release instructions](docs/PUBLIC_RELEASE.md) for the public-source and plugin distribution paths. Historical plugin identifiers and AI development notes alone do not require rewriting Git history. Confirm redistribution rights for archived references and review remaining historical activity before changing visibility.
 
 ## Documentation
 
