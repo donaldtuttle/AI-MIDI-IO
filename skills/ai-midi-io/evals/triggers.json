@@ -1,0 +1,10 @@
+{
+  "skill": "ai-midi-io",
+  "test_cases": [
+    {"input": "generate a midi file", "should_trigger": true},
+    {"input": "validate this mid file", "should_trigger": true},
+    {"input": "create a 4 track composition at 120 bpm", "should_trigger": true},
+    {"input": "what is the weather", "should_trigger": false},
+    {"input": "send an email", "should_trigger": false}
+  ]
+}

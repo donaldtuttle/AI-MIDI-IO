@@ -1,0 +1,33 @@
+{
+  "skill": "ai-midi-io",
+  "test_cases": [
+    {
+      "name": "generate_simple_track",
+      "input": "Create a one-track MIDI file with two notes at 120 BPM",
+      "assertions": [
+        "Uses scheduled_track with absolute ticks",
+        "Calls validate_midi after save",
+        "Reports expected_musical_tracks=1"
+      ]
+    },
+    {
+      "name": "validate_existing",
+      "input": "Validate this MIDI file and tell me the track count and end tick",
+      "assertions": [
+        "Calls validate_midi",
+        "Reports musical_tracks and end_tick from the result",
+        "Does not claim playback success"
+      ]
+    },
+    {
+      "name": "demo_reference",
+      "input": "Show me the verification fixture details",
+      "assertions": [
+        "States 16 bars, C major, 120 BPM, PPQ 480",
+        "Mentions 1 conductor + 4 musical tracks",
+        "Notes end tick 30720",
+        "Does not substitute the demo for a user composition"
+      ]
+    }
+  ]
+}
