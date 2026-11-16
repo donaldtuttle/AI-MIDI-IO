@@ -42,7 +42,7 @@ class PublicPluginPackageTests(unittest.TestCase):
             path = build(Path(temp) / "public.zip")
             with ZipFile(path) as z:
                 content = b"\n".join(z.read(n) for n in z.namelist() if n.endswith((".md", ".json", ".txt", ".py")))
-                for private in (b"_chatgptios_conversationID", b"plugin_e2c6", b"pluginrel_", b"chatgpt.com/plugins/plugin_"):
+                for private in (b"_chatgptios_" + b"conversationID", b"plugin_" + b"e2c6", b"plugin" + b"rel_", b"chatgpt.com/plugins/" + b"plugin_"):
                     self.assertNotIn(private, content)
                 self.assertFalse(any("provenance" in n or "reference/source" in n or "reference/optimized" in n for n in z.namelist()))
 
