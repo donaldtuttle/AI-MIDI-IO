@@ -40,9 +40,8 @@ Distributions of the MIT-licensed Python library and Windows Player should
 accompany the license and copyright notice. If including third-party sources,
 also include their applicable attribution and license notices.
 
-The GitHub repository's MIT License does not automatically establish rights to
-republish historical references, imported text or third-party assets. The
-project owner should confirm applicable redistribution rights. No specific
-copyright infringement has been established by the available source audit.
-Historical plugin IDs by themselves are not evidence of compromised credentials.
-See the [scoped publication assessment](PUBLICATION_ASSESSMENT.md).
+The MIT License does not extend to externally owned reference text, imported
+material or media without permission from the applicable rights holders.
+Historical sources and assets retain their own attribution and reuse terms.
+See the [third-party notices](../THIRD_PARTY_NOTICES.md) for details. The dated
+[publication assessment](PUBLICATION_ASSESSMENT.md) records the earlier source review.

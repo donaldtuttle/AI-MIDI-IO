@@ -13,7 +13,7 @@ MIDI output timing follows the loaded file. The current implementation does not 
 
 ## Source
 
-The original, user-verified C# source is retained as independent files in this directory. `Player.cs` provides the interface, `MidiFile.cs` handles parsing and event timing, `MidiSynth.cs` and `InstrumentBank.cs` render the local sound bank, `WaveOutput.cs` handles PCM output, and `MidiOutput.cs` handles Windows MIDI ports.
+The player is maintained as C# source in this directory. `Player.cs` defines the Windows interface, `MidiFile.cs` parses MIDI events and timing, `MidiSynth.cs` and `InstrumentBank.cs` provide software synthesis, `WaveOutput.cs` handles PCM audio output, and `MidiOutput.cs` handles Windows MIDI output ports.
 
 ## Build
 
@@ -30,4 +30,4 @@ The build script invokes the system C# compiler at `%WINDIR%\Microsoft.NET\Frame
 
 The Python package generates and validates `.mid` files. The Windows player is an optional, independent playback application that can open those MIDI files. No Python runtime or interprocess bridge is necessary.
 
-Three separately supplied Windows executable builds were not added to version control. Their correspondence to the archived source is not established by this source import; the Windows project can be built directly from the retained C# files.
+The included `build.ps1` compiles the maintained source. GitHub Actions also provides a Windows x64 build workflow under `.github/workflows/windows-midi-player.yml`.

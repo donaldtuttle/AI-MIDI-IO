@@ -1,6 +1,6 @@
 # Verification composition
 
-The v0.63.2 repair fixture is preserved byte for byte in
+The project's reproducible four-track MIDI example is available in
 [AI_MIDI_IO_Verification_4track_120BPM.mid](verification/AI_MIDI_IO_Verification_4track_120BPM.mid).
 Its [validation report](verification/validation.json) records the serialized
 structure and note balance. The file is Standard MIDI File Type 1 at 480 PPQ.
@@ -28,7 +28,7 @@ ai-midi-io validate demo-output/midi_generation/AI_MIDI_IO_Verification_4track_1
 
 The exporter reopens the MIDI, checks track structure and note releases, and
 reports the measured duration. The regression suite compares the bytes against
-this historical SHA-256 digest.
+this reference SHA-256 digest.
 
 ```text
 2576e4ca517a2c5f9d1c0038c063db59f192f2e6478e73607a47cbd8b06331d1

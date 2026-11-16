@@ -1,49 +1,61 @@
-# Public distribution and release checklist
+# AI MIDI IO: Distribution and releases
 
-AI MIDI IO has two independent distribution channels:
+AI MIDI IO is an AI-assisted MIDI composition toolkit that began as a Custom GPT. The project includes a reusable Python MIDI engine, agent-oriented skills and plugin packaging, and a standalone Windows MIDI Player.
 
-- **GitHub source:** Python MIDI toolkit, Windows C# MIDI Player, skills, tests, documentation and selectively licensed historical materials.
-- **ChatGPT/Codex plugin:** a focused skills-only ZIP produced from the maintained Python source and the public plugin profile.
+The [source repository](https://github.com/donaldtuttle/AI-MIDI-IO) is **public**. The project's first-party software is [MIT-licensed](../LICENSE); third-party components and archived reference documents retain their applicable rights. See [THIRD_PARTY_NOTICES.md](../THIRD_PARTY_NOTICES.md).
 
-## Publication assessment
+## Use the Python toolkit
 
-Read the [November 16, 2026 publication assessment](PUBLICATION_ASSESSMENT.md) before changing repository visibility.
+Clone the repository, install the package, and generate or validate a Standard MIDI File:
 
-**The existing Git history does not need to be rewritten merely because it contains historical plugin identifiers, AI development notes or archived instructions.** No confirmed leaked secret was identified in the inspected historical ZIP. That finding is scoped, not an exhaustive audit of all Git objects or Actions logs.
+```sh
+git clone https://github.com/donaldtuttle/AI-MIDI-IO.git
+cd AI-MIDI-IO
+python -m pip install .
+ai-midi-io demo --output-root ./out
+ai-midi-io validate out/midi_generation/AI_MIDI_IO_Verification_4track_120BPM.mid --expected-musical-tracks 4 --expected-end-tick 30720
+```
 
-The practical remaining decision is whether the preserved original and optimized knowledge references may be publicly redistributed. The owner should confirm authorship or relevant permissions for that archival content. The root MIT License covers original first-party software, not automatically every imported reference or third-party excerpt.
+Python 3.10 or later is required. Mido is a declared package dependency.
 
-### Publish this repository on GitHub
+## Build the Windows MIDI Player
 
-1. Review archived-reference redistribution rights and remaining GitHub Actions logs and history. Keep the existing repository if the retained archive is appropriate for public distribution.
-2. On GitHub, open [AI MIDI IO](https://github.com/donaldtuttle/AI-MIDI-IO) → **Settings → General → Danger Zone → Change repository visibility**.
-3. Choose **Public** and confirm GitHub's warnings. The GitHub UI action requires repository administration; it is not done by the plugin packaging script.
-4. Verify the public URL from a signed-out browser, check the license and release links, and publish versioned release assets if desired.
+On Windows x64 with .NET Framework 4.x and PowerShell:
 
-Changing visibility exposes previous commits and Actions logs. If specific historical material must remain private, that needs a separate plan; removing it only from the latest commit is insufficient. A new public repository or backed-up history rewrite is an *option*, not a default prerequisite.
+```powershell
+cd apps/windows-midi-player
+.\build.ps1
+```
 
-## Build the portable ChatGPT/Codex plugin
+The resulting `MIDI Player.exe` can open Standard MIDI Files for playback. Windows MIDI Out can send channel messages to a selected hardware or virtual MIDI device. The player uses the General MIDI DLS sound bank installed with Windows; sound-bank samples are not included in this repository.
+
+The [Windows build workflow](../.github/workflows/windows-midi-player.yml) also compiles the tracked source and uploads its executable as a GitHub Actions artifact. A successful automated build does not establish that independently supplied older executables are byte-identical.
+
+## Build the ChatGPT/Codex plugin
 
 ```sh
 python tools/build_public_plugin.py dist/AI-MIDI-IO-plugin-public.zip
 python -m unittest discover -s tests -p test_public_plugin.py -v
 ```
 
-The public ZIP includes the plugin manifests, a packaged skill, a concise original MIDI reference, maintained Python sources, runtime adapters, a square SVG icon, the preserved MIT-licensed legacy writer and applicable notices. It excludes archival private-plugin IDs, historical repair reports, old prompts, and the extended unreviewed reference collection.
+The resulting ZIP contains plugin manifests, a packaged MIDI skill, an original compact MIDI reference, Python source modules, runtime adapters, an icon, and applicable license notices. The historical plugin provenance and extended archived references are not included in this distribution ZIP.
 
-MIDI file generation still requires an executable Python environment and Mido 1.3.3 or compatible 1.x. The Windows MIDI Player is a separate application.
+The plugin is designed to work with an AI agent that has an executable Python environment. Standard MIDI File generation and validation require Mido 1.3.3 or compatible 1.x. Installing the plugin alone does not provision Python, Mido, MIDI hardware, or an audio renderer.
 
-The ZIP is a distribution artifact, not an automatically installed ChatGPT plugin. Use the [OpenAI plugin packaging guide](https://developers.openai.com/plugins/build/plugins) and [submission process](https://developers.openai.com/plugins/deploy/submission) for supported import and public-directory publication. Directory listing requires upload checks, any applicable review, and publication by an authorized developer. A GitHub visibility change alone does not publish the plugin to ChatGPT.
+To make the plugin available within ChatGPT, use the supported import and publishing workflow; making the GitHub repository public does not automatically publish a ChatGPT Plugin Directory listing.
+
+- [Plugin packaging](https://developers.openai.com/plugins/build/plugins)
+- [Plugin submission](https://developers.openai.com/plugins/deploy/submission)
 
 ## Release checklist
 
-- [ ] Confirm the owner can publicly redistribute retained historical reference texts, diagrams and third-party excerpts.
-- [ ] Review remaining Git history, branches/tags and Actions logs for confidential information before enabling public visibility.
-- [ ] Build the plugin ZIP; verify manifests, referenced image paths, package integrity and dependency documentation.
-- [ ] Run Python and plugin tests on the intended supported environments.
-- [ ] Verify the Windows x64 player build and the distributable executable.
-- [ ] Test installing the plugin from the actual ZIP in an eligible ChatGPT/Codex environment; verify real MIDI generation if Python and Mido are available.
-- [ ] Make GitHub public, verify signed-out access, and publish download assets as appropriate.
-- [ ] Submit the plugin separately to the directory if general in-product discovery is desired.
+Before announcing a tagged, downloadable release:
 
-See [licensing](LICENSING.md), [third-party notices](../THIRD_PARTY_NOTICES.md), and [test results](TESTING.md). A successful CI build is not proof of a completed public release.
+- Run the Python, legacy backend, and plugin packaging tests.
+- Confirm the Windows x64 player builds and the executable launches.
+- Validate the downloadable MIDI fixture and package archives.
+- Include MIT and third-party notices in distributed assets.
+- Verify that the plugin installs and generates a validated MIDI file in a supported host environment.
+- Create a versioned GitHub Release and attach the intended downloadable assets.
+
+The [publication assessment](PUBLICATION_ASSESSMENT.md) is a dated historical audit record, not current installation guidance. See [testing notes](TESTING.md) for the scope of completed verification.
